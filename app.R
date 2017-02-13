@@ -5,6 +5,8 @@ library(stringr)
 library(DT)
 library(scales)
 library(plotly)
+library(xlsx)
+
 
 NCCIbind<-data.frame(NCCIbind)
 
@@ -46,213 +48,213 @@ server<-function(input, output) {
     DT::datatable(NCCIbind, options = list(orderClasses = TRUE, pageLength = 25))
   })
   output$downloadData <- downloadHandler(
-    filename = function() { paste('NCCIexport-', Sys.Date(), '.csv', sep='') },
+    filename = function() { paste('NCCIexport-', Sys.Date(), '.tsv', sep='') },
     content = function(file) {
-      write.csv(NCCIbind, file)
+      write.table(NCCIbind, file, sep = "\t")
     }
   )
   output$AGA041 <- downloadHandler(
     filename = function() {
-      paste("AGA041-", date, ".csv", sep="")
+      paste("AGA041-", date, ".tsv", sep="")
     },
     content = function(file) {
-      write.csv(AGA041, file)
+      write.table(AGA041, file, sep = "\t")
     } )
   output$AGA045 <- downloadHandler(
     filename = function() {
-      paste("AGA045-", date, ".csv", sep="")
+      paste("AGA045-", date, ".tsv", sep="")
     },
     content = function(file) {
-      write.csv(AGA045, file)
+      write.table(AGA045, file, sep = "\t")
     } )
   output$AGA046 <- downloadHandler(
     filename = function() {
-      paste("AGA046-", date, ".csv", sep="")
+      paste("AGA046-", date, ".tsv", sep="")
     },
     content = function(file) {
-      write.csv(AGA046, file)
+      write.table(AGA046, file, sep = "\t")
     } )
   output$AGA051 <- downloadHandler(
     filename = function() {
-      paste("AGA051-", date, ".csv", sep="")
+      paste("AGA051-", date, ".tsv", sep="")
     },
     content = function(file) {
-      write.csv(AGA051, file)
+      write.table(AGA051, file, sep = "\t")
     } )
   output$AGA055 <- downloadHandler(
     filename = function() {
-      paste("AGA055-", date, ".csv", sep="")
+      paste("AGA055-", date, ".tsv", sep="")
     },
     content = function(file) {
-      write.csv(AGA055, file)
+      write.table(AGA055, file, sep = "\t")
     } )
   output$AGA059 <- downloadHandler(
     filename = function() {
-      paste("AGA059-", date, ".csv", sep="")
+      paste("AGA059-", date, ".tsv", sep="")
     },
     content = function(file) {
-      write.csv(AGA059, file)
+      write.table(AGA059, file, sep = "\t")
     } )
   output$AGA060 <- downloadHandler(
     filename = function() {
-      paste("AGA060-", date, ".csv", sep="")
+      paste("AGA060-", date, ".tsv", sep="")
     },
     content = function(file) {
-      write.csv(AGA060, file)
+      write.table(AGA060, file, , sep = "\t")
     } )
   output$AGA061 <- downloadHandler(
     filename = function() {
-      paste("AGA061-", date, ".csv", sep="")
+      paste("AGA061-", date, ".tsv", sep="")
     },
     content = function(file) {
-      write.csv(AGA061, file)
+      write.table(AGA061, file, sep = "\t")
     } )
   output$DIF010 <- downloadHandler(
     filename = function() {
-      paste("DIF010-", date, ".csv", sep="")
+      paste("DIF010-", date, ".tsv", sep="")
     },
     content = function(file) {
-      write.csv(DIF010, file)
+      write.table(DIF010, file, , sep = "\t")
     } )
   output$DIF018 <- downloadHandler(
     filename = function() {
-      paste("DIF018-", date, ".csv", sep="")
+      paste("DIF018-", date, ".tsv", sep="")
     },
     content = function(file) {
-      write.csv(DIF018, file)
+      write.table(DIF018, file, sep = "\t")
     } )
   output$DIF044 <- downloadHandler(
     filename = function() {
-      paste("DIF044-", date, ".csv", sep="")
+      paste("DIF044-", date, ".tsv", sep="")
     },
     content = function(file) {
-      write.csv(DIF044, file)
+      write.table(DIF044, file, sep = "\t")
     } )
   output$DIF059 <- downloadHandler(
     filename = function() {
-      paste("DIF059-", date, ".csv", sep="")
+      paste("DIF059-", date, ".tsv", sep="")
     },
     content = function(file) {
-      write.csv(DIF059, file)
+      write.table(DIF059, file, sep = "\t")
     } )
   output$NIA029 <- downloadHandler(
     filename = function() {
-      paste("NIA029-", date, ".csv", sep="")
+      paste("NIA029-", date, ".tsv", sep="")
     },
     content = function(file) {
-      write.csv(NIA029, file)
+      write.table(NIA029, file, sep = "\t")
     } )
   output$TILL006 <- downloadHandler(
     filename = function() {
-      paste("TILL006-", date, ".csv", sep="")
+      paste("TILL006-", date, ".tsv", sep="")
     },
     content = function(file) {
-      write.csv(TILL006, file)
+      write.table(TILL006, file, sep = "\t")
     } )
   output$TILL007 <- downloadHandler(
     filename = function() {
-      paste("TILL007-", date, ".csv", sep="")
+      paste("TILL007-", date, ".tsv", sep="")
     },
     content = function(file) {
-      write.csv(TILL007, file)
+      write.table(TILL007, file, sep = "\t")
     } )
   output$TILL009 <- downloadHandler(
     filename = function() {
-      paste("TILL009-", date, ".csv", sep="")
+      paste("TILL009-", date, ".tsv", sep="")
     },
     content = function(file) {
-      write.csv(TILL009, file)
+      write.table(TILL009, file, sep = "\t")
     } )
   output$DIF040 <- downloadHandler(
     filename = function() {
-      paste("DIF040-", date, ".csv", sep="")
+      paste("DIF040-", date, ".tsv", sep="")
     },
     content = function(file) {
-      write.csv(DIF040, file)
+      write.table(DIF040, file, sep = "\t")
     } )
   output$DIF048 <- downloadHandler(
     filename = function() {
-      paste("DIF048-", date, ".csv", sep="")
+      paste("DIF048-", date, ".tsv", sep="")
     },
     content = function(file) {
-      write.csv(DIF048, file)
+      write.table(DIF048, file, sep = "\t")
     } )
    output$DIF045 <- downloadHandler(
     filename = function() {
-      paste("DIF045-", date, ".csv", sep="")
+      paste("DIF045-", date, ".tsv", sep="")
     },
     content = function(file) {
-      write.csv(DIF045, file)
+      write.table(DIF045, file, sep = "\t")
     } )
        output$AGA062 <- downloadHandler(
     filename = function() {
-      paste("AGA062-", date, ".csv", sep="")
+      paste("AGA062-", date, ".tsv", sep="")
     },
     content = function(file) {
-      write.csv(AGA062, file)
+      write.table(AGA062, file, sep = "\t")
     } )
      output$AGA031 <- downloadHandler(
     filename = function() {
-      paste("AGA031-", date, ".csv", sep="")
+      paste("AGA031-", date, ".tsv", sep="")
     },
     content = function(file) {
-      write.csv(AGA031, file)
+      write.table(AGA031, file, sep = "\t")
     } )
        output$DIF038 <- downloadHandler(
     filename = function() {
-      paste("DIF038-", date, ".csv", sep="")
+      paste("DIF038-", date, ".tsv", sep="")
     },
     content = function(file) {
-      write.csv(DIF038, file)
+      write.table(DIF038, file, sep = "\t")
     } )
        output$CFWNM2 <- downloadHandler(
     filename = function() {
-      paste("CFWNamlewaMada2-", date, ".csv", sep="")
+      paste("CFWNamlewaMada2-", date, ".tsv", sep="")
     },
     content = function(file) {
-      write.csv(CFWNM2, file)
+      write.table(CFWNM2, file, sep = "\t")
     } )
         output$TIL016 <- downloadHandler(
     filename = function() {
-      paste("TIL016-", date, ".csv", sep="")
+      paste("TIL016-", date, ".tsv", sep="")
     },
     content = function(file) {
-      write.csv(TIl016, file)
+      write.table(TIl016, file, sep = "\t")
     } )
     output$AGA066 <- downloadHandler(
     filename = function() {
-      paste("AGA066-", date, ".csv", sep="")
+      paste("AGA066-", date, ".tsv", sep="")
     },
     content = function(file) {
-      write.csv(AGA066, file)
+      write.table(AGA066, file, sep = "\t")
     } )
     output$DIF050 <- downloadHandler(
     filename = function() {
-      paste("DIF050-", date, ".csv", sep="")
+      paste("DIF050-", date, ".tsv", sep="")
     },
     content = function(file) {
-      write.csv(DIF050, file)
+      write.table(DIF050, file, sep = "\t")
     } )
   output$AGA063 <- downloadHandler(
     filename = function() {
-      paste("AGA063-", date, ".csv", sep="")
+      paste("AGA063-", date, ".tsv", sep="")
     },
     content = function(file) {
-      write.csv(AGA063, file)
+      write.table(AGA063, file, sep = "\t")
     } )
   output$TIL018 <- downloadHandler(
     filename = function() {
-      paste("TIL018-", date, ".csv", sep="")
+      paste("TIL018-", date, ".tsv", sep="")
     },
     content = function(file) {
-      write.csv(TIL018, file)
+      write.table(TIL018, file, sep = "\t")
     } )
   output$TIL010 <- downloadHandler(
     filename = function() {
-      paste("TIL010-", date, ".csv", sep="")
+      paste("TIL010-", date, ".tsv", sep="")
     },
     content = function(file) {
-      write.csv(TIL010, file)
+      write.table(TIL010, file, sep = "\t")
     } )
   
   
