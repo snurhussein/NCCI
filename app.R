@@ -226,6 +226,37 @@ server<-function(input, output) {
     content = function(file) {
       write.csv(AGA066, file)
     } )
+    output$DIF050 <- downloadHandler(
+    filename = function() {
+      paste("DIF050-", date, ".csv", sep="")
+    },
+    content = function(file) {
+      write.csv(DIF050, file)
+    } )
+  output$AGA063 <- downloadHandler(
+    filename = function() {
+      paste("AGA063-", date, ".csv", sep="")
+    },
+    content = function(file) {
+      write.csv(AGA063, file)
+    } )
+  output$TIL018 <- downloadHandler(
+    filename = function() {
+      paste("TIL018-", date, ".csv", sep="")
+    },
+    content = function(file) {
+      write.csv(TIL018, file)
+    } )
+  output$TIL010 <- downloadHandler(
+    filename = function() {
+      paste("TIL010-", date, ".csv", sep="")
+    },
+    content = function(file) {
+      write.csv(TIL010, file)
+    } )
+  
+  
+    
     
     
   output$total <-  renderText({
@@ -296,7 +327,11 @@ ui<-pageWithSidebar(
                         downloadLink("DIF038", "DIF038"),br(),
                          downloadLink("CFWNM2", "CFWNM2"),br(),
                         downloadLink("TIL016", "TIL016"),br(),
-                         downloadLink("AGA066", "AGA066"))
+                         downloadLink("AGA066", "AGA066"),br(),
+                         downloadLink("DIF050", "DIF050"),br(),
+                         downloadLink("AGA063", "AGA063"),br(),
+                         downloadLink("TIL018", "TIL018"),br(),
+                         downloadLink("TIL010", "TIL010") )
     )
   ))
 
