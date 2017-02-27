@@ -314,11 +314,11 @@ AtelierLeaderc$Q41.1.<-AtelierLeaderc$Q19.1.
 AtelierLeaderc$Q41.2.<-AtelierLeaderc$Q19.2.
 AtelierLeaderc$Q41.3.<-AtelierLeaderc$Q19.3.
 AtelierLeaderc$Q41.4.<-AtelierLeaderc$Q19.4.
-AtelierLeaderc$Q26<-NULL
-AtelierLeaderc$Q27.1.<-NULL
-AtelierLeaderc$Q27.2.<-NULL
-AtelierLeaderc$Q27.3.<-NULL
-AtelierLeaderc$Q27.4.<-NULL
+AtelierLeaderc$Q13<-NULL
+AtelierLeaderc$Q19.1.<-NULL
+AtelierLeaderc$Q19.2.<-NULL
+AtelierLeaderc$Q19.3.<-NULL
+AtelierLeaderc$Q19.4.<-NULL
 
 
 #Combine tables
