@@ -256,9 +256,20 @@ server<-function(input, output) {
     content = function(file) {
       write.table(TIL010, file, sep = "\t")
     } )
-  
-  
-    
+  output$TIL004 <- downloadHandler(
+    filename = function() {
+      paste("TIL004-", date, ".tsv", sep="")
+    },
+    content = function(file) {
+      write.table(TIL004, file, sep = "\t")
+    } )
+  output$AtelierLeader <- downloadHandler(
+    filename = function() {
+      paste("AtelierLeader-", date, ".tsv", sep="")
+    },
+    content = function(file) {
+      write.table(AtelierLeader, file, sep = "\t")
+    } )
     
     
   output$total <-  renderText({
@@ -327,13 +338,15 @@ ui<-pageWithSidebar(
                         downloadLink("AGA062", "AGA062"),br(),
                         downloadLink("AGA031", "AGA031"),br(),
                         downloadLink("DIF038", "DIF038"),br(),
-                         downloadLink("CFWNM2", "CFWNM2"),br(),
+                        downloadLink("CFWNM2", "CFWNM2"),br(),
                         downloadLink("TIL016", "TIL016"),br(),
-                         downloadLink("AGA066", "AGA066"),br(),
-                         downloadLink("DIF050", "DIF050"),br(),
-                         downloadLink("AGA063", "AGA063"),br(),
-                         downloadLink("TIL018", "TIL018"),br(),
-                         downloadLink("TIL010", "TIL010") )
+                        downloadLink("AGA066", "AGA066"),br(),
+                        downloadLink("DIF050", "DIF050"),br(),
+                        downloadLink("AGA063", "AGA063"),br(),
+                        downloadLink("TIL018", "TIL018"),br(),
+                        downloadLink("TIL010", "TIL010"),br(), 
+                        downloadLink("TIL004", "TIL004"),br(),
+                        downloadLink("AtelierLeader", "AtelierLeader"))
     )
   ))
 
