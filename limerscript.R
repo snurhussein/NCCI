@@ -86,7 +86,7 @@ AGA063c <- AGA063[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q13","Q19.1.","Q19.2.",
 TIL018c <- TIL018[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q26","Q27.1.","Q27.2.","Q27.3.","Q27.4.")]
 TIL010c <- TIL010[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q26","Q27.1.","Q27.2.","Q27.3.","Q27.4.")]
 TIL004c <- TIL004[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q26","Q27.1.","Q27.2.","Q27.3.","Q27.4.")]
-AtelierLeaderc<-AtelierLeader[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q26","Q27.1.","Q27.2.","Q27.3.","Q27.4.")]
+AtelierLeaderc<-AtelierLeader[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q13","Q19.1.","Q19.2.","Q19.3.","Q19.4.")]
 
 #Add identification column
 
@@ -309,11 +309,11 @@ TIL004c$Q27.2.<-NULL
 TIL004c$Q27.3.<-NULL
 TIL004c$Q27.4.<-NULL
 
-AtelierLeaderc$Q17<-AtelierLeaderc$Q26
-AtelierLeaderc$Q41.1.<-AtelierLeaderc$Q27.1.
-AtelierLeaderc$Q41.2.<-AtelierLeaderc$Q27.2.
-AtelierLeaderc$Q41.3.<-AtelierLeaderc$Q27.3.
-AtelierLeaderc$Q41.4.<-AtelierLeaderc$Q27.4.
+AtelierLeaderc$Q17<-AtelierLeaderc$Q13
+AtelierLeaderc$Q41.1.<-AtelierLeaderc$Q19.1.
+AtelierLeaderc$Q41.2.<-AtelierLeaderc$Q19.2.
+AtelierLeaderc$Q41.3.<-AtelierLeaderc$Q19.3.
+AtelierLeaderc$Q41.4.<-AtelierLeaderc$Q19.4.
 AtelierLeaderc$Q26<-NULL
 AtelierLeaderc$Q27.1.<-NULL
 AtelierLeaderc$Q27.2.<-NULL
