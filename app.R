@@ -372,7 +372,7 @@ ui<-pageWithSidebar(
                         downloadLink("TIL018", "TIL018"),br(),
                         downloadLink("TIL010", "TIL010"),br(), 
                         downloadLink("TIL004", "TIL004"),br(),
-                        downloadLink("AtelierLeader", "AtelierLeader"),br()
+                        downloadLink("AtelierLeader", "AtelierLeader"),br(),
                         downloadLink("DIF055", "DIF055"),br(),
                         downloadLink("AGA052", "AGA052"),br(), 
                         downloadLink("TILL023", "TILL023"),br(),
