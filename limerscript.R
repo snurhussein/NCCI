@@ -52,6 +52,10 @@ TIL018<-get_responses(iSurveyID= 826566, sLanguageCode = 'fr', sResponseType = '
 TIL010<-get_responses(iSurveyID= 884843, sLanguageCode = 'fr', sResponseType = 'short')
 TIL004<-get_responses(iSurveyID= 696635, sLanguageCode = 'fr', sResponseType = 'short')
 AtelierLeader<-get_responses(iSurveyID= 181754, sLanguageCode = 'fr', sResponseType = 'short')
+DIF055<-get_responses(iSurveyID= 533857, sLanguageCode = 'fr', sResponseType = 'short')
+AGA052<-get_responses(iSurveyID= 675311, sLanguageCode = 'fr', sResponseType = 'short')
+TILL023<-get_responses(iSurveyID= 182745, sLanguageCode = 'fr', sResponseType = 'short')
+DIF094<-get_responses(iSurveyID= 627317, sLanguageCode = 'fr', sResponseType = 'short')
 
 
 #Make copies with only the columns of interest, also excluding empty surveys
@@ -87,6 +91,10 @@ TIL018c <- TIL018[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q26","Q27.1.","Q27.2.",
 TIL010c <- TIL010[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q26","Q27.1.","Q27.2.","Q27.3.","Q27.4.")]
 TIL004c <- TIL004[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q26","Q27.1.","Q27.2.","Q27.3.","Q27.4.")]
 AtelierLeaderc<-AtelierLeader[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q13","Q19.1.","Q19.2.","Q19.3.","Q19.4.")]
+DIF055c <- DIF055[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q13","Q19.1.","Q19.2.","Q19.3.","Q19.4.")]
+AGA052c <- AGA052[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q31","Q32.1.","Q32.2.","Q32.3.","Q32.4.")]
+TILL023c <- TILL023[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q27.1.","Q27.2.","Q27.3.","Q27.4.")]
+DIF094c <- DIF094[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q21","Q27.1.","Q27.2.","Q27.3.","Q27.4.")]
 
 #Add identification column
 
@@ -120,6 +128,10 @@ TIL018c$Survey <- 'TIL018'
 TIL010c$Survey <- 'TIL010'
 TIL004c$Survey <- 'TIL004'
 AtelierLeaderc$Survey<-'AtelierLeader'
+DIF055c$Survey <- 'DIF055'
+AGA052c$Survey <- 'AGA052'
+TILL023c$Survey <- 'TILL023'
+DIF094c$Survey <- 'DIF094'
 
 #Move misaligned columns to desired, consistent location
 
@@ -320,10 +332,51 @@ AtelierLeaderc$Q19.2.<-NULL
 AtelierLeaderc$Q19.3.<-NULL
 AtelierLeaderc$Q19.4.<-NULL
 
+DIF055c$Q17<-DIF055c$Q13
+DIF055c$Q41.1.<-DIF055c$Q19.1.
+DIF055c$Q41.2.<-DIF055c$Q19.2.
+DIF055c$Q41.3.<-DIF055c$Q19.3.
+DIF055c$Q41.4.<-DIF055c$Q19.4.
+DIF055c$Q13<-NULL
+DIF055c$Q19.1.<-NULL
+DIF055c$Q19.2.<-NULL
+DIF055c$Q19.3.<-NULL
+DIF055c$Q19.4.<-NULL
+
+AGA052c$Q17<-AGA052c$Q31
+AGA052c$Q41.1.<-AGA052c$Q32.1.
+AGA052c$Q41.2.<-AGA052c$Q32.2.
+AGA052c$Q41.3.<-AGA052c$Q32.3.
+AGA052c$Q41.4.<-AGA052c$Q32.4.
+AGA052c$Q32<-NULL
+AGA052c$Q32.1.<-NULL
+AGA052c$Q32.2.<-NULL
+AGA052c$Q32.3.<-NULL
+AGA052c$Q32.4.<-NULL
+
+TILL023c$Q41.1.<-TILL023c$Q27.1.
+TILL023c$Q41.2.<-TILL023c$Q27.2.
+TILL023c$Q41.3.<-TILL023c$Q27.3.
+TILL023c$Q41.4.<-TILL023c$Q27.4.
+TILL023c$Q27.1.<-NULL
+TILL023c$Q27.2.<-NULL
+TILL023c$Q27.3.<-NULL
+TILL023c$Q27.4.<-NULL
+
+DIF094c$Q17<-DIF094c$Q21
+DIF094c$Q41.1.<-DIF094c$Q27.1.
+DIF094c$Q41.2.<-DIF094c$Q27.2.
+DIF094c$Q41.3.<-DIF094c$Q27.3.
+DIF094c$Q41.4.<-DIF094c$Q27.4.
+DIF094c$Q21<-NULL
+DIF094c$Q27.1.<-NULL
+DIF094c$Q27.2.<-NULL
+DIF094c$Q27.3.<-NULL
+DIF094c$Q27.4.<-NULL
 
 #Combine tables
 
-NCCIbind <- rbind.fill(AGA041c, AGA045c, AGA051c, AGA055c, AGA059c, AGA060c, AGA061c, DIF010c, DIF018c, DIF044c,NIA029c, TILL006c, TILL007c, TILL009c, DIF040c, DIF048c, DIF045c, AGA062c, DIF038c, AGA031c, CFWNM2c, TIL016c, AGA066c, DIF050c, AGA063c, TIL018c, TIL010c, TIL004c, AtelierLeaderc)
+NCCIbind <- rbind.fill(AGA041c, AGA045c, AGA051c, AGA055c, AGA059c, AGA060c, AGA061c, DIF010c, DIF018c, DIF044c,NIA029c, TILL006c, TILL007c, TILL009c, DIF040c, DIF048c, DIF045c, AGA062c, DIF038c, AGA031c, CFWNM2c, TIL016c, AGA066c, DIF050c, AGA063c, TIL018c, TIL010c, TIL004c, AtelierLeaderc, DIF055c, AGA052c, TILL023c, DIF094)
 
 #Replace numerical codes with text labels
 
