@@ -48,230 +48,256 @@ server<-function(input, output) {
     DT::datatable(NCCIbind, options = list(orderClasses = TRUE, pageLength = 25))
   })
   output$downloadData <- downloadHandler(
-    filename = function() { paste('NCCIexport-', Sys.Date(), '.tsv', sep='') },
+    filename = function() { paste('NCCIexport-', Sys.Date(), '.xlsx') },
     content = function(file) {
-      write.table(NCCIbind, file, sep = "\t")
+      write.xlsx(NCCIbind, file)
     }
   )
   output$AGA041 <- downloadHandler(
     filename = function() {
-      paste("AGA041-", date, ".tsv", sep="")
+      paste("AGA041-", date, ".xlsx")
     },
     content = function(file) {
-      write.table(AGA041, file, sep = "\t")
+      write.xlsx(AGA041, file)
     } )
   output$AGA045 <- downloadHandler(
     filename = function() {
-      paste("AGA045-", date, ".tsv", sep="")
+      paste("AGA045-", date, ".xlsx")
     },
     content = function(file) {
-      write.table(AGA045, file, sep = "\t")
+      write.xlsx(AGA045, file)
     } )
   output$AGA046 <- downloadHandler(
     filename = function() {
-      paste("AGA046-", date, ".tsv", sep="")
+      paste("AGA046-", date, ".xlsx")
     },
     content = function(file) {
-      write.table(AGA046, file, sep = "\t")
+      write.xlsx(AGA046, file)
     } )
   output$AGA051 <- downloadHandler(
     filename = function() {
-      paste("AGA051-", date, ".tsv", sep="")
+      paste("AGA051-", date, ".xlsx")
     },
     content = function(file) {
-      write.table(AGA051, file, sep = "\t")
+      write.xlsx(AGA051, file)
     } )
   output$AGA055 <- downloadHandler(
     filename = function() {
-      paste("AGA055-", date, ".tsv", sep="")
+      paste("AGA055-", date, ".xlsx")
     },
     content = function(file) {
-      write.table(AGA055, file, sep = "\t")
+      write.xlsx(AGA055, file)
     } )
   output$AGA059 <- downloadHandler(
     filename = function() {
-      paste("AGA059-", date, ".tsv", sep="")
+      paste("AGA059-", date, ".xlsx")
     },
     content = function(file) {
-      write.table(AGA059, file, sep = "\t")
+      write.xlsx(AGA059, file)
     } )
   output$AGA060 <- downloadHandler(
     filename = function() {
-      paste("AGA060-", date, ".tsv", sep="")
+      paste("AGA060-", date, ".xlsx")
     },
     content = function(file) {
-      write.table(AGA060, file, , sep = "\t")
+      write.xlsx(AGA060, file )
     } )
   output$AGA061 <- downloadHandler(
     filename = function() {
-      paste("AGA061-", date, ".tsv", sep="")
+      paste("AGA061-", date, ".xlsx")
     },
     content = function(file) {
-      write.table(AGA061, file, sep = "\t")
+      write.xlsx(AGA061, file)
     } )
   output$DIF010 <- downloadHandler(
     filename = function() {
-      paste("DIF010-", date, ".tsv", sep="")
+      paste("DIF010-", date, ".xlsx")
     },
     content = function(file) {
-      write.table(DIF010, file, , sep = "\t")
+      write.xlsx(DIF010, file )
     } )
   output$DIF018 <- downloadHandler(
     filename = function() {
-      paste("DIF018-", date, ".tsv", sep="")
+      paste("DIF018-", date, ".xlsx")
     },
     content = function(file) {
-      write.table(DIF018, file, sep = "\t")
+      write.xlsx(DIF018, file)
     } )
   output$DIF044 <- downloadHandler(
     filename = function() {
-      paste("DIF044-", date, ".tsv", sep="")
+      paste("DIF044-", date, ".xlsx")
     },
     content = function(file) {
-      write.table(DIF044, file, sep = "\t")
+      write.xlsx(DIF044, file)
     } )
   output$DIF059 <- downloadHandler(
     filename = function() {
-      paste("DIF059-", date, ".tsv", sep="")
+      paste("DIF059-", date, ".xlsx")
     },
     content = function(file) {
-      write.table(DIF059, file, sep = "\t")
+      write.xlsx(DIF059, file)
     } )
   output$NIA029 <- downloadHandler(
     filename = function() {
-      paste("NIA029-", date, ".tsv", sep="")
+      paste("NIA029-", date, ".xlsx")
     },
     content = function(file) {
-      write.table(NIA029, file, sep = "\t")
+      write.xlsx(NIA029, file)
     } )
   output$TILL006 <- downloadHandler(
     filename = function() {
-      paste("TILL006-", date, ".tsv", sep="")
+      paste("TILL006-", date, ".xlsx")
     },
     content = function(file) {
-      write.table(TILL006, file, sep = "\t")
+      write.xlsx(TILL006, file)
     } )
   output$TILL007 <- downloadHandler(
     filename = function() {
-      paste("TILL007-", date, ".tsv", sep="")
+      paste("TILL007-", date, ".xlsx")
     },
     content = function(file) {
-      write.table(TILL007, file, sep = "\t")
+      write.xlsx(TILL007, file)
     } )
   output$TILL009 <- downloadHandler(
     filename = function() {
-      paste("TILL009-", date, ".tsv", sep="")
+      paste("TILL009-", date, ".xlsx")
     },
     content = function(file) {
-      write.table(TILL009, file, sep = "\t")
+      write.xlsx(TILL009, file)
     } )
   output$DIF040 <- downloadHandler(
     filename = function() {
-      paste("DIF040-", date, ".tsv", sep="")
+      paste("DIF040-", date, ".xlsx")
     },
     content = function(file) {
-      write.table(DIF040, file, sep = "\t")
+      write.xlsx(DIF040, file)
     } )
   output$DIF048 <- downloadHandler(
     filename = function() {
-      paste("DIF048-", date, ".tsv", sep="")
+      paste("DIF048-", date, ".xlsx")
     },
     content = function(file) {
-      write.table(DIF048, file, sep = "\t")
+      write.xlsx(DIF048, file)
     } )
-   output$DIF045 <- downloadHandler(
+  output$DIF045 <- downloadHandler(
     filename = function() {
-      paste("DIF045-", date, ".tsv", sep="")
+      paste("DIF045-", date, ".xlsx")
     },
     content = function(file) {
-      write.table(DIF045, file, sep = "\t")
+      write.xlsx(DIF045, file)
     } )
-       output$AGA062 <- downloadHandler(
+  output$AGA062 <- downloadHandler(
     filename = function() {
-      paste("AGA062-", date, ".tsv", sep="")
+      paste("AGA062-", date, ".xlsx")
     },
     content = function(file) {
-      write.table(AGA062, file, sep = "\t")
+      write.xlsx(AGA062, file)
     } )
-     output$AGA031 <- downloadHandler(
+  output$AGA031 <- downloadHandler(
     filename = function() {
-      paste("AGA031-", date, ".tsv", sep="")
+      paste("AGA031-", date, ".xlsx")
     },
     content = function(file) {
-      write.table(AGA031, file, sep = "\t")
+      write.xlsx(AGA031, file)
     } )
-       output$DIF038 <- downloadHandler(
+  output$DIF038 <- downloadHandler(
     filename = function() {
-      paste("DIF038-", date, ".tsv", sep="")
+      paste("DIF038-", date, ".xlsx")
     },
     content = function(file) {
-      write.table(DIF038, file, sep = "\t")
+      write.xlsx(DIF038, file)
     } )
-       output$CFWNM2 <- downloadHandler(
+  output$CFWNM2 <- downloadHandler(
     filename = function() {
-      paste("CFWNamlewaMada2-", date, ".tsv", sep="")
+      paste("CFWNamlewaMada2-", date, ".xlsx")
     },
     content = function(file) {
-      write.table(CFWNM2, file, sep = "\t")
+      write.xlsx(CFWNM2, file)
     } )
-        output$TIL016 <- downloadHandler(
+  output$TIL016 <- downloadHandler(
     filename = function() {
-      paste("TIL016-", date, ".tsv", sep="")
+      paste("TIL016-", date, ".xlsx")
     },
     content = function(file) {
-      write.table(TIl016, file, sep = "\t")
+      write.xlsx(TIl016, file)
     } )
-    output$AGA066 <- downloadHandler(
+  output$AGA066 <- downloadHandler(
     filename = function() {
-      paste("AGA066-", date, ".tsv", sep="")
+      paste("AGA066-", date, ".xlsx")
     },
     content = function(file) {
-      write.table(AGA066, file, sep = "\t")
+      write.xlsx(AGA066, file)
     } )
-    output$DIF050 <- downloadHandler(
+  output$DIF050 <- downloadHandler(
     filename = function() {
-      paste("DIF050-", date, ".tsv", sep="")
+      paste("DIF050-", date, ".xlsx")
     },
     content = function(file) {
-      write.table(DIF050, file, sep = "\t")
+      write.xlsx(DIF050, file)
     } )
   output$AGA063 <- downloadHandler(
     filename = function() {
-      paste("AGA063-", date, ".tsv", sep="")
+      paste("AGA063-", date, ".xlsx")
     },
     content = function(file) {
-      write.table(AGA063, file, sep = "\t")
+      write.xlsx(AGA063, file)
     } )
   output$TIL018 <- downloadHandler(
     filename = function() {
-      paste("TIL018-", date, ".tsv", sep="")
+      paste("TIL018-", date, ".xlsx")
     },
     content = function(file) {
-      write.table(TIL018, file, sep = "\t")
+      write.xlsx(TIL018, file)
     } )
   output$TIL010 <- downloadHandler(
     filename = function() {
-      paste("TIL010-", date, ".tsv", sep="")
+      paste("TIL010-", date, ".xlsx")
     },
     content = function(file) {
-      write.table(TIL010, file, sep = "\t")
+      write.xlsx(TIL010, file)
     } )
   output$TIL004 <- downloadHandler(
     filename = function() {
-      paste("TIL004-", date, ".tsv", sep="")
+      paste("TIL004-", date, ".xlsx")
     },
     content = function(file) {
-      write.table(TIL004, file, sep = "\t")
+      write.xlsx(TIL004, file)
     } )
   output$AtelierLeader <- downloadHandler(
     filename = function() {
-      paste("AtelierLeader-", date, ".tsv", sep="")
+      paste("AtelierLeader-", date, ".xlsx")
     },
     content = function(file) {
-      write.table(AtelierLeader, file, sep = "\t")
+      write.xlsx(AtelierLeader, file)
     } )
-    
-    
+  output$DIF055 <- downloadHandler(
+    filename = function() {
+      paste("DIF055-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(DIF055, file)
+    } )
+  output$AGA052 <- downloadHandler(
+    filename = function() {
+      paste("AGA052-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(AGA052, file)
+    } ) 
+ output$TILL023 <- downloadHandler(
+    filename = function() {
+      paste("TILL023-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(TILL023, file)
+    } )
+ output$DIF094 <- downloadHandler(
+    filename = function() {
+      paste("DIF094-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(DIF094, file)
+    } )     
   output$total <-  renderText({
     paste0(nrow(NCCIbind)) 
   })
@@ -346,7 +372,11 @@ ui<-pageWithSidebar(
                         downloadLink("TIL018", "TIL018"),br(),
                         downloadLink("TIL010", "TIL010"),br(), 
                         downloadLink("TIL004", "TIL004"),br(),
-                        downloadLink("AtelierLeader", "AtelierLeader"))
+                        downloadLink("AtelierLeader", "AtelierLeader"),br()
+                        downloadLink("DIF055", "DIF055"),br(),
+                        downloadLink("AGA052", "AGA052"),br(), 
+                        downloadLink("TILL023", "TILL023"),br(),
+                        downloadLink("DIF094", "DIF094"))
     )
   ))
 
