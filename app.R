@@ -297,7 +297,29 @@ server<-function(input, output) {
     },
     content = function(file) {
       write.xlsx(DIF094, file)
-    } )     
+    } )  
+ output$TILL025 <- downloadHandler(
+    filename = function() {
+      paste("TILL025-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(TILL025, file)
+    } )  
+ output$TILL026 <- downloadHandler(
+    filename = function() {
+      paste("TILL026-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(TILL026, file)
+    } )  
+  output$TIL014 <- downloadHandler(
+    filename = function() {
+      paste("TIL014-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(TIL014, file)
+    } )    
+    
   output$total <-  renderText({
     paste0(nrow(NCCIbind)) 
   })
@@ -376,7 +398,10 @@ ui<-pageWithSidebar(
                         downloadLink("DIF055", "DIF055"),br(),
                         downloadLink("AGA052", "AGA052"),br(), 
                         downloadLink("TILL023", "TILL023"),br(),
-                        downloadLink("DIF094", "DIF094"))
+                        downloadLink("DIF094", "DIF094"),br(),
+                        downloadLink("TILL025", "TILL025"),br(),
+                        downloadLink("TILL026", "TILL026"),br(),
+                        downloadLink("TIL014", "TIL014"))
     )
   ))
 
