@@ -56,6 +56,10 @@ DIF055<-get_responses(iSurveyID= 533857, sLanguageCode = 'fr', sResponseType = '
 AGA052<-get_responses(iSurveyID= 675311, sLanguageCode = 'fr', sResponseType = 'short')
 TILL023<-get_responses(iSurveyID= 182745, sLanguageCode = 'fr', sResponseType = 'short')
 DIF094<-get_responses(iSurveyID= 627317, sLanguageCode = 'fr', sResponseType = 'short')
+TILL025<-get_responses(iSurveyID= 933813, sLanguageCode = 'fr', sResponseType = 'short')
+TILL026<-get_responses(iSurveyID= 138547, sLanguageCode = 'fr', sResponseType = 'short')
+TIL014<-get_responses(iSurveyID= 913713, sLanguageCode = 'fr', sResponseType = 'short')
+DIF100<-get_responses(iSurveyID= 679492, sLanguageCode = 'fr', sResponseType = 'short')
 
 
 #Make copies with only the columns of interest, also excluding empty surveys
@@ -95,6 +99,12 @@ DIF055c <- DIF055[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q13","Q19.1.","Q19.2.",
 AGA052c <- AGA052[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q31","Q32.1.","Q32.2.","Q32.3.","Q32.4.")]
 TILL023c <- TILL023[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q27.1.","Q27.2.","Q27.3.","Q27.4.")]
 DIF094c <- DIF094[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q21","Q27.1.","Q27.2.","Q27.3.","Q27.4.")]
+TILL025c<-TILL025[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q27.1.","Q27.2.","Q27.3.","Q27.4.")]
+TILL026c<-TILL026[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q27.1.","Q27.2.","Q27.3.","Q27.4.")]
+TIL014c<-TIL014[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q27.1.","Q27.2.","Q27.3.","Q27.4.")]
+#DIF100c<-DIF100[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q27.1.","Q27.2.","Q27.3.","Q27.4.")]
+
+
 
 #Add identification column
 
