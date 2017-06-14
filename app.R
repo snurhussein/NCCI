@@ -474,7 +474,7 @@ ui<-pageWithSidebar(
                         downloadLink("AGA067", "AGA067"),br(),
                         downloadLink("DIF138", "DIF138"),br(),
                         downloadLink("AGA072", "AGA072"), br(),
-                        downloadLink("TIL039", "TIL039")),
+                        downloadLink("TIL039", "TIL039"))
     )
   ))
 
