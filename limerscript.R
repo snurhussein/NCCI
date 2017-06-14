@@ -111,11 +111,11 @@ DIF094c <- DIF094[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q21","Q27.1.","Q27.2.",
 TILL025c<-TILL025[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q27.1.","Q27.2.","Q27.3.","Q27.4.")]
 TILL026c<-TILL026[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q27.1.","Q27.2.","Q27.3.","Q27.4.")]
 TIL014c<-TIL014[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q27.1.","Q27.2.","Q27.3.","Q27.4.")]
-DIF100c<-DIF100[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q27.1.","Q27.2.","Q27.3.","Q27.4.")]
+DIF100c<-DIF100[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10")]
 
-AGA074c<-AGA074[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q27.1.","Q27.2.","Q27.3.","Q27.4.")]
-DIF105c<-DIF105[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q16.1.","Q16.2.","Q16.3.","Q16.4.")]
-DIF130c<-DIF130[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q27.1.","Q27.2.","Q27.3.","Q27.4.")]
+AGA074c<-AGA074[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10")]
+DIF105c<-DIF105[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10")]
+DIF130c<-DIF130[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10")]
 #TIL027
 AGA067c<-AGA067[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q11","Q12","Q13","Q14","Q16")]
 DIF138c<-DIF138[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q11","Q12","Q13","Q14","Q16","Q17","Q19","Q20")]
@@ -170,7 +170,7 @@ DIF130c$Survey<-'DIF130'
 #TIL027
 AGA067c$Survey<-'AGA067'
 DIF138c$Survey<-'DIF138'
-AGA072$Survey<-'AGA072'
+AGA072c$Survey<-'AGA072'
 #TIL039
 
 #Move misaligned columns to desired, consistent location
@@ -449,7 +449,7 @@ NCCIbind$Age.Group<-cut(NCCIbind$Q7,breaks=c(0,17,30,45,60,100), labels=c("Under
 NCCIbind$Ethnicity <- factor(NCCIbind$Q9, levels = c(1,2,3,4,5,6,7,8), labels = c("Haussa", "Touareg", "Peul", "Zarma/Songhai","Toubou","Kanouri","Arabe","Je préfère ne pas répondre"))
 NCCIbind$Gender<-NCCIbind$Q8
 NCCIbind$Participation<-factor(NCCIbind$Q10, labels = c("Je suis un jeune participant à la formation et un membre de l'équipe qui va bénéficier des unités de production d'eau","Je suis un organisateur (autorité, partenaire)","Je suis un membre de la communauté (spectateur de processus)", "Sans réponse" ))
-NCCIbind$Selection.Beneficiaries <- factor(NCCIbind$Q17, levels = c(1,2,3,4,5,6), labels = c("Très juste", "Juste", "Neutre", "Peu juste","Très injuste","Sans Response"))
+NCCIbind$Selection.Beneficiaries <- factor(NCCIbind$Q21, levels = c(1,2,3,4,5,6), labels = c("Très juste", "Juste", "Neutre", "Peu juste","Très injuste","Sans Response"))
 
 
 #Create separate table for ‘multiple selection’ questions
