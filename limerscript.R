@@ -60,6 +60,15 @@ TILL025<-get_responses(iSurveyID= 933813, sLanguageCode = 'fr', sResponseType = 
 TILL026<-get_responses(iSurveyID= 138547, sLanguageCode = 'fr', sResponseType = 'short')
 TIL014<-get_responses(iSurveyID= 913713, sLanguageCode = 'fr', sResponseType = 'short')
 DIF100<-get_responses(iSurveyID= 679492, sLanguageCode = 'fr', sResponseType = 'short')
+AGA074<-get_responses(iSurveyID= 198899, sLanguageCode = 'fr', sResponseType = 'short')
+DIF105<-get_responses(iSurveyID= 979696, sLanguageCode = 'fr', sResponseType = 'short')
+DIF130<-get_responses(iSurveyID= 391345, sLanguageCode = 'fr', sResponseType = 'short')
+TIL027<-get_responses(iSurveyID= 582128, sLanguageCode = 'fr', sResponseType = 'short')
+AGA067<-get_responses(iSurveyID= 619978, sLanguageCode = 'fr', sResponseType = 'short')
+DIF138<-get_responses(iSurveyID= 176951, sLanguageCode = 'fr', sResponseType = 'short')
+AGA072<-get_responses(iSurveyID= 885914, sLanguageCode = 'fr', sResponseType = 'short')
+TIL039<-get_responses(iSurveyID= 422262, sLanguageCode = 'fr', sResponseType = 'short')
+
 
 
 #Make copies with only the columns of interest, also excluding empty surveys
@@ -104,6 +113,15 @@ TILL026c<-TILL026[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q27.1.","Q27.2.","Q27.3
 TIL014c<-TIL014[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q27.1.","Q27.2.","Q27.3.","Q27.4.")]
 #DIF100c<-DIF100[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q27.1.","Q27.2.","Q27.3.","Q27.4.")]
 
+AGA074c<-AGA074[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q27.1.","Q27.2.","Q27.3.","Q27.4.")]
+DIF105c<-DIF105[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q16.1.","Q16.2.","Q16.3.","Q16.4.")]
+DIF130c<-DIF130[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q27.1.","Q27.2.","Q27.3.","Q27.4.")]
+#TIL027
+AGA067c<-AGA067[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q11","Q12","Q13","Q14","Q16")]
+DIF138c<-DIF138[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q11","Q12","Q13","Q14","Q16","Q17","Q19","Q20")]
+AGA072<-AGA072[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q11","Q12","Q13","Q14","Q16","Q17","Q19","Q20")]
+#TIL039
+
 
 
 #Add identification column
@@ -146,6 +164,14 @@ TILL025c$Survey<-'TILL025'
 TILL026c$Survey<-'TILL026'
 TIL014c$Survey<-'TIL014'
 #DIF100c$Survey<-'DIF100'
+AGA074c$Survey<-'AGA074'
+DIF105c$Survey<-'DIF105'
+DIF130c$Survey<-'DIF130'
+#TIL027
+AGA067c$Survey<-'AGA067'
+DIF138c$Survey<-'DIF138'
+AGA072$Survey<-'AGA072'
+#TIL039
 
 #Move misaligned columns to desired, consistent location
 
