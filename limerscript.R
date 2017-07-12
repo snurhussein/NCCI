@@ -65,9 +65,13 @@ DIF105<-get_responses(iSurveyID= 979696, sLanguageCode = 'fr', sResponseType = '
 DIF130<-get_responses(iSurveyID= 391345, sLanguageCode = 'fr', sResponseType = 'short')
 TIL027<-get_responses(iSurveyID= 582128, sLanguageCode = 'fr', sResponseType = 'short')
 AGA067<-get_responses(iSurveyID= 619978, sLanguageCode = 'fr', sResponseType = 'short')
-DIF138<-get_responses(iSurveyID= 176951, sLanguageCode = 'fr', sResponseType = 'short')
 AGA072<-get_responses(iSurveyID= 885914, sLanguageCode = 'fr', sResponseType = 'short')
 TIL039<-get_responses(iSurveyID= 422262, sLanguageCode = 'fr', sResponseType = 'short')
+DIF138<-get_responses(iSurveyID= 949543, sLanguageCode = 'fr', sResponseType = 'short')
+AGA083<-get_responses(iSurveyID= 152849, sLanguageCode = 'fr', sResponseType = 'short')
+DIF140<-get_responses(iSurveyID= 946811, sLanguageCode = 'fr', sResponseType = 'short')
+DIF142<-get_responses(iSurveyID= 887624, sLanguageCode = 'fr', sResponseType = 'short')
+AGA085<-get_responses(iSurveyID= 378413, sLanguageCode = 'fr', sResponseType = 'short')
 
 
 
@@ -112,7 +116,6 @@ TILL025c<-TILL025[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q27.1.","Q27.2.","Q27.3
 TILL026c<-TILL026[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q27.1.","Q27.2.","Q27.3.","Q27.4.")]
 TIL014c<-TIL014[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q27.1.","Q27.2.","Q27.3.","Q27.4.")]
 DIF100c<-DIF100[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10")]
-
 AGA074c<-AGA074[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10")]
 DIF105c<-DIF105[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10")]
 DIF130c<-DIF130[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10")]
