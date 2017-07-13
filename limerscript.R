@@ -123,18 +123,18 @@ AGA074c<-AGA074[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10")]
 DIF105c<-DIF105[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10")]
 DIF130c<-DIF130[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10")]
 #TIL027
-AGA071c<-AGA071[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q27.1","Q27.2","Q27.3","Q27.4")]
+AGA071c<-AGA071[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q27.1.","Q27.2.","Q27.3.","Q27.4.")]
 #TIL005c
-AGA067c<-AGA067[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10")]
+AGA067c<-AGA067[c("Q1","Q2","Q9","Q10","Q11","Q30")]
 #DIF138c
 #AGA072c
-TIL039<-TIL039[c("Q1","Q2","Q9","Q10","Q12","Q24")]
+TIL039<-TIL039[c("Q1","Q2","Q9","Q10","Q24")]
 #Version 2
-AGA086c<-AGA086[c("Q1","Q9","Q10","Q11","Q12","Q13","Q14","Q15.1","Q15.2","Q15.3","Q15.4","Q15.5","Q16","Q17","Q19","Q21","S20","S22","S23","Q20","R22","R21","Q24")]
-AGA083c<-AGA083[c("Q1","Q9","Q10","Q11","Q12","Q13","Q14","Q15.1","Q15.2","Q15.3","Q15.4","Q15.5","Q16","Q17","Q19","Q21","S20","S22","S23","Q20","R22","R21","Q24")]
-DIF140c<-DIF140[c("Q1","Q9","Q10","Q11","Q12","Q13","Q14","Q15.1","Q15.2","Q15.3","Q15.4","Q15.5","Q16","Q17","Q19","Q21","S20","S22","S23","Q20","R22","R21","Q24")]
+AGA086c<-AGA086[c("Q1","Q9","Q10","Q11","Q12","Q13","Q14","Q15.1.","Q15.2.","Q15.3.","Q15.4.","Q15.5.","Q16.1.","Q16.2.","Q16.3.","Q16.4.","Q16.5.","Q17","Q19","Q21","S20","S22","S23","Q20","R22","R21","Q24")]
+AGA083c<-AGA083[c("Q1","Q9","Q10","Q11","Q12","Q13","Q14","Q15.1.","Q15.2.","Q15.3.","Q15.4.","Q15.5.","Q16.1.","Q16.2.","Q16.3.","Q16.4.","Q16.5.","Q17","Q19","Q21","S20","S22","S23","Q20","R22","R21","Q24")]
+DIF140c<-DIF140[c("Q1","Q9","Q10","Q11","Q12","Q13","Q14","Q15.1.","Q15.2.","Q15.3.","Q15.4.","Q15.5.","Q16.1.","Q16.2.","Q16.3.","Q16.4.","Q16.5.","Q17","Q19","Q21","S20","S22","S23","Q20","R22","R21","Q24")]
 #DIF142c
-AGA085c<-AGA085[c("Q1","Q9","Q10","Q11","Q12","Q13","Q14","Q15.1","Q15.2","Q15.3","Q15.4","Q15.5","Q16","Q17","Q19","Q21","S20","S22","S23","Q20","R22","R21","Q24")]
+AGA085c<-AGA085[c("Q1","Q9","Q10","Q11","Q12","Q13","Q14","Q15.1.","Q15.2.","Q15.3.","Q15.4.","Q15.5.","Q16.1.","Q16.2.","Q16.3.","Q16.4.","Q16.5.","Q17","Q19","Q21","S20","S22","S23","Q20","R22","R21","Q24")]
 
 
 #Add identification column
@@ -182,9 +182,14 @@ DIF105c$Survey<-'DIF105'
 DIF130c$Survey<-'DIF130'
 #TIL027
 AGA067c$Survey<-'AGA067'
-DIF138c$Survey<-'DIF138'
-AGA072c$Survey<-'AGA072'
+#DIF138c$Survey<-'DIF138'
+#AGA072c$Survey<-'AGA072'
 #TIL039
+AGA086c$Survey<-'AGA086'
+AGA083c$Survey<-'AGA083'
+DIF140c$Survey<-'DIF140'
+#DIF142c
+AGA085c$Survey<-'AGA085'
 
 #Move misaligned columns to desired, consistent location
 
@@ -203,6 +208,7 @@ TILL007c$Q41.2.<-TILL007c$Q23.2.
 TILL007c$Q41.3.<-TILL007c$Q23.3.
 TILL007c$Q41.4.<-TILL007c$Q23.4.
 
+TILL009c$Q17<-TILL009c$Q21
 TILL009c$Q41.1.<-TILL009c$Q25.1.
 TILL009c$Q41.2.<-TILL009c$Q25.2.
 TILL009c$Q41.3.<-TILL009c$Q25.3.
@@ -254,6 +260,7 @@ TILL009c$Q25.1.<-NULL
 TILL009c$Q25.2.<-NULL
 TILL009c$Q25.3.<-NULL
 TILL009c$Q25.4.<-NULL
+TILL009c$Q21<-NULL
 
 DIF040c$Q16.1.<-NULL
 DIF040c$Q16.2.<-NULL
@@ -417,10 +424,12 @@ DIF094c$Q41.1.<-DIF094c$Q27.1.
 DIF094c$Q41.2.<-DIF094c$Q27.2.
 DIF094c$Q41.3.<-DIF094c$Q27.3.
 DIF094c$Q41.4.<-DIF094c$Q27.4.
+DIF094c$Q17<-DIF094c$Q21
 DIF094c$Q27.1.<-NULL
 DIF094c$Q27.2.<-NULL
 DIF094c$Q27.3.<-NULL
 DIF094c$Q27.4.<-NULL
+DIF094c$Q21<-NULL
 
 TILL025c$Q41.1.<-TILL025c$Q27.1.
 TILL025c$Q41.2.<-TILL025c$Q27.2.
@@ -449,10 +458,28 @@ TIL014c$Q27.2.<-NULL
 TIL014c$Q27.3.<-NULL
 TIL014c$Q27.4.<-NULL
 
+AGA067c$Q8<-AGA067c$Q9
+AGA067c$Q9<-AGA067c$Q10
+AGA067c$Q10<-AGA067c$Q11
+AGA067c$Q11<-NULL
+
+AGA071c$Q41.1.<-AGA071c$Q27.1.
+AGA071c$Q41.2.<-AGA071c$Q27.2.
+AGA071c$Q41.3.<-AGA071c$Q27.3.
+AGA071c$Q41.4.<-AGA071c$Q27.4.
+AGA071c$Q27.1.<-NULL
+AGA071c$Q27.2.<-NULL
+AGA071c$Q27.3.<-NULL
+AGA071c$Q27.4.<-NULL
+
+
 #Combine tables
 
 NCCIbind <- rbind.fill(AGA041c, AGA045c, AGA051c, AGA055c, AGA059c, AGA060c, AGA061c, DIF010c, DIF018c, DIF044c,NIA029c, TILL006c, TILL007c, TILL009c, DIF040c, DIF048c, DIF045c, AGA062c, DIF038c, AGA031c, CFWNM2c, TIL016c, AGA066c, DIF050c, AGA063c, TIL018c, TIL010c, TIL004c, AtelierLeaderc, DIF055c, 
-                       AGA052c, TILL023c, DIF094c, TILL025c, TILL026c, TIL014c, DIF100c, AGA074c, DIF105c, DIF130c, AGA067c, DIF138c, AGA072c)
+                       AGA052c, TILL023c, DIF094c, TILL025c, TILL026c, TIL014c, DIF100c, AGA074c, DIF105c, DIF130c, AGA067c)
+
+NCCIbind2 <- rbind.fill(AGA086c, AGA083c, DIF140c, AGA085c)
+
 
 #Replace numerical codes with text labels
 
@@ -463,6 +490,15 @@ NCCIbind$Ethnicity <- factor(NCCIbind$Q9, levels = c(1,2,3,4,5,6,7,8), labels = 
 NCCIbind$Gender<-NCCIbind$Q8
 NCCIbind$Participation<-factor(NCCIbind$Q10, labels = c("Je suis un jeune participant à la formation et un membre de l'équipe qui va bénéficier des unités de production d'eau","Je suis un organisateur (autorité, partenaire)","Je suis un membre de la communauté (spectateur de processus)", "Sans réponse" ))
 NCCIbind$Selection.Beneficiaries <- factor(NCCIbind$Q17, levels = c(1,2,3,4,5,6), labels = c("Très juste", "Juste", "Neutre", "Peu juste","Très injuste","Sans Response"))
+
+#Replace numerical codes with text labels--V2
+NCCIbind2$Language <- factor(NCCIbind2$Q1, levels = c(1,2,3,4,5,6,7,8), labels = c("Haussa", "Français", "Toubou", "Tamasheq","Kanouri","Zarma","Fulfulde Adamawa","Arabe"))
+NCCIbind2$Region <- factor(NCCIbind2$Q2, levels = c(1,2,3,4,"-oth-"), labels = c("Agadez","Diffa","Niamey","Tillabery","Other"))
+NCCIbind2$Age.Group<-cut(NCCIbind2$Q24,breaks=c(0,17,30,45,60,100), labels=c("Under 18","18-30","31-45","46-60","60+" ))
+NCCIbind2$Ethnicity <- factor(NCCIbind2$Q10, levels = c(1,2,3,4,5,6,7,8), labels = c("Haussa", "Touareg", "Peul", "Zarma/Songhai","Toubou","Kanouri","Arabe","Je préfère ne pas répondre"))
+NCCIbind2$Gender<-NCCIbind$Q9
+NCCIbind2$Participation<-factor(NCCIbind2$Q11, labels = c("Je suis un jeune participant à la formation et un membre de l'équipe qui va bénéficier des unités de production d'eau","Je suis un organisateur (autorité, partenaire)","Je suis un membre de la communauté (spectateur de processus)", "Sans réponse" ))
+
 
 
 #Create separate table for ‘multiple selection’ questions
