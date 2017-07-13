@@ -498,7 +498,9 @@ NCCIbind2$Age.Group<-cut(NCCIbind2$Q24,breaks=c(0,17,30,45,60,100), labels=c("Un
 NCCIbind2$Ethnicity <- factor(NCCIbind2$Q10, levels = c(1,2,3,4,5,6,7,8), labels = c("Haussa", "Touareg", "Peul", "Zarma/Songhai","Toubou","Kanouri","Arabe","Je préfère ne pas répondre"))
 NCCIbind2$Gender<-NCCIbind$Q9
 NCCIbind2$Participation<-factor(NCCIbind2$Q11, labels = c("Je suis un jeune participant à la formation et un membre de l'équipe qui va bénéficier des unités de production d'eau","Je suis un organisateur (autorité, partenaire)","Je suis un membre de la communauté (spectateur de processus)", "Sans réponse" ))
-
+NCCIbind2$RegroupeParticipants<-factor(NCCIbind2$Q12, labels = c("Oui","Non"))
+NCCIbind2$ResteEnContact<-factor(NCCIbind2$Q13, labels = c("Non", "Rarement", "Frequement"))
+NCCIbind2$CommentContact<-factor(NCCIbind2$Q14, labels = c("Face-à-face", "Téléphone", "Social"))
 
 
 #Create separate table for ‘multiple selection’ questions
