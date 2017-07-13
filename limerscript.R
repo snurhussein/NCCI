@@ -64,9 +64,12 @@ AGA074<-get_responses(iSurveyID= 198899, sLanguageCode = 'fr', sResponseType = '
 DIF105<-get_responses(iSurveyID= 979696, sLanguageCode = 'fr', sResponseType = 'short')
 DIF130<-get_responses(iSurveyID= 391345, sLanguageCode = 'fr', sResponseType = 'short')
 TIL027<-get_responses(iSurveyID= 582128, sLanguageCode = 'fr', sResponseType = 'short')
+AGA071<-get_responses(iSurveyID= 431791, sLanguageCode = 'fr', sResponseType = 'short')
+TIL005<-get_responses(iSurveyID= 117429, sLanguageCode = 'fr', sResponseType = 'short')
 AGA067<-get_responses(iSurveyID= 619978, sLanguageCode = 'fr', sResponseType = 'short')
+AGA086<-get_responses(iSurveyID= 124758, sLanguageCode = 'fr', sResponseType = 'short')
 AGA072<-get_responses(iSurveyID= 885914, sLanguageCode = 'fr', sResponseType = 'short')
-TIL039<-get_responses(iSurveyID= 422262, sLanguageCode = 'fr', sResponseType = 'short')
+TIL039<-get_responses(iSurveyID= 433362, sLanguageCode = 'fr', sResponseType = 'short')
 DIF138<-get_responses(iSurveyID= 949543, sLanguageCode = 'fr', sResponseType = 'short')
 AGA083<-get_responses(iSurveyID= 152849, sLanguageCode = 'fr', sResponseType = 'short')
 DIF140<-get_responses(iSurveyID= 946811, sLanguageCode = 'fr', sResponseType = 'short')
@@ -120,11 +123,18 @@ AGA074c<-AGA074[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10")]
 DIF105c<-DIF105[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10")]
 DIF130c<-DIF130[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10")]
 #TIL027
-AGA067c<-AGA067[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q11","Q12","Q13","Q14","Q16")]
-DIF138c<-DIF138[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q11","Q12","Q13","Q14","Q16","Q17","Q19","Q20")]
-AGA072c<-AGA072[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q11","Q12","Q13","Q14","Q16","Q17","Q19","Q20")]
-#TIL039
+AGA071c<-AGA071[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q27.1","Q27.2","Q27.3","Q27.4")]
+#TIL005c
+AGA067c<-AGA067[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10")]
+#DIF138c
+#AGA072c
+TIL039<-AGA072[c("Q1","Q2","Q9","Q10","Q12","Q24")]
 
+AGA086c
+AGA083c
+DIF140c
+#DIF142c
+AGA085c
 
 
 #Add identification column
@@ -202,25 +212,25 @@ DIF040c$Q41.1.<-DIF040c$Q16.1.
 DIF040c$Q41.2.<-DIF040c$Q16.2.
 DIF040c$Q41.3.<-DIF040c$Q16.3.
 DIF040c$Q41.4.<- NA
-DIF040c$Q21<-DIF040c$Q15
+DIF040c$Q17<-DIF040c$Q15
 
 DIF048c$Q41.1.<-DIF048c$Q16.1.
 DIF048c$Q41.2.<-DIF048c$Q16.2.
 DIF048c$Q41.3.<-DIF048c$Q16.3.
 DIF048c$Q41.4.<- NA
-DIF048c$Q21<-DIF048c$Q15
+DIF048c$Q17<-DIF048c$Q15
 
 DIF045c$Q41.1.<-DIF045c$Q16.1.
 DIF045c$Q41.2.<-DIF045c$Q16.2.
 DIF045c$Q41.3.<-DIF045c$Q16.3.
 DIF045c$Q41.4.<- NA
-DIF045c$Q21<-DIF045c$Q15
+DIF045c$Q17<-DIF045c$Q15
 
 AGA062c$Q41.1.<-AGA062c$Q32.1.
 AGA062c$Q41.2.<-AGA062c$Q32.2.
 AGA062c$Q41.3.<-AGA062c$Q32.3.
 AGA062c$Q41.4.<- AGA062c$Q32.4.
-AGA062c$Q21<-AGA062c$Q18
+AGA062c$Q17<-AGA062c$Q18
 
 AGA059c$Q23.1.<-NULL
 AGA059c$Q23.2.<-NULL
@@ -237,7 +247,7 @@ TILL007c$Q23.2.<-NULL
 TILL007c$Q23.3.<-NULL
 TILL007c$Q23.4.<-NULL
 
-AGA060c$Q21<-AGA060c$Q16
+AGA060c$Q17<-AGA060c$Q16
 AGA060c$Q16<-NULL
 
 TILL009c$Q25.1.<-NULL
@@ -270,7 +280,7 @@ DIF038c$Q41.1.<-DIF038c$Q32.1.
 DIF038c$Q41.2.<-DIF038c$Q32.2.
 DIF038c$Q41.3.<-DIF038c$Q32.3.
 DIF038c$Q41.4.<-DIF038c$Q32.4.
-DIF038c$Q21<-DIF038c$Q16
+DIF038c$Q17<-DIF038c$Q16
 
 DIF038c$Q32.1.<- NULL
 DIF038c$Q32.2.<- NULL
@@ -282,7 +292,7 @@ AGA031c$Q41.1.<-AGA031c$Q53.1.
 AGA031c$Q41.2.<-AGA031c$Q53.2.
 AGA031c$Q41.3.<-AGA031c$Q53.3.
 AGA031c$Q41.4.<-AGA031c$Q53.4.
-AGA031c$Q21<-AGA031c$Q45
+AGA031c$Q17<-AGA031c$Q45
 
 AGA031c$Q53.1.<- NULL
 AGA031c$Q53.2.<- NULL
@@ -291,7 +301,7 @@ AGA031c$Q53.4.<- NULL
 AGA031c$Q45<- NULL
 
 CFWNM2c$Q10<-CFWNM2c$Q11
-CFWNM2c$Q21<-CFWNM2c$Q33
+CFWNM2c$Q17<-CFWNM2c$Q33
 CFWNM2c$Q41.1.<-CFWNM2c$Q34.1.
 CFWNM2c$Q41.2.<-CFWNM2c$Q34.2.
 CFWNM2c$Q41.3.<-CFWNM2c$Q34.3.
@@ -303,7 +313,7 @@ CFWNM2c$Q34.2.<-NULL
 CFWNM2c$Q34.3.<-NULL
 CFWNM2c$Q34.4.<-NULL
 
-TIL016c$Q21<-TIL016c$Q21
+TIL016c$Q17<-TIL016c$Q21
 TIL016c$Q41.1.<-TIL016c$Q27.1.
 TIL016c$Q41.2.<-TIL016c$Q27.2.
 TIL016c$Q41.3.<-TIL016c$Q27.3.
@@ -314,10 +324,10 @@ TIL016c$Q27.2.<-NULL
 TIL016c$Q27.3.<-NULL
 TIL016c$Q27.4.<-NULL
 
-DIF050c$Q21<-DIF050c$Q15
+DIF050c$Q17<-DIF050c$Q15
 DIF050c$Q15<-NULL
 
-AGA063c$Q21<-AGA063c$Q13
+AGA063c$Q17<-AGA063c$Q13
 AGA063c$Q41.1.<-AGA063c$Q19.1.
 AGA063c$Q41.2.<-AGA063c$Q19.2.
 AGA063c$Q41.3.<-AGA063c$Q19.3.
@@ -328,7 +338,7 @@ AGA063c$Q19.2.<-NULL
 AGA063c$Q19.3.<-NULL
 AGA063c$Q19.4.<-NULL
 
-TIL018c$Q21<-TIL018c$Q26
+TIL018c$Q17<-TIL018c$Q26
 TIL018c$Q41.1.<-TIL018c$Q27.1.
 TIL018c$Q41.2.<-TIL018c$Q27.2.
 TIL018c$Q41.3.<-TIL018c$Q27.3.
@@ -339,7 +349,7 @@ TIL018c$Q27.2.<-NULL
 TIL018c$Q27.3.<-NULL
 TIL018c$Q27.4.<-NULL
 
-TIL010c$Q21<-TIL010c$Q26
+TIL010c$Q17<-TIL010c$Q26
 TIL010c$Q41.1.<-TIL010c$Q27.1.
 TIL010c$Q41.2.<-TIL010c$Q27.2.
 TIL010c$Q41.3.<-TIL010c$Q27.3.
@@ -350,7 +360,7 @@ TIL010c$Q27.2.<-NULL
 TIL010c$Q27.3.<-NULL
 TIL010c$Q27.4.<-NULL
 
-TIL004c$Q21<-TIL004c$Q26
+TIL004c$Q17<-TIL004c$Q26
 TIL004c$Q41.1.<-TIL004c$Q27.1.
 TIL004c$Q41.2.<-TIL004c$Q27.2.
 TIL004c$Q41.3.<-TIL004c$Q27.3.
@@ -361,7 +371,7 @@ TIL004c$Q27.2.<-NULL
 TIL004c$Q27.3.<-NULL
 TIL004c$Q27.4.<-NULL
 
-AtelierLeaderc$Q21<-AtelierLeaderc$Q13
+AtelierLeaderc$Q17<-AtelierLeaderc$Q13
 AtelierLeaderc$Q41.1.<-AtelierLeaderc$Q19.1.
 AtelierLeaderc$Q41.2.<-AtelierLeaderc$Q19.2.
 AtelierLeaderc$Q41.3.<-AtelierLeaderc$Q19.3.
@@ -372,7 +382,7 @@ AtelierLeaderc$Q19.2.<-NULL
 AtelierLeaderc$Q19.3.<-NULL
 AtelierLeaderc$Q19.4.<-NULL
 
-DIF055c$Q21<-DIF055c$Q13
+DIF055c$Q17<-DIF055c$Q13
 DIF055c$Q41.1.<-DIF055c$Q19.1.
 DIF055c$Q41.2.<-DIF055c$Q19.2.
 DIF055c$Q41.3.<-DIF055c$Q19.3.
@@ -383,7 +393,7 @@ DIF055c$Q19.2.<-NULL
 DIF055c$Q19.3.<-NULL
 DIF055c$Q19.4.<-NULL
 
-AGA052c$Q21<-AGA052c$Q31
+AGA052c$Q17<-AGA052c$Q31
 AGA052c$Q41.1.<-AGA052c$Q32.1.
 AGA052c$Q41.2.<-AGA052c$Q32.2.
 AGA052c$Q41.3.<-AGA052c$Q32.3.
@@ -452,7 +462,7 @@ NCCIbind$Age.Group<-cut(NCCIbind$Q7,breaks=c(0,17,30,45,60,100), labels=c("Under
 NCCIbind$Ethnicity <- factor(NCCIbind$Q9, levels = c(1,2,3,4,5,6,7,8), labels = c("Haussa", "Touareg", "Peul", "Zarma/Songhai","Toubou","Kanouri","Arabe","Je préfère ne pas répondre"))
 NCCIbind$Gender<-NCCIbind$Q8
 NCCIbind$Participation<-factor(NCCIbind$Q10, labels = c("Je suis un jeune participant à la formation et un membre de l'équipe qui va bénéficier des unités de production d'eau","Je suis un organisateur (autorité, partenaire)","Je suis un membre de la communauté (spectateur de processus)", "Sans réponse" ))
-NCCIbind$Selection.Beneficiaries <- factor(NCCIbind$Q21, levels = c(1,2,3,4,5,6), labels = c("Très juste", "Juste", "Neutre", "Peu juste","Très injuste","Sans Response"))
+NCCIbind$Selection.Beneficiaries <- factor(NCCIbind$Q17, levels = c(1,2,3,4,5,6), labels = c("Très juste", "Juste", "Neutre", "Peu juste","Très injuste","Sans Response"))
 
 
 #Create separate table for ‘multiple selection’ questions
