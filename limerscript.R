@@ -520,5 +520,8 @@ NCCIbind$Q41.2.<-NULL
 NCCIbind$Q41.3.<-NULL
 NCCIbind$Q41.4.<-NULL
 
+NCCIcomplete <- rbind.fill(NCCIbind, NCCIbind2)
+
+
 save.image()
 
