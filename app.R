@@ -382,7 +382,34 @@ server<-function(input, output) {
     content = function(file) {
       write.xlsx(TIL039, file)
     } ) 
-    
+    output$AGA086 <- downloadHandler(
+    filename = function() {
+      paste("AGA086-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(AGA086, file)
+    } ) 
+  output$AGA083 <- downloadHandler(
+    filename = function() {
+      paste("AGA083-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(AGA083, file)
+    } ) 
+  output$DIF140 <- downloadHandler(
+    filename = function() {
+      paste("DIF140-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(DIF140, file)
+    } ) 
+  output$AGA085 <- downloadHandler(
+    filename = function() {
+      paste("AGA085-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(AGA085, file)
+    } )    
     
   output$total <-  renderText({
     paste0(nrow(NCCIbind)) 
@@ -407,9 +434,23 @@ ui<-pageWithSidebar(
                      "6. Avez-vous participé, organisé, ou vous sentez vous concerné en tant que membre de la communauté par le concours scolaire pour la cohésion 
                      sociale?"="Participation",
                      "7.  La sélection des bénéficiaires pour la participation dans ce projet a été:"="Selection.Beneficiaries",
-                     "8. Comment avez-vous entendu parler de la ligne téléphonique/hotline?"="Comment.Entendu"
+                     "8. Comment avez-vous entendu parler de la ligne téléphonique/hotline?"="Comment.Entendu",
+                     "9. Selon vous, cette activité regroupé les communautés"="RegroupeParticipants",
+                     "10. Êtes-vous resté en contact"="ResteEnContact",
+                     "11. Comment êtes-vous resté en contact"="CommentContact"
                 
                 )), 
+     selectInput("variable2", "Compare:",
+                list("1. Language" = "Language", 
+                     "2. Region" = "Region", 
+                     "3. Gender" = "Gender",
+                     "4. Ethnicity" = "Ethnicity",
+                     "5. Age" = "Age.Group",
+                     "6. Type of Participation"="Participation",
+                     "7. Selection Fairness"="Selection.Beneficiaries"
+                     
+                )), 
+    
     
     downloadButton('downloadData', 'Download data')
   ),
@@ -418,13 +459,29 @@ ui<-pageWithSidebar(
   mainPanel(
     h3(textOutput("caption")),
     tabsetPanel(type="tabs",
-                tabPanel("Plot", plotOutput("Plot"),
+                tabPanel("Compare", plotOutput("SubPlot"),
                          h4("Summary"),
-                         paste0("Respondents: ", nrow(NCCIbind)), tags$br(),
-                         paste0("Men: ", sum(NCCIbind$Gender == "M"),",  (" , signif(sum(NCCIbind$Gender == "M")/nrow(NCCIbind),digits = 4)*100,"%)"),tags$br(),
-                         paste0("Women: ", sum(NCCIbind$Gender == "F"),",  (" , signif(sum(NCCIbind$Gender == "F")/nrow(NCCIbind),digits = 4)*100,"%)")
+                         paste0("Respondents: ", nrow(NCCIcomplete)), tags$br(),
+                         paste0("Men: ", nrow(filter(NCCIcomplete, Gender=="M")),",  (" , signif(nrow(filter(NCCIcomplete, Gender=="M"))/nrow(NCCIcomplete),digits = 4)*100,"%)"),tags$br(),
+                         paste0("Women: ", nrow(filter(NCCIcomplete, Gender=="F")),",  (" , signif(nrow(filter(NCCIcomplete, Gender=="F"))/nrow(NCCIcomplete),digits = 4)*100,"%)")
                          , tags$br(),
-                         paste0("Updated: ", date,"UTC")),
+                         paste0("Updated: ", date,"UTC") 
+                         
+                         ),
+                
+                tabPanel("Overall", plotOutput("Plot"),
+                         h4("Summary"),
+                         paste0("Respondents: ", nrow(NCCIcomplete)), tags$br(),
+                         paste0("Men: ", nrow(filter(NCCIcomplete, Gender=="M")),",  (" , signif(nrow(filter(NCCIcomplete, Gender=="M"))/nrow(NCCIcomplete),digits = 4)*100,"%)"),tags$br(),
+                         paste0("Women: ", nrow(filter(NCCIcomplete, Gender=="F")),",  (" , signif(nrow(filter(NCCIcomplete, Gender=="Frs"))/nrow(NCCIcomplete),digits = 4)*100,"%)")
+                         , tags$br(),
+                         paste0("Updated: ", date,"UTC") 
+                         
+                         
+                        ),
+              
+                
+                             
                 
                 tabPanel("Table", DT::dataTableOutput("table")),
                 tabPanel("Full Surveys", 
@@ -474,7 +531,18 @@ ui<-pageWithSidebar(
                         downloadLink("AGA067", "AGA067"),br(),
                         downloadLink("DIF138", "DIF138"),br(),
                         downloadLink("AGA072", "AGA072"), br(),
-                        downloadLink("TIL039", "TIL039"))
+                        downloadLink("TIL039", "TIL039")br(),
+                         downloadLink("AGA086", "AGA086"),br(),
+                         downloadLink("AGA083", "AGA083"),br(),
+                         downloadLink("DIF140", "DIF140"),br(),
+                         downloadLink("AGA085", "AGA085"), br(),
+                          downloadLink("TIL035", "TIL035"),br(),
+                         downloadLink("TIL037", "TIL037"),br(),
+                         downloadLink("DIF107", "DIF107"),br(),
+                         downloadLink("DIF145", "DIF145")
+                      
+                        
+                        )
     )
   ))
 
