@@ -8,7 +8,7 @@ library(plotly)
 library(xlsx)
 
 
-NCCIbind<-data.frame(NCCIbind)
+NCCIcomplete<-data.frame(NCCIcomplete)
 
 server<-function(input, output) {
   
@@ -29,28 +29,57 @@ server<-function(input, output) {
     # check for the input variable
     if (input$variable == "Comment.Entendu") {
       # Q1
-      NCCIbind <- data.frame(Comment.Entendu = NCCImelt2$Comment.Entendu, var = factor(NCCImelt2[[input$variable]]))
+      dataset <- data.frame(Comment.Entendu = NCCImelt2$Comment.Entendu, var = factor(NCCImelt2[[input$variable]]))
     }
     else {
       # Other questions
-      NCCIbind <- data.frame(Language = NCCIbind$Language, var = factor(NCCIbind[[input$variable]]))
+      dataset <- data.frame(Language = NCCIcomplete$Language, var = factor(NCCIcomplete[[input$variable]]))
     }
     
-    p <- ggplot(subset(NCCIbind, var!="NA"), aes(var)) +
+    p <- ggplot(subset(dataset, var!="NA"), aes(var)) +
       geom_bar(aes(y = (..count..)/sum(..count..)), fill="slateblue")+
       xlab("") + ylab("Percent")+scale_x_discrete(labels = function(x) str_wrap(x, width = 25)) +
-      scale_y_continuous(labels=percent)
+      scale_y_continuous(labels=percent) + stat_count(geom="text", colour="gray40", size=3.5, 
+      aes(label=paste0(round((100*..count../sum(..count..)),2),'%'), y=((..count..)/sum(..count..))+0.02))
+
+    
     print(p)
     
   })
+     output$SubPlot <- renderPlot({
+    
+    # check for the input variable
+    
+    dem=factor(NCCIcomplete[[input$variable2]])
+    
+    if (input$variable == "Comment.Entendu") {
+      # Q1
+      dataset <- data.frame(Comment.Entendu = NCCImelt2$Comment.Entendu, var = factor(NCCImelt2[[input$variable]]))
+    }
+    else {
+      # Other questions
+      dataset <- data.frame(Language = NCCIcomplete$Language, var = factor(NCCIcomplete[[input$variable]]))
+    }
+   
+     
+    q <- ggplot(dataset, aes(x=dem, fill=var, y=..count..)) + geom_bar(position="dodge") +
+    xlab("") + ylab("Count")+scale_x_discrete(labels = function(x) str_wrap(x, width = 25)) + scale_fill_discrete(name=dataset$dem) + 
+      theme(legend.position = "bottom", legend.text = element_text(size = 7))
+    
+     print(q)
+    
+  })
+  
+    
+    
   # Generate an HTML table view of the data; when updating, add links to new tables
   output$table <- DT::renderDataTable({
-    DT::datatable(NCCIbind, options = list(orderClasses = TRUE, pageLength = 25))
+    DT::datatable(NCCIcomplete, options = list(orderClasses = TRUE, pageLength = 25))
   })
   output$downloadData <- downloadHandler(
     filename = function() { paste('NCCIexport-', Sys.Date(), '.xlsx') },
     content = function(file) {
-      write.xlsx(NCCIbind, file)
+      write.xlsx(NCCIcomplete, file)
     }
   )
   output$AGA041 <- downloadHandler(
@@ -412,10 +441,10 @@ server<-function(input, output) {
     } )    
     
   output$total <-  renderText({
-    paste0(nrow(NCCIbind)) 
+    paste0(nrow(NCCIcomplete)) 
   })
-  output$male<-renderText({paste0(sum(NCCIbind$Q8 == "M"))})
-  output$female<-renderText({paste0(sum(NCCIbind$Q8 == "F"))})
+  output$male<-renderText({paste0(sum(NCCIcomplete$Q8 == "M"))})
+  output$female<-renderText({paste0(sum(NCCIcomplete$Q8 == "F"))})
 }
 ui<-pageWithSidebar(
   
@@ -473,7 +502,7 @@ ui<-pageWithSidebar(
                          h4("Summary"),
                          paste0("Respondents: ", nrow(NCCIcomplete)), tags$br(),
                          paste0("Men: ", nrow(filter(NCCIcomplete, Gender=="M")),",  (" , signif(nrow(filter(NCCIcomplete, Gender=="M"))/nrow(NCCIcomplete),digits = 4)*100,"%)"),tags$br(),
-                         paste0("Women: ", nrow(filter(NCCIcomplete, Gender=="F")),",  (" , signif(nrow(filter(NCCIcomplete, Gender=="Frs"))/nrow(NCCIcomplete),digits = 4)*100,"%)")
+                         paste0("Women: ", nrow(filter(NCCIcomplete, Gender=="F")),",  (" , signif(nrow(filter(NCCIcomplete, Gender=="F"))/nrow(NCCIcomplete),digits = 4)*100,"%)")
                          , tags$br(),
                          paste0("Updated: ", date,"UTC") 
                          
@@ -531,7 +560,7 @@ ui<-pageWithSidebar(
                         downloadLink("AGA067", "AGA067"),br(),
                         downloadLink("DIF138", "DIF138"),br(),
                         downloadLink("AGA072", "AGA072"), br(),
-                        downloadLink("TIL039", "TIL039")br(),
+                        downloadLink("TIL039", "TIL039"),br(),
                          downloadLink("AGA086", "AGA086"),br(),
                          downloadLink("AGA083", "AGA083"),br(),
                          downloadLink("DIF140", "DIF140"),br(),
