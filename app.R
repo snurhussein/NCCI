@@ -439,6 +439,36 @@ server<-function(input, output) {
     content = function(file) {
       write.xlsx(AGA085, file)
     } )    
+  output$TIL035 <- downloadHandler(
+    filename = function() {
+      paste("TIL035-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(AGA085, file)
+    } )   
+  output$TIL037 <- downloadHandler(
+    filename = function() {
+      paste("TIL037-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(AGA085, file)
+    } )   
+  output$DIF107 <- downloadHandler(
+    filename = function() {
+      paste("DIF107-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(AGA085, file)
+    } )   
+  output$DIF145 <- downloadHandler(
+    filename = function() {
+      paste("DIF145-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(AGA085, file)
+    } )   
+       
+       
     
   output$total <-  renderText({
     paste0(nrow(NCCIcomplete)) 
