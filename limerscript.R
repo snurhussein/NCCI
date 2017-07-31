@@ -79,8 +79,11 @@ TIL035<-get_responses(iSurveyID= 813893, sLanguageCode = 'fr', sResponseType = '
 TIL037<-get_responses(iSurveyID= 772621, sLanguageCode = 'fr', sResponseType = 'short')
 DIF107<-get_responses(iSurveyID= 262583, sLanguageCode = 'fr', sResponseType = 'short')
 DIF145<-get_responses(iSurveyID= 185443, sLanguageCode = 'fr', sResponseType = 'short')
-DIF124<-get_responses(iSurveyID= 123585, sLanguageCode = 'fr', sResponseType = 'short')
-
+DIF123<-get_responses(iSurveyID= 123585, sLanguageCode = 'fr', sResponseType = 'short')
+AGA077<-get_responses(iSurveyID= 235718, sLanguageCode = 'fr', sResponseType = 'short')
+DIF121<-get_responses(iSurveyID= 888795, sLanguageCode = 'fr', sResponseType = 'short')
+DIF108<-get_responses(iSurveyID= 499791, sLanguageCode = 'fr', sResponseType = 'short')
+DIF125<-get_responses(iSurveyID= 121226, sLanguageCode = 'fr', sResponseType = 'short')
 
 
 #Make copies with only the columns of interest, also excluding empty surveys
@@ -144,7 +147,11 @@ TIL035c<-TIL035[c("Q1","Q2","Q9","Q10","Q11","Q12","Q13","Q14","Q15.1.","Q15.2."
 TIL037c<-TIL037[c("Q1","Q2","Q9","Q10","Q11","Q12","Q13","Q14","Q15.1.","Q15.2.","Q15.3.","Q15.4.","Q15.5.","Q16.1.","Q16.2.","Q16.3.","Q16.4.","Q16.5.")]
 DIF107c<-DIF107[c("Q1","Q2","Q9","Q10","Q11","Q12","Q13","Q14","Q15.1.","Q15.2.","Q15.3.","Q15.4.","Q15.5.","Q16.1.","Q16.2.","Q16.3.","Q16.4.","Q16.5.")]
 DIF145c<-DIF145[c("Q1","Q2","Q9","Q10","Q11","Q12","Q13","Q14","Q15.1.","Q15.2.","Q15.3.","Q15.4.","Q15.5.","Q16.1.","Q16.2.","Q16.3.","Q16.4.","Q16.5.")]
-#DIF124
+#DIF123c
+AGA077c<-AGA077[c("Q1","Q2","Q9","Q10","Q11","Q12","Q13","Q14","Q15.1.","Q15.2.","Q15.3.","Q15.4.","Q15.5.","Q16.1.","Q16.2.","Q16.3.","Q16.4.","Q16.5.")]
+#DIF121c
+DIF108c<-DIF108[c("Q1","Q2","Q9","Q10","Q11")]
+#DIF125c
 
 
 
@@ -202,10 +209,12 @@ AGA083c$Survey<-'AGA083'
 DIF140c$Survey<-'DIF140'
 #DIF142c
 AGA085c$Survey<-'AGA085'
-TIL035c$Survey<- 'TIL035c'
-TIL037c$Survey<- 'TIL037c'
-DIF107c$Survey<- 'DIF107c'
-DIF145c$Survey<- 'DIF145c'
+TIL035c$Survey<- 'TIL035'
+TIL037c$Survey<- 'TIL037'
+DIF107c$Survey<- 'DIF107'
+DIF145c$Survey<- 'DIF145'
+AGA077c$Survey<- 'AGA077'
+DIF108c$Survey<- 'DIF108'
 
 #Move misaligned columns to desired, consistent location
 
@@ -496,7 +505,7 @@ NCCIbind <- rbind.fill(AGA041c, AGA045c, AGA051c, AGA055c, AGA059c, AGA060c, AGA
                        AGA063c, TIL018c, TIL010c, TIL004c, AtelierLeaderc, DIF055c, AGA052c, TILL023c, DIF094c, TILL025c, TILL026c, 
                        TIL014c, DIF100c, AGA074c, DIF105c, DIF130c, AGA067c)
 
-NCCIbind2 <- rbind.fill(AGA086c, AGA083c, DIF140c, AGA085c, TIL035c, TIL037c, DIF107c, DIF145c)
+NCCIbind2 <- rbind.fill(AGA086c, AGA083c, DIF140c, AGA085c, TIL035c, TIL037c, DIF107c, DIF145c, AGA077c, DIF108c)
 
 
 #Replace numerical codes with text labels
