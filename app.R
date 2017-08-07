@@ -514,13 +514,14 @@ ui<-pageWithSidebar(
                 
                 )), 
      selectInput("variable2", "Compare:",
-                list("1. Language" = "Language", 
-                     "2. Region" = "Region", 
-                     "3. Gender" = "Gender",
-                     "4. Ethnicity" = "Ethnicity",
-                     "5. Age" = "Age.Group",
-                     "6. Type of Participation"="Participation",
-                     "7. Selection Fairness"="Selection.Beneficiaries"
+                list("1. All Respondents" = "AllRespondents", 
+                     "2. Language" = "Language", 
+                     "3. Region" = "Region", 
+                     "4. Gender" = "Gender",
+                     "5. Ethnicity" = "Ethnicity",
+                     "6. Age" = "Age.Group",
+                     "7. Type of Participation"="Participation",
+                     "8. Selection Fairness"="Selection.Beneficiaries"
                      
                 )), 
     
@@ -532,7 +533,7 @@ ui<-pageWithSidebar(
   mainPanel(
     h3(textOutput("caption")),
     tabsetPanel(type="tabs",
-                tabPanel("Compare", plotOutput("SubPlot"),
+                tabPanel("Chart", plotOutput("SubPlot"),
                          h4("Summary"),
                          paste0("Respondents: ", nrow(NCCIcomplete)), tags$br(),
                          paste0("Men: ", nrow(filter(NCCIcomplete, Gender=="M")),",  (" , signif(nrow(filter(NCCIcomplete, Gender=="M"))/nrow(NCCIcomplete),digits = 4)*100,"%)"),tags$br(),
@@ -542,16 +543,7 @@ ui<-pageWithSidebar(
                          
                          ),
                 
-                tabPanel("Overall", plotOutput("Plot"),
-                         h4("Summary"),
-                         paste0("Respondents: ", nrow(NCCIcomplete)), tags$br(),
-                         paste0("Men: ", nrow(filter(NCCIcomplete, Gender=="M")),",  (" , signif(nrow(filter(NCCIcomplete, Gender=="M"))/nrow(NCCIcomplete),digits = 4)*100,"%)"),tags$br(),
-                         paste0("Women: ", nrow(filter(NCCIcomplete, Gender=="F")),",  (" , signif(nrow(filter(NCCIcomplete, Gender=="F"))/nrow(NCCIcomplete),digits = 4)*100,"%)")
-                         , tags$br(),
-                         paste0("Updated: ", date,"UTC") 
-                         
-                         
-                        ),
+        
               
                 
                              
