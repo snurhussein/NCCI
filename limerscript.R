@@ -30,13 +30,13 @@ AGA045<-get_responses(iSurveyID= 139427, sLanguageCode = 'fr', sResponseType = '
 AGA041<-get_responses(iSurveyID= 318229, sLanguageCode = 'fr', sResponseType = 'short')
 DIF044<-get_responses(iSurveyID= 251232, sLanguageCode = 'fr', sResponseType = 'short')
 AGA055<-get_responses(iSurveyID= 731787, sLanguageCode = 'fr', sResponseType = 'short')
-TILL006<-get_responses(iSurveyID= 828848, sLanguageCode = 'fr', sResponseType = 'short')
+TIL006<-get_responses(iSurveyID= 828848, sLanguageCode = 'fr', sResponseType = 'short')
 AGA060<-get_responses(iSurveyID= 675145, sLanguageCode = 'fr', sResponseType = 'short')
 AGA059<-get_responses(iSurveyID= 212898, sLanguageCode = 'fr', sResponseType = 'short')
 AGA061<-get_responses(iSurveyID= 191773, sLanguageCode = 'fr', sResponseType = 'short')
 DIF059<-get_responses(iSurveyID= 485985, sLanguageCode = 'fr', sResponseType = 'short')
-TILL007<-get_responses(iSurveyID= 943461, sLanguageCode = 'fr', sResponseType = 'short')
-TILL009<-get_responses(iSurveyID= 541311, sLanguageCode = 'fr', sResponseType = 'short')
+TIL007<-get_responses(iSurveyID= 943461, sLanguageCode = 'fr', sResponseType = 'short')
+TIL009<-get_responses(iSurveyID= 541311, sLanguageCode = 'fr', sResponseType = 'short')
 DIF040<-get_responses(iSurveyID= 448111, sLanguageCode = 'fr', sResponseType = 'short')
 DIF048<-get_responses(iSurveyID= 716422, sLanguageCode = 'fr', sResponseType = 'short')
 DIF045<-get_responses(iSurveyID= 259664, sLanguageCode = 'fr', sResponseType = 'short')
@@ -54,10 +54,10 @@ TIL004<-get_responses(iSurveyID= 696635, sLanguageCode = 'fr', sResponseType = '
 AtelierLeader<-get_responses(iSurveyID= 181754, sLanguageCode = 'fr', sResponseType = 'short')
 DIF055<-get_responses(iSurveyID= 533857, sLanguageCode = 'fr', sResponseType = 'short')
 AGA052<-get_responses(iSurveyID= 675311, sLanguageCode = 'fr', sResponseType = 'short')
-TILL023<-get_responses(iSurveyID= 182745, sLanguageCode = 'fr', sResponseType = 'short')
+TIL023<-get_responses(iSurveyID= 182745, sLanguageCode = 'fr', sResponseType = 'short')
 DIF094<-get_responses(iSurveyID= 627317, sLanguageCode = 'fr', sResponseType = 'short')
-TILL025<-get_responses(iSurveyID= 933813, sLanguageCode = 'fr', sResponseType = 'short')
-TILL026<-get_responses(iSurveyID= 138547, sLanguageCode = 'fr', sResponseType = 'short')
+TIL025<-get_responses(iSurveyID= 933813, sLanguageCode = 'fr', sResponseType = 'short')
+TIL026<-get_responses(iSurveyID= 138547, sLanguageCode = 'fr', sResponseType = 'short')
 TIL014<-get_responses(iSurveyID= 913713, sLanguageCode = 'fr', sResponseType = 'short')
 DIF100<-get_responses(iSurveyID= 679492, sLanguageCode = 'fr', sResponseType = 'short')
 AGA074<-get_responses(iSurveyID= 198899, sLanguageCode = 'fr', sResponseType = 'short')
@@ -101,9 +101,9 @@ DIF010c <- DIF010[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q17","Q41.1.","Q41.2.",
 DIF018c <- DIF018[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q17","Q41.1.","Q41.2.","Q41.3.","Q41.4.")]
 DIF044c <- DIF044[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q41.1.","Q41.2.","Q41.3.","Q41.4.")]
 NIA029c <- NIA029[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q41.1.","Q41.2.","Q41.3.","Q41.4.")]
-TILL006c <- TILL006[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10")]
-TILL007c <- TILL007[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q23.1.","Q23.2.","Q23.3.","Q23.4.")]
-TILL009c <- TILL009[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q21","Q25.1.","Q25.2.","Q25.3.","Q25.4.")]
+TIL006c <- TIL006[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10")]
+TIL007c <- TIL007[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q23.1.","Q23.2.","Q23.3.","Q23.4.")]
+TIL009c <- TIL009[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q21","Q25.1.","Q25.2.","Q25.3.","Q25.4.")]
 DIF040c <- DIF040[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q15","Q16.1.","Q16.2.","Q16.3.")]
 DIF048c <- DIF048[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q15","Q16.1.","Q16.2.","Q16.3.")]
 DIF045c <- DIF045[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q15","Q16.1.","Q16.2.","Q16.3.")]
@@ -121,10 +121,10 @@ TIL004c <- TIL004[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q26","Q27.1.","Q27.2.",
 AtelierLeaderc<-AtelierLeader[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q13","Q19.1.","Q19.2.","Q19.3.","Q19.4.")]
 DIF055c <- DIF055[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q13","Q19.1.","Q19.2.","Q19.3.","Q19.4.")]
 AGA052c <- AGA052[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q31","Q32.1.","Q32.2.","Q32.3.","Q32.4.")]
-TILL023c <- TILL023[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q27.1.","Q27.2.","Q27.3.","Q27.4.")]
+TIL023c <- TIL023[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q27.1.","Q27.2.","Q27.3.","Q27.4.")]
 DIF094c <- DIF094[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q21","Q27.1.","Q27.2.","Q27.3.","Q27.4.")]
-TILL025c<-TILL025[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q27.1.","Q27.2.","Q27.3.","Q27.4.")]
-TILL026c<-TILL026[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q27.1.","Q27.2.","Q27.3.","Q27.4.")]
+TIL025c<-TIL025[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q27.1.","Q27.2.","Q27.3.","Q27.4.")]
+TIL026c<-TIL026[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q27.1.","Q27.2.","Q27.3.","Q27.4.")]
 TIL014c<-TIL014[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q27.1.","Q27.2.","Q27.3.","Q27.4.")]
 DIF100c<-DIF100[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10")]
 AGA074c<-AGA074[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10")]
@@ -170,9 +170,9 @@ DIF010c$Survey <- 'DIF010'
 DIF018c$Survey <- 'DIF018'
 DIF044c$Survey <- 'DIF044'
 NIA029c$Survey <- 'NIA029'
-TILL006c$Survey <- 'TILL006'
-TILL007c$Survey <- 'TILL007'
-TILL009c$Survey <- 'TILL009'
+TIL006c$Survey <- 'TIL006'
+TIL007c$Survey <- 'TIL007'
+TIL009c$Survey <- 'TIL009'
 DIF040c$Survey <- 'DIF040'
 DIF048c$Survey <- 'DIF048'
 DIF045c$Survey <- 'DIF045'
@@ -190,10 +190,10 @@ TIL004c$Survey <- 'TIL004'
 AtelierLeaderc$Survey<-'AtelierLeader'
 DIF055c$Survey <- 'DIF055'
 AGA052c$Survey <- 'AGA052'
-TILL023c$Survey <- 'TILL023'
+TIL023c$Survey <- 'TIL023'
 DIF094c$Survey <- 'DIF094'
-TILL025c$Survey<-'TILL025'
-TILL026c$Survey<-'TILL026'
+TIL025c$Survey<-'TIL025'
+TIL026c$Survey<-'TIL026'
 TIL014c$Survey<-'TIL014'
 DIF100c$Survey<-'DIF100'
 AGA074c$Survey<-'AGA074'
@@ -228,16 +228,16 @@ AGA060c$Q41.2.<-AGA060c$Q23.2.
 AGA060c$Q41.3.<-AGA060c$Q23.3.
 AGA060c$Q41.4.<-AGA060c$Q23.4.
 
-TILL007c$Q41.1.<-TILL007c$Q23.1.
-TILL007c$Q41.2.<-TILL007c$Q23.2.
-TILL007c$Q41.3.<-TILL007c$Q23.3.
-TILL007c$Q41.4.<-TILL007c$Q23.4.
+TIL007c$Q41.1.<-TIL007c$Q23.1.
+TIL007c$Q41.2.<-TIL007c$Q23.2.
+TIL007c$Q41.3.<-TIL007c$Q23.3.
+TIL007c$Q41.4.<-TIL007c$Q23.4.
 
-TILL009c$Q17<-TILL009c$Q21
-TILL009c$Q41.1.<-TILL009c$Q25.1.
-TILL009c$Q41.2.<-TILL009c$Q25.2.
-TILL009c$Q41.3.<-TILL009c$Q25.3.
-TILL009c$Q41.4.<-TILL009c$Q25.4.
+TIL009c$Q17<-TIL009c$Q21
+TIL009c$Q41.1.<-TIL009c$Q25.1.
+TIL009c$Q41.2.<-TIL009c$Q25.2.
+TIL009c$Q41.3.<-TIL009c$Q25.3.
+TIL009c$Q41.4.<-TIL009c$Q25.4.
 
 DIF040c$Q41.1.<-DIF040c$Q16.1.
 DIF040c$Q41.2.<-DIF040c$Q16.2.
@@ -273,19 +273,19 @@ AGA060c$Q23.2.<-NULL
 AGA060c$Q23.3.<-NULL
 AGA060c$Q23.4.<-NULL
 
-TILL007c$Q23.1.<-NULL
-TILL007c$Q23.2.<-NULL
-TILL007c$Q23.3.<-NULL
-TILL007c$Q23.4.<-NULL
+TIL007c$Q23.1.<-NULL
+TIL007c$Q23.2.<-NULL
+TIL007c$Q23.3.<-NULL
+TIL007c$Q23.4.<-NULL
 
 AGA060c$Q17<-AGA060c$Q16
 AGA060c$Q16<-NULL
 
-TILL009c$Q25.1.<-NULL
-TILL009c$Q25.2.<-NULL
-TILL009c$Q25.3.<-NULL
-TILL009c$Q25.4.<-NULL
-TILL009c$Q21<-NULL
+TIL009c$Q25.1.<-NULL
+TIL009c$Q25.2.<-NULL
+TIL009c$Q25.3.<-NULL
+TIL009c$Q25.4.<-NULL
+TIL009c$Q21<-NULL
 
 DIF040c$Q16.1.<-NULL
 DIF040c$Q16.2.<-NULL
@@ -436,14 +436,14 @@ AGA052c$Q32.2.<-NULL
 AGA052c$Q32.3.<-NULL
 AGA052c$Q32.4.<-NULL
 
-TILL023c$Q41.1.<-TILL023c$Q27.1.
-TILL023c$Q41.2.<-TILL023c$Q27.2.
-TILL023c$Q41.3.<-TILL023c$Q27.3.
-TILL023c$Q41.4.<-TILL023c$Q27.4.
-TILL023c$Q27.1.<-NULL
-TILL023c$Q27.2.<-NULL
-TILL023c$Q27.3.<-NULL
-TILL023c$Q27.4.<-NULL
+TIL023c$Q41.1.<-TIL023c$Q27.1.
+TIL023c$Q41.2.<-TIL023c$Q27.2.
+TIL023c$Q41.3.<-TIL023c$Q27.3.
+TIL023c$Q41.4.<-TIL023c$Q27.4.
+TIL023c$Q27.1.<-NULL
+TIL023c$Q27.2.<-NULL
+TIL023c$Q27.3.<-NULL
+TIL023c$Q27.4.<-NULL
 
 DIF094c$Q41.1.<-DIF094c$Q27.1.
 DIF094c$Q41.2.<-DIF094c$Q27.2.
@@ -456,23 +456,23 @@ DIF094c$Q27.3.<-NULL
 DIF094c$Q27.4.<-NULL
 DIF094c$Q21<-NULL
 
-TILL025c$Q41.1.<-TILL025c$Q27.1.
-TILL025c$Q41.2.<-TILL025c$Q27.2.
-TILL025c$Q41.3.<-TILL025c$Q27.3.
-TILL025c$Q41.4.<-TILL025c$Q27.4.
-TILL025c$Q27.1.<-NULL
-TILL025c$Q27.2.<-NULL
-TILL025c$Q27.3.<-NULL
-TILL025c$Q27.4.<-NULL
+TIL025c$Q41.1.<-TIL025c$Q27.1.
+TIL025c$Q41.2.<-TIL025c$Q27.2.
+TIL025c$Q41.3.<-TIL025c$Q27.3.
+TIL025c$Q41.4.<-TIL025c$Q27.4.
+TIL025c$Q27.1.<-NULL
+TIL025c$Q27.2.<-NULL
+TIL025c$Q27.3.<-NULL
+TIL025c$Q27.4.<-NULL
 
-TILL026c$Q41.1.<-TILL026c$Q27.1.
-TILL026c$Q41.2.<-TILL026c$Q27.2.
-TILL026c$Q41.3.<-TILL026c$Q27.3.
-TILL026c$Q41.4.<-TILL026c$Q27.4.
-TILL026c$Q27.1.<-NULL
-TILL026c$Q27.2.<-NULL
-TILL026c$Q27.3.<-NULL
-TILL026c$Q27.4.<-NULL
+TIL026c$Q41.1.<-TIL026c$Q27.1.
+TIL026c$Q41.2.<-TIL026c$Q27.2.
+TIL026c$Q41.3.<-TIL026c$Q27.3.
+TIL026c$Q41.4.<-TIL026c$Q27.4.
+TIL026c$Q27.1.<-NULL
+TIL026c$Q27.2.<-NULL
+TIL026c$Q27.3.<-NULL
+TIL026c$Q27.4.<-NULL
 
 TIL014c$Q41.1.<-TIL014c$Q27.1.
 TIL014c$Q41.2.<-TIL014c$Q27.2.
@@ -500,9 +500,9 @@ AGA071c$Q27.4.<-NULL
 
 #Combine tables
 
-NCCIbind <- rbind.fill(AGA041c, AGA045c, AGA051c, AGA055c, AGA059c, AGA060c, AGA061c, DIF010c, DIF018c, DIF044c,NIA029c, TILL006c, 
-                       TILL007c, TILL009c, DIF040c, DIF048c, DIF045c, AGA062c, DIF038c, AGA031c, CFWNM2c, TIL016c, AGA066c, DIF050c,
-                       AGA063c, TIL018c, TIL010c, TIL004c, AtelierLeaderc, DIF055c, AGA052c, TILL023c, DIF094c, TILL025c, TILL026c, 
+NCCIbind <- rbind.fill(AGA041c, AGA045c, AGA051c, AGA055c, AGA059c, AGA060c, AGA061c, DIF010c, DIF018c, DIF044c,NIA029c, TIL006c, 
+                       TIL007c, TIL009c, DIF040c, DIF048c, DIF045c, AGA062c, DIF038c, AGA031c, CFWNM2c, TIL016c, AGA066c, DIF050c,
+                       AGA063c, TIL018c, TIL010c, TIL004c, AtelierLeaderc, DIF055c, AGA052c, TIL023c, DIF094c, TIL025c, TIL026c, 
                        TIL014c, DIF100c, AGA074c, DIF105c, DIF130c, AGA067c)
 
 NCCIbind2 <- rbind.fill(AGA086c, AGA083c, DIF140c, AGA085c, TIL035c, TIL037c, DIF107c, DIF145c, AGA077c, DIF108c)
