@@ -549,6 +549,8 @@ NCCIbind$Q41.4.<-NULL
 
 NCCIcomplete <- rbind.fill(NCCIbind, NCCIbind2)
 NCCIcomplete$AllRespondents<-"All Respondents"
+NCCIcomplete$month<-format(as.Date(NCCIcomplete$startdate), "%Y-%m")
+
 
 save.image()
 
