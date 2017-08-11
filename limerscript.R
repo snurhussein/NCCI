@@ -548,7 +548,7 @@ NCCIbind$Q41.3.<-NULL
 NCCIbind$Q41.4.<-NULL
 
 NCCIcomplete <- rbind.fill(NCCIbind, NCCIbind2)
-NCCIcomplete$All Respondents<-"All Respondents"
+NCCIcomplete$AllRespondents<-"All Respondents"
 
 save.image()
 
