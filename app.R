@@ -481,7 +481,20 @@ server<-function(input, output) {
     content = function(file) {
       write.xlsx(DIF108, file)
     } )  
-       
+   output$DIF123 <- downloadHandler(
+    filename = function() {
+      paste("DIF123-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(DIF123, file)
+    } ) 
+  output$DIF125 <- downloadHandler(
+    filename = function() {
+      paste("DIF125-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(DIF125, file)
+    } )     
        
     
   output$total <-  renderText({
@@ -606,7 +619,9 @@ ui<-pageWithSidebar(
                          downloadLink("DIF107", "DIF107"),br(),
                          downloadLink("DIF145", "DIF145"),br(),
                          downloadLink("AGA077", "AGA077"),br(),
-                         downloadLink("DIF108", "DIF108")
+                         downloadLink("DIF108", "DIF108"),br(),
+                         downloadLink("DIF123", "DIF123"),br(),
+                         downloadLink("DIF125", "DIF125")
                       
                         
                         )
