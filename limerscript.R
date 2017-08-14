@@ -84,6 +84,7 @@ AGA077<-get_responses(iSurveyID= 235718, sLanguageCode = 'fr', sResponseType = '
 DIF121<-get_responses(iSurveyID= 888795, sLanguageCode = 'fr', sResponseType = 'short')
 DIF108<-get_responses(iSurveyID= 499791, sLanguageCode = 'fr', sResponseType = 'short')
 DIF125<-get_responses(iSurveyID= 121226, sLanguageCode = 'fr', sResponseType = 'short')
+TIL044<-get_responses(iSurveyID= 243661, sLanguageCode = 'fr', sResponseType = 'short')
 
 
 #Make copies with only the columns of interest, also excluding empty surveys
@@ -142,16 +143,17 @@ AGA086c<-AGA086[c("startdate","Q1","Q2","Q9","Q10","Q11","Q12","Q13","Q14","Q15.
 AGA083c<-AGA083[c("startdate","Q1","Q2","Q9","Q10","Q11","Q12","Q13","Q14","Q15.1.","Q15.2.","Q15.3.","Q15.4.","Q15.5.","Q16.1.","Q16.2.","Q16.3.","Q16.4.","Q16.5.","Q17","Q19","Q21","S20","S22","S23","Q20","R22","R21","Q24")]
 DIF140c<-DIF140[c("startdate","Q1","Q2","Q9","Q10","Q11","Q12","Q13","Q14","Q15.1.","Q15.2.","Q15.3.","Q15.4.","Q15.5.","Q16.1.","Q16.2.","Q16.3.","Q16.4.","Q16.5.","Q17","Q19","Q21","S20","S22","S23","Q20","R22","R21","Q24")]
 #DIF142c
-AGA085c<-AGA085[c("startdate","Q1","Q2","Q9","Q10","Q11","Q12","Q13","Q14","Q15.1.","Q15.2.","Q15.3.","Q15.4.","Q15.5.","Q16.1.","Q16.2.","Q16.3.","Q16.4.","Q16.5.")]
-TIL035c<-TIL035[c("startdate","Q1","Q2","Q9","Q10","Q11","Q12","Q13","Q14","Q15.1.","Q15.2.","Q15.3.","Q15.4.","Q15.5.","Q16.1.","Q16.2.","Q16.3.","Q16.4.","Q16.5.")]
-TIL037c<-TIL037[c("startdate","Q1","Q2","Q9","Q10","Q11","Q12","Q13","Q14","Q15.1.","Q15.2.","Q15.3.","Q15.4.","Q15.5.","Q16.1.","Q16.2.","Q16.3.","Q16.4.","Q16.5.")]
-DIF107c<-DIF107[c("startdate","Q1","Q2","Q9","Q10","Q11","Q12","Q13","Q14","Q15.1.","Q15.2.","Q15.3.","Q15.4.","Q15.5.","Q16.1.","Q16.2.","Q16.3.","Q16.4.","Q16.5.")]
-DIF145c<-DIF145[c("startdate","Q1","Q2","Q9","Q10","Q11","Q12","Q13","Q14","Q15.1.","Q15.2.","Q15.3.","Q15.4.","Q15.5.","Q16.1.","Q16.2.","Q16.3.","Q16.4.","Q16.5.")]
-#DIF123c
-AGA077c<-AGA077[c("startdate","Q1","Q2","Q9","Q10","Q11","Q12","Q13","Q14","Q15.1.","Q15.2.","Q15.3.","Q15.4.","Q15.5.","Q16.1.","Q16.2.","Q16.3.","Q16.4.","Q16.5.")]
-#DIF121c
-DIF108c<-DIF108[c("startdate","Q1","Q2","Q9","Q10","Q11")]
-#DIF125c
+AGA085c<-AGA085[c("startdate","Q1","Q2","Q9","Q10","Q11","Q12","Q13","Q14","Q15.1.","Q15.2.","Q15.3.","Q15.4.","Q15.5.","Q16.1.","Q16.2.","Q16.3.","Q16.4.","Q16.5.","Q24")]
+TIL035c<-TIL035[c("startdate","Q1","Q2","Q9","Q10","Q11","Q12","Q13","Q14","Q15.1.","Q15.2.","Q15.3.","Q15.4.","Q15.5.","Q16.1.","Q16.2.","Q16.3.","Q16.4.","Q16.5.","Q24")]
+TIL037c<-TIL037[c("startdate","Q1","Q2","Q9","Q10","Q11","Q12","Q13","Q14","Q15.1.","Q15.2.","Q15.3.","Q15.4.","Q15.5.","Q16.1.","Q16.2.","Q16.3.","Q16.4.","Q16.5.","Q24")]
+DIF107c<-DIF107[c("startdate","Q1","Q2","Q9","Q10","Q11","Q12","Q13","Q14","Q15.1.","Q15.2.","Q15.3.","Q15.4.","Q15.5.","Q16.1.","Q16.2.","Q16.3.","Q16.4.","Q16.5.","Q24")]
+DIF145c<-DIF145[c("startdate","Q1","Q2","Q9","Q10","Q11","Q12","Q13","Q14","Q15.1.","Q15.2.","Q15.3.","Q15.4.","Q15.5.","Q16.1.","Q16.2.","Q16.3.","Q16.4.","Q16.5.","Q24")]
+DIF123c<-DIF123[c("startdate","Q1","Q2","Q9","Q10","Q11","Q24")]
+AGA077c<-AGA077[c("startdate","Q1","Q2","Q9","Q10","Q11","Q12","Q13","Q14","Q15.1.","Q15.2.","Q15.3.","Q15.4.","Q15.5.","Q16.1.","Q16.2.","Q16.3.","Q16.4.","Q16.5.","Q24")]
+DIF121c<-DIF121[c("startdate","Q1","Q2","Q9","Q10","Q11","Q24")]
+DIF108c<-DIF108[c("startdate","Q1","Q2","Q9","Q10","Q11","Q24")]
+DIF125c<-DIF125[c("startdate","Q1","Q2","Q9","Q10","Q11","Q13","Q14","Q24")]
+#TIL044c
 
 
 
@@ -213,8 +215,11 @@ TIL035c$Survey<- 'TIL035'
 TIL037c$Survey<- 'TIL037'
 DIF107c$Survey<- 'DIF107'
 DIF145c$Survey<- 'DIF145'
+DIF123c$Survey<-'DIF123'
 AGA077c$Survey<- 'AGA077'
 DIF108c$Survey<- 'DIF108'
+DIF125c$Survey<- 'DIF125'
+DIF121c$Survey<- 'DIF121'
 
 #Move misaligned columns to desired, consistent location
 
@@ -505,7 +510,7 @@ NCCIbind <- rbind.fill(AGA041c, AGA045c, AGA051c, AGA055c, AGA059c, AGA060c, AGA
                        AGA063c, TIL018c, TIL010c, TIL004c, AtelierLeaderc, DIF055c, AGA052c, TIL023c, DIF094c, TIL025c, TIL026c, 
                        TIL014c, DIF100c, AGA074c, DIF105c, DIF130c, AGA067c)
 
-NCCIbind2 <- rbind.fill(AGA086c, AGA083c, DIF140c, AGA085c, TIL035c, TIL037c, DIF107c, DIF145c, AGA077c, DIF108c)
+NCCIbind2 <- rbind.fill(AGA086c, AGA083c, DIF140c, AGA085c, TIL035c, TIL037c, DIF107c, DIF145c, AGA077c, DIF108c, DIF123c, DIF125c)
 
 
 #Replace numerical codes with text labels
