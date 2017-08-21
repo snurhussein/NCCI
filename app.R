@@ -82,6 +82,13 @@ server<-function(input, output) {
       write.xlsx(NCCIcomplete, file)
     }
   )
+output$AGA031 <- downloadHandler(
+    filename = function() {
+      paste("AGA031-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(AGA031, file)
+    } )
   output$AGA041 <- downloadHandler(
     filename = function() {
       paste("AGA041-", date, ".xlsx")
@@ -110,6 +117,13 @@ server<-function(input, output) {
     content = function(file) {
       write.xlsx(AGA051, file)
     } )
+  output$AGA052 <- downloadHandler(
+    filename = function() {
+      paste("AGA052-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(AGA052, file)
+    } )
   output$AGA055 <- downloadHandler(
     filename = function() {
       paste("AGA055-", date, ".xlsx")
@@ -129,7 +143,7 @@ server<-function(input, output) {
       paste("AGA060-", date, ".xlsx")
     },
     content = function(file) {
-      write.xlsx(AGA060, file )
+      write.xlsx(AGA060, file)
     } )
   output$AGA061 <- downloadHandler(
     filename = function() {
@@ -138,131 +152,12 @@ server<-function(input, output) {
     content = function(file) {
       write.xlsx(AGA061, file)
     } )
-  output$DIF010 <- downloadHandler(
-    filename = function() {
-      paste("DIF010-", date, ".xlsx")
-    },
-    content = function(file) {
-      write.xlsx(DIF010, file )
-    } )
-  output$DIF018 <- downloadHandler(
-    filename = function() {
-      paste("DIF018-", date, ".xlsx")
-    },
-    content = function(file) {
-      write.xlsx(DIF018, file)
-    } )
-  output$DIF044 <- downloadHandler(
-    filename = function() {
-      paste("DIF044-", date, ".xlsx")
-    },
-    content = function(file) {
-      write.xlsx(DIF044, file)
-    } )
-  output$DIF059 <- downloadHandler(
-    filename = function() {
-      paste("DIF059-", date, ".xlsx")
-    },
-    content = function(file) {
-      write.xlsx(DIF059, file)
-    } )
-  output$NIA029 <- downloadHandler(
-    filename = function() {
-      paste("NIA029-", date, ".xlsx")
-    },
-    content = function(file) {
-      write.xlsx(NIA029, file)
-    } )
-  output$TILL006 <- downloadHandler(
-    filename = function() {
-      paste("TILL006-", date, ".xlsx")
-    },
-    content = function(file) {
-      write.xlsx(TILL006, file)
-    } )
-  output$TILL007 <- downloadHandler(
-    filename = function() {
-      paste("TILL007-", date, ".xlsx")
-    },
-    content = function(file) {
-      write.xlsx(TILL007, file)
-    } )
-  output$TILL009 <- downloadHandler(
-    filename = function() {
-      paste("TILL009-", date, ".xlsx")
-    },
-    content = function(file) {
-      write.xlsx(TILL009, file)
-    } )
-  output$DIF040 <- downloadHandler(
-    filename = function() {
-      paste("DIF040-", date, ".xlsx")
-    },
-    content = function(file) {
-      write.xlsx(DIF040, file)
-    } )
-  output$DIF048 <- downloadHandler(
-    filename = function() {
-      paste("DIF048-", date, ".xlsx")
-    },
-    content = function(file) {
-      write.xlsx(DIF048, file)
-    } )
-  output$DIF045 <- downloadHandler(
-    filename = function() {
-      paste("DIF045-", date, ".xlsx")
-    },
-    content = function(file) {
-      write.xlsx(DIF045, file)
-    } )
   output$AGA062 <- downloadHandler(
     filename = function() {
       paste("AGA062-", date, ".xlsx")
     },
     content = function(file) {
       write.xlsx(AGA062, file)
-    } )
-  output$AGA031 <- downloadHandler(
-    filename = function() {
-      paste("AGA031-", date, ".xlsx")
-    },
-    content = function(file) {
-      write.xlsx(AGA031, file)
-    } )
-  output$DIF038 <- downloadHandler(
-    filename = function() {
-      paste("DIF038-", date, ".xlsx")
-    },
-    content = function(file) {
-      write.xlsx(DIF038, file)
-    } )
-  output$CFWNM2 <- downloadHandler(
-    filename = function() {
-      paste("CFWNamlewaMada2-", date, ".xlsx")
-    },
-    content = function(file) {
-      write.xlsx(CFWNM2, file)
-    } )
-  output$TIL016 <- downloadHandler(
-    filename = function() {
-      paste("TIL016-", date, ".xlsx")
-    },
-    content = function(file) {
-      write.xlsx(TIl016, file)
-    } )
-  output$AGA066 <- downloadHandler(
-    filename = function() {
-      paste("AGA066-", date, ".xlsx")
-    },
-    content = function(file) {
-      write.xlsx(AGA066, file)
-    } )
-  output$DIF050 <- downloadHandler(
-    filename = function() {
-      paste("DIF050-", date, ".xlsx")
-    },
-    content = function(file) {
-      write.xlsx(DIF050, file)
     } )
   output$AGA063 <- downloadHandler(
     filename = function() {
@@ -271,26 +166,68 @@ server<-function(input, output) {
     content = function(file) {
       write.xlsx(AGA063, file)
     } )
-  output$TIL018 <- downloadHandler(
+  output$AGA066 <- downloadHandler(
     filename = function() {
-      paste("TIL018-", date, ".xlsx")
+      paste("AGA066-", date, ".xlsx")
     },
     content = function(file) {
-      write.xlsx(TIL018, file)
+      write.xlsx(AGA066, file)
     } )
-  output$TIL010 <- downloadHandler(
+  output$AGA067 <- downloadHandler(
     filename = function() {
-      paste("TIL010-", date, ".xlsx")
+      paste("AGA067-", date, ".xlsx")
     },
     content = function(file) {
-      write.xlsx(TIL010, file)
+      write.xlsx(AGA067, file)
     } )
-  output$TIL004 <- downloadHandler(
+  output$AGA071 <- downloadHandler(
     filename = function() {
-      paste("TIL004-", date, ".xlsx")
+      paste("AGA071-", date, ".xlsx")
     },
     content = function(file) {
-      write.xlsx(TIL004, file)
+      write.xlsx(AGA071, file)
+    } )
+  output$AGA072 <- downloadHandler(
+    filename = function() {
+      paste("AGA072-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(AGA072, file)
+    } )
+  output$AGA074 <- downloadHandler(
+    filename = function() {
+      paste("AGA074-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(AGA074, file)
+    } )
+  output$AGA077 <- downloadHandler(
+    filename = function() {
+      paste("AGA077-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(AGA077, file)
+    } )
+  output$AGA083 <- downloadHandler(
+    filename = function() {
+      paste("AGA083-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(AGA083, file)
+    } )
+  output$AGA085 <- downloadHandler(
+    filename = function() {
+      paste("AGA085-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(AGA085, file)
+    } )
+  output$AGA086 <- downloadHandler(
+    filename = function() {
+      paste("AGA086-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(AGA086, file)
     } )
   output$AtelierLeader <- downloadHandler(
     filename = function() {
@@ -299,6 +236,69 @@ server<-function(input, output) {
     content = function(file) {
       write.xlsx(AtelierLeader, file)
     } )
+  output$CFWNM2 <- downloadHandler(
+    filename = function() {
+      paste("CFWNM2-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(CFWNM2, file)
+    } )
+  output$DIF010 <- downloadHandler(
+    filename = function() {
+      paste("DIF010-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(DIF010, file)
+    } )
+  output$DIF018 <- downloadHandler(
+    filename = function() {
+      paste("DIF018-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(DIF018, file)
+    } )
+  output$DIF038 <- downloadHandler(
+    filename = function() {
+      paste("DIF038-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(DIF038, file)
+    } )
+  output$DIF040 <- downloadHandler(
+    filename = function() {
+      paste("DIF040-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(DIF040, file)
+    } )
+  output$DIF044 <- downloadHandler(
+    filename = function() {
+      paste("DIF044-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(DIF044, file)
+    } )
+  output$DIF045 <- downloadHandler(
+    filename = function() {
+      paste("DIF045-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(DIF045, file)
+    } )
+  output$DIF048 <- downloadHandler(
+    filename = function() {
+      paste("DIF048-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(DIF048, file)
+    } )
+  output$DIF050 <- downloadHandler(
+    filename = function() {
+      paste("DIF050-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(DIF050, file)
+    } )
   output$DIF055 <- downloadHandler(
     filename = function() {
       paste("DIF055-", date, ".xlsx")
@@ -306,195 +306,216 @@ server<-function(input, output) {
     content = function(file) {
       write.xlsx(DIF055, file)
     } )
-  output$AGA052 <- downloadHandler(
-    filename = function() {
-      paste("AGA052-", date, ".xlsx")
-    },
-    content = function(file) {
-      write.xlsx(AGA052, file)
-    } ) 
- output$TILL023 <- downloadHandler(
-    filename = function() {
-      paste("TILL023-", date, ".xlsx")
-    },
-    content = function(file) {
-      write.xlsx(TILL023, file)
-    } )
- output$DIF094 <- downloadHandler(
+  output$DIF094 <- downloadHandler(
     filename = function() {
       paste("DIF094-", date, ".xlsx")
     },
     content = function(file) {
       write.xlsx(DIF094, file)
-    } )  
- output$TILL025 <- downloadHandler(
-    filename = function() {
-      paste("TILL025-", date, ".xlsx")
-    },
-    content = function(file) {
-      write.xlsx(TILL025, file)
-    } )  
- output$TILL026 <- downloadHandler(
-    filename = function() {
-      paste("TILL026-", date, ".xlsx")
-    },
-    content = function(file) {
-      write.xlsx(TILL026, file)
-    } )  
-  output$TIL014 <- downloadHandler(
-    filename = function() {
-      paste("TIL014-", date, ".xlsx")
-    },
-    content = function(file) {
-      write.xlsx(TIL014, file)
-    } ) 
-     output$DIF100 <- downloadHandler(
+    } )
+  output$DIF100 <- downloadHandler(
     filename = function() {
       paste("DIF100-", date, ".xlsx")
     },
     content = function(file) {
       write.xlsx(DIF100, file)
-    } ) 
-     output$AGA074 <- downloadHandler(
-    filename = function() {
-      paste("AGA074-", date, ".xlsx")
-    },
-    content = function(file) {
-      write.xlsx(AGA074, file)
-    } ) 
-     output$DIF105 <- downloadHandler(
+    } )
+  output$DIF105 <- downloadHandler(
     filename = function() {
       paste("DIF105-", date, ".xlsx")
     },
     content = function(file) {
       write.xlsx(DIF105, file)
-    } ) 
-     output$DIF130 <- downloadHandler(
-    filename = function() {
-      paste("DIF130-", date, ".xlsx")
-    },
-    content = function(file) {
-      write.xlsx(DIF130, file)
-    } ) 
-     output$TIL027 <- downloadHandler(
-    filename = function() {
-      paste("TIL027-", date, ".xlsx")
-    },
-    content = function(file) {
-      write.xlsx(TIL027, file)
-    } ) 
-     output$AGA067 <- downloadHandler(
-    filename = function() {
-      paste("AGA067-", date, ".xlsx")
-    },
-    content = function(file) {
-      write.xlsx(AGA067, file)
-    } ) 
-     output$DIF138 <- downloadHandler(
-    filename = function() {
-      paste("DIF138-", date, ".xlsx")
-    },
-    content = function(file) {
-      write.xlsx(DIF138, file)
-    } ) 
-     output$AGA072 <- downloadHandler(
-    filename = function() {
-      paste("AGA072-", date, ".xlsx")
-    },
-    content = function(file) {
-      write.xlsx(AGA072, file)
-    } ) 
-     output$TIL039 <- downloadHandler(
-    filename = function() {
-      paste("TIL039-", date, ".xlsx")
-    },
-    content = function(file) {
-      write.xlsx(TIL039, file)
-    } ) 
-    output$AGA086 <- downloadHandler(
-    filename = function() {
-      paste("AGA086-", date, ".xlsx")
-    },
-    content = function(file) {
-      write.xlsx(AGA086, file)
-    } ) 
-  output$AGA083 <- downloadHandler(
-    filename = function() {
-      paste("AGA083-", date, ".xlsx")
-    },
-    content = function(file) {
-      write.xlsx(AGA083, file)
-    } ) 
-  output$DIF140 <- downloadHandler(
-    filename = function() {
-      paste("DIF140-", date, ".xlsx")
-    },
-    content = function(file) {
-      write.xlsx(DIF140, file)
-    } ) 
-  output$AGA085 <- downloadHandler(
-    filename = function() {
-      paste("AGA085-", date, ".xlsx")
-    },
-    content = function(file) {
-      write.xlsx(AGA085, file)
-    } )    
-  output$TIL035 <- downloadHandler(
-    filename = function() {
-      paste("TIL035-", date, ".xlsx")
-    },
-    content = function(file) {
-      write.xlsx(TIL035, file)
-    } )   
-  output$TIL037 <- downloadHandler(
-    filename = function() {
-      paste("TIL037-", date, ".xlsx")
-    },
-    content = function(file) {
-      write.xlsx(TIL037, file)
-    } )   
+    } )
   output$DIF107 <- downloadHandler(
     filename = function() {
       paste("DIF107-", date, ".xlsx")
     },
     content = function(file) {
       write.xlsx(DIF107, file)
-    } )   
-  output$DIF145 <- downloadHandler(
-    filename = function() {
-      paste("DIF145-", date, ".xlsx")
-    },
-    content = function(file) {
-      write.xlsx(DIF145, file)
-    } )   
-  output$AGA077 <- downloadHandler(
-    filename = function() {
-      paste("AGA077-", date, ".xlsx")
-    },
-    content = function(file) {
-      write.xlsx(AGA077, file)
-    } )  
+    } )
   output$DIF108 <- downloadHandler(
     filename = function() {
       paste("DIF108-", date, ".xlsx")
     },
     content = function(file) {
       write.xlsx(DIF108, file)
-    } )  
-   output$DIF123 <- downloadHandler(
+    } )
+  output$DIF121 <- downloadHandler(
+    filename = function() {
+      paste("DIF121-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(DIF121, file)
+    } )
+  output$DIF123 <- downloadHandler(
     filename = function() {
       paste("DIF123-", date, ".xlsx")
     },
     content = function(file) {
       write.xlsx(DIF123, file)
-    } ) 
+    } )
   output$DIF125 <- downloadHandler(
     filename = function() {
       paste("DIF125-", date, ".xlsx")
     },
     content = function(file) {
       write.xlsx(DIF125, file)
-    } )     
+    } )
+  output$DIF130 <- downloadHandler(
+    filename = function() {
+      paste("DIF130-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(DIF130, file)
+    } )
+  output$DIF130 <- downloadHandler(
+    filename = function() {
+      paste("DIF130-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(DIF130, file)
+    } )
+  output$DIF138 <- downloadHandler(
+    filename = function() {
+      paste("DIF138-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(DIF138, file)
+    } )
+  output$DIF140 <- downloadHandler(
+    filename = function() {
+      paste("DIF140-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(DIF140, file)
+    } )
+  output$DIF142 <- downloadHandler(
+    filename = function() {
+      paste("DIF142-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(DIF142, file)
+    } )
+  output$DIF145 <- downloadHandler(
+    filename = function() {
+      paste("DIF145-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(DIF145, file)
+    } )
+  output$NIA029 <- downloadHandler(
+    filename = function() {
+      paste("NIA029-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(NIA029, file)
+    } )
+  output$TIL004 <- downloadHandler(
+    filename = function() {
+      paste("TIL004-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(TIL004, file)
+    } )
+  output$TIL006 <- downloadHandler(
+    filename = function() {
+      paste("TIL006-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(TIL006, file)
+    } )
+  output$TIL007 <- downloadHandler(
+    filename = function() {
+      paste("TIL007-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(TIL007, file)
+    } )
+  output$TIL009 <- downloadHandler(
+    filename = function() {
+      paste("TIL009-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(TIL009, file)
+    } )
+  output$TIL010 <- downloadHandler(
+    filename = function() {
+      paste("TIL010-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(TIL010, file)
+    } )
+  output$TIL014 <- downloadHandler(
+    filename = function() {
+      paste("TIL014-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(TIL014, file)
+    } )
+  output$TIL016 <- downloadHandler(
+    filename = function() {
+      paste("TIL016-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(TIL016, file)
+    } )
+  output$TIL018 <- downloadHandler(
+    filename = function() {
+      paste("TIL018-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(TIL018, file)
+    } )
+  output$TIL023 <- downloadHandler(
+    filename = function() {
+      paste("TIL023-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(TIL023, file)
+    } )
+  output$TIL025 <- downloadHandler(
+    filename = function() {
+      paste("TIL025-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(TIL025, file)
+    } )
+  output$TIL026 <- downloadHandler(
+    filename = function() {
+      paste("TIL026-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(TIL026, file)
+    } )
+  output$TIL027 <- downloadHandler(
+    filename = function() {
+      paste("TIL027-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(TIL027, file)
+    } )
+  output$TIL035 <- downloadHandler(
+    filename = function() {
+      paste("TIL035-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(TIL035, file)
+    } )
+  output$TIL037 <- downloadHandler(
+    filename = function() {
+      paste("TIL037-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(TIL037, file)
+    } )
+  output$TIL039 <- downloadHandler(
+    filename = function() {
+      paste("TIL039-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(TIL039, file)
+    } )  
        
     
   output$total <-  renderText({
@@ -563,65 +584,67 @@ ui<-pageWithSidebar(
                 
                 tabPanel("Table", DT::dataTableOutput("table")),
                 tabPanel("Full Surveys", 
-                         downloadLink("AGA041", "AGA041"),br(),
-                         downloadLink("AGA045", "AGA045"),br(),
-                         downloadLink("AGA046", "AGA046"),br(),
-                         downloadLink("AGA051", "AGA051"),br(),
-                         downloadLink("AGA055", "AGA055"),br(),
-                         downloadLink("AGA059", "AGA059"),br(),
-                         downloadLink("AGA060", "AGA060"),br(),
-                         downloadLink("AGA061", "AGA061"),br(),
-                         downloadLink("DIF010", "DIF010"),br(),
-                         downloadLink("DIF018", "DIF018"),br(),
-                         downloadLink("DIF044", "DIF044"),br(),
-                         downloadLink("DIF059", "DIF059"),br(),
-                         downloadLink("NIA029", "NIA029"),br(),
-                         downloadLink("TILL006", "TILL006"),br(),
-                         downloadLink("TILL007", "TILL007"),br(),
-                         downloadLink("TILL009", "TILL009"),br(),
-                         downloadLink("DIF040", "DIF040"),br(),
-                         downloadLink("DIF048", "DIF048"),br(),
-                        downloadLink("DIF045", "DIF045"),br(),
-                        downloadLink("AGA062", "AGA062"),br(),
-                        downloadLink("AGA031", "AGA031"),br(),
-                        downloadLink("DIF038", "DIF038"),br(),
-                        downloadLink("CFWNM2", "CFWNM2"),br(),
-                        downloadLink("TIL016", "TIL016"),br(),
-                        downloadLink("AGA066", "AGA066"),br(),
-                        downloadLink("DIF050", "DIF050"),br(),
-                        downloadLink("AGA063", "AGA063"),br(),
-                        downloadLink("TIL018", "TIL018"),br(),
-                        downloadLink("TIL010", "TIL010"),br(), 
-                        downloadLink("TIL004", "TIL004"),br(),
-                        downloadLink("AtelierLeader", "AtelierLeader"),br(),
-                        downloadLink("DIF055", "DIF055"),br(),
-                        downloadLink("AGA052", "AGA052"),br(), 
-                        downloadLink("TILL023", "TILL023"),br(),
-                        downloadLink("DIF094", "DIF094"),br(),
-                        downloadLink("TILL025", "TILL025"),br(),
-                        downloadLink("TILL026", "TILL026"),br(),
-                        downloadLink("TIL014", "TIL014"),br(),
-                        downloadLink("DIF100", "DIF100"),br(),
-                        downloadLink("AGA074", "AGA074"),br(),
-                        downloadLink("DIF105", "DIF105"),br(),
-                        downloadLink("DIF130", "DIF130"),br(),
-                        downloadLink("TIL027", "TIL027"),br(),
-                        downloadLink("AGA067", "AGA067"),br(),
-                        downloadLink("DIF138", "DIF138"),br(),
-                        downloadLink("AGA072", "AGA072"), br(),
-                        downloadLink("TIL039", "TIL039"),br(),
-                         downloadLink("AGA086", "AGA086"),br(),
-                         downloadLink("AGA083", "AGA083"),br(),
-                         downloadLink("DIF140", "DIF140"),br(),
+                       downloadLink("AGA031", "AGA031"), br(),
+                         downloadLink("AGA041", "AGA041"), br(),
+                         downloadLink("AGA045", "AGA045"), br(),
+                         
+                         downloadLink("AGA051", "AGA051"), br(),
+                         downloadLink("AGA052", "AGA052"), br(),
+                         downloadLink("AGA055", "AGA055"), br(),
+                         downloadLink("AGA059", "AGA059"), br(),
+                         downloadLink("AGA060", "AGA060"), br(),
+                         downloadLink("AGA061", "AGA061"), br(),
+                         downloadLink("AGA062", "AGA062"), br(),
+                         downloadLink("AGA063", "AGA063"), br(),
+                         downloadLink("AGA066", "AGA066"), br(),
+                         downloadLink("AGA067", "AGA067"), br(),
+                         downloadLink("AGA071", "AGA071"), br(),
+                         downloadLink("AGA072", "AGA072"), br(),
+                         downloadLink("AGA074", "AGA074"), br(),
+                         downloadLink("AGA077", "AGA077"), br(),
+                         downloadLink("AGA083", "AGA083"), br(),
                          downloadLink("AGA085", "AGA085"), br(),
-                          downloadLink("TIL035", "TIL035"),br(),
-                         downloadLink("TIL037", "TIL037"),br(),
-                         downloadLink("DIF107", "DIF107"),br(),
-                         downloadLink("DIF145", "DIF145"),br(),
-                         downloadLink("AGA077", "AGA077"),br(),
-                         downloadLink("DIF108", "DIF108"),br(),
-                         downloadLink("DIF123", "DIF123"),br(),
-                         downloadLink("DIF125", "DIF125")
+                         downloadLink("AGA086", "AGA086"), br(),
+                         downloadLink("AtelierLeader", "AtelierLeader"), br(),
+                         downloadLink("CFWNM2", "CFWNM2"), br(),
+                         downloadLink("DIF010", "DIF010"), br(),
+                         downloadLink("DIF018", "DIF018"), br(),
+                         downloadLink("DIF038", "DIF038"), br(),
+                         downloadLink("DIF040", "DIF040"), br(),
+                         downloadLink("DIF044", "DIF044"), br(),
+                         downloadLink("DIF045", "DIF045"), br(),
+                         downloadLink("DIF048", "DIF048"), br(),
+                         downloadLink("DIF050", "DIF050"), br(),
+                         downloadLink("DIF055", "DIF055"), br(),
+                         downloadLink("DIF094", "DIF094"), br(),
+                         downloadLink("DIF100", "DIF100"), br(),
+                         downloadLink("DIF105", "DIF105"), br(),
+                         downloadLink("DIF107", "DIF107"), br(),
+                         downloadLink("DIF108", "DIF108"), br(),
+                         downloadLink("DIF121", "DIF121"), br(),
+                         downloadLink("DIF123", "DIF123"), br(),
+                         downloadLink("DIF125", "DIF125"), br(),
+                         downloadLink("DIF130", "DIF130"), br(),
+                        
+                         downloadLink("DIF138", "DIF138"), br(),
+                         downloadLink("DIF140", "DIF140"), br(),
+                         
+                         downloadLink("DIF145", "DIF145"), br(),
+                         downloadLink("NIA029", "NIA029"), br(),
+                         downloadLink("TIL004", "TIL004"), br(),
+                         downloadLink("TIL006", "TIL006"), br(),
+                         downloadLink("TIL007", "TIL007"), br(),
+                         downloadLink("TIL009", "TIL009"), br(),
+                         downloadLink("TIL010", "TIL010"), br(),
+                         downloadLink("TIL014", "TIL014"), br(),
+                         downloadLink("TIL016", "TIL016"), br(),
+                         downloadLink("TIL018", "TIL018"), br(),
+                         downloadLink("TIL023", "TIL023"), br(),
+                         downloadLink("TIL025", "TIL025"), br(),
+                      
+                         downloadLink("TIL035", "TIL035"), br(),
+                         downloadLink("TIL037", "TIL037"), br(),
+                         downloadLink("TIL039", "TIL039")
                       
                         
                         )
