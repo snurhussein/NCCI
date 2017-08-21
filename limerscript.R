@@ -68,7 +68,7 @@ AGA071<-get_responses(iSurveyID= 431791, sLanguageCode = 'fr', sResponseType = '
 TIL005<-get_responses(iSurveyID= 117429, sLanguageCode = 'fr', sResponseType = 'short')
 AGA067<-get_responses(iSurveyID= 619978, sLanguageCode = 'fr', sResponseType = 'short')
 AGA086<-get_responses(iSurveyID= 124758, sLanguageCode = 'fr', sResponseType = 'short')
-AGA072<-get_responses(iSurveyID= 885914, sLanguageCode = 'fr', sResponseType = 'short')
+AGA072<-get_responses(iSurveyID= 647845, sLanguageCode = 'fr', sResponseType = 'short')
 TIL039<-get_responses(iSurveyID= 433362, sLanguageCode = 'fr', sResponseType = 'short')
 DIF138<-get_responses(iSurveyID= 949543, sLanguageCode = 'fr', sResponseType = 'short')
 AGA083<-get_responses(iSurveyID= 152849, sLanguageCode = 'fr', sResponseType = 'short')
@@ -138,9 +138,10 @@ AGA071c<-AGA071[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q27.1.","Q27.2.","Q27.3."
 #TIL005c
 
 
-#AGA072c
+
 
 #Version 2
+AGA072c<-AGA072[c("Q1","Q2","Q9","Q10","Q11","Q13","Q14","Q24"))]
 TIL039c<-TIL039[c("Q1","Q2","Q9","Q10","Q11","Q24")]
 AGA067c<-AGA067[c("startdate","Q1","Q2","Q9","Q10","Q11","Q30")]
 DIF138c<-DIF138[c("startdate","Q1","Q2","Q9","Q10","Q11","Q24")]
@@ -209,8 +210,8 @@ DIF130c$Survey<-'DIF130'
 #TIL027
 AGA067c$Survey<-'AGA067'
 AGA071c$Survey<-'AGA071'
-#DIF138c$Survey<-'DIF138'
-#AGA072c$Survey<-'AGA072'
+DIF138c$Survey<-'DIF138'
+AGA072c$Survey<-'AGA072'
 TIL039c$Survey<-'TIL039'
 AGA086c$Survey<-'AGA086'
 AGA083c$Survey<-'AGA083'
@@ -227,7 +228,7 @@ DIF108c$Survey<- 'DIF108'
 DIF125c$Survey<- 'DIF125'
 DIF121c$Survey<- 'DIF121'
 DIF130c$Survey<- 'DIF130'
-DIF138c$Survey<-'DIF138'
+
 
 #Move misaligned columns to desired, consistent location
 
