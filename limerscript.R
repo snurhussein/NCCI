@@ -208,6 +208,7 @@ DIF105c$Survey<-'DIF105'
 DIF130c$Survey<-'DIF130'
 #TIL027
 AGA067c$Survey<-'AGA067'
+AGA071c$Survey<-'AGA071'
 #DIF138c$Survey<-'DIF138'
 #AGA072c$Survey<-'AGA072'
 TIL039c$Survey<-'TIL039'
@@ -225,6 +226,8 @@ AGA077c$Survey<- 'AGA077'
 DIF108c$Survey<- 'DIF108'
 DIF125c$Survey<- 'DIF125'
 DIF121c$Survey<- 'DIF121'
+DIF130c$Survey<- 'DIF130'
+DIF138c$Survey<-'DIF138'
 
 #Move misaligned columns to desired, consistent location
 
@@ -493,7 +496,7 @@ TIL014c$Q27.2.<-NULL
 TIL014c$Q27.3.<-NULL
 TIL014c$Q27.4.<-NULL
 
-AGA067c$Q24<-AGA071c$Q30
+AGA067c$Q24<-AGA067c$Q30
 AGA067c$Q30<-NULL
                   
 AGA071c$Q41.1.<-AGA071c$Q27.1.
