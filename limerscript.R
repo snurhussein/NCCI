@@ -547,6 +547,12 @@ NCCImelt2 = melt(subset(NCCIbind, Q41.1.=="Y" | Q41.2.=="Y" | Q41.3.=="Y" | Q41.
 NCCImelt2$QForm <- paste(NCCImelt2$variable,NCCImelt2$value)
 NCCImelt2$Comment.Entendu <- factor(NCCImelt2$QForm, levels = c("Q41.1. Y","Q41.2. Y", "Q41.3. Y", "Q41.4. Y"), labels = c("Via les cartes d'information ", "Au travers d'annonces pendant l'activité ", "A la radio", "Par le bouche à oreille"))
 NCCImelt2$QForm<-NULL
+NCCImelt2$AllRespondents<-"All Respondents"
+NCCImelt2$Region <- factor(NCCImelt2$Q2, levels = c(1,2,3,4,"-oth-"), labels = c("Agadez","Diffa","Niamey","Tillabery","Other"))
+NCCImelt2$Age.Group<-cut(NCCImelt2$Q7,breaks=c(0,17,30,45,60,100), labels=c("Under 18","18-30","31-45","46-60","60+" ))
+NCCImelt2$Ethnicity <- factor(NCCImelt2$Q9, levels = c(1,2,3,4,5,6,7,8), labels = c("Haussa", "Touareg", "Peul", "Zarma/Songhai","Toubou","Kanouri","Arabe","Je préfère ne pas répondre"))
+NCCImelt2$Gender<-NCCImelt2$Q8
+NCCImelt2$Participation<-factor(NCCImelt2$Q10, labels = c("Je suis un jeune participant à la formation et un membre de l'équipe qui va bénéficier des unités de production d'eau","Je suis un organisateur (autorité, partenaire)","Je suis un membre de la communauté (spectateur de processus)", "Sans réponse" ))
 
 NCCIbind$Cartes.information<-NCCIbind$Q41.1.
 NCCIbind$Annonces.pendant<-NCCIbind$Q41.2.
@@ -561,7 +567,7 @@ NCCIbind$Q41.4.<-NULL
 NCCIcomplete <- rbind.fill(NCCIbind, NCCIbind2)
 NCCIcomplete$AllRespondents<-"All Respondents"
 NCCIcomplete$month<-format(as.Date(NCCIcomplete$startdate), "%Y-%m")
-
+NCCIcomplete <- merge(NCCIcomplete,NER_Obj3,by="Survey")
 
 save.image()
 
