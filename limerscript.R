@@ -555,11 +555,13 @@ NCCIbind$Q41.4.<-NULL
 NCCIcomplete <- rbind.fill(NCCIbind, NCCIbind2)
 NCCIcomplete$AllRespondents<-"All Respondents"
 NCCIcomplete$month<-format(as.Date(NCCIcomplete$startdate), "%Y-%m")
+
+#Merge program data
 NCCIcomplete <- merge(NCCIcomplete,NER_Obj3,by="Survey")
 
 #Create separate table for ‘multiple selection’ questions
 
-NCCImelt = melt(subset(NCCIcomplete, Cartes.information=="Y" | Annonces.pendant=="Y" | radio=="Y" | bouche.orielle=="Y"), id.vars=c("Language","Region","Age.Group","Ethnicity","Gender","Participation","Survey", "month"), measure.vars=c("Cartes.information","Annonces.pendant","radio","bouche.orielle"))
+NCCImelt = melt(subset(NCCIcomplete, Cartes.information=="Y" | Annonces.pendant=="Y" | radio=="Y" | bouche.orielle=="Y"), id.vars=c("Language","Region","Age.Group","Ethnicity","Gender","Participation","Survey", "month","Objective3"), measure.vars=c("Cartes.information","Annonces.pendant","radio","bouche.orielle"))
 NCCImelt$QForm <- paste(NCCImelt$variable,NCCImelt$value)
 NCCImelt$Comment.Entendu <- factor(NCCImelt$QForm, levels = c("Cartes.information Y","Annonces.pendant Y", "radio Y", "bouche.orielle Y"), labels = c("Via les cartes d'information ", "Au travers d'annonces pendant l'activité ", "A la radio", "Par le bouche à oreille"))
 NCCImelt$QForm<-NULL
