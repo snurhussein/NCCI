@@ -29,7 +29,7 @@ server<-function(input, output) {
     # check for the input variable
     if (input$variable == "Comment.Entendu") {
       # Q1
-      dataset <- data.frame(Comment.Entendu = NCCImelt2$Comment.Entendu, var = factor(NCCImelt2[[input$variable]]))
+      dataset <- data.frame(Comment.Entendu = NCCImelt2$Comment.Entendu, var = factor(NCCImelt2[[input$variable]]), dem=factor(NCCImelt2[[input$variable2]]))
     }
     else {
       # Other questions
