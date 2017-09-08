@@ -23,30 +23,8 @@ server<-function(input, output) {
     formulaText()
   })
   
-  # Generate a plot of the requested variable - ggplot version
-  output$Plot <- renderPlot({
-    
-    # check for the input variable
-    if (input$variable == "Comment.Entendu") {
-      # Q1
-      dataset <- data.frame(Comment.Entendu = NCCImelt2$Comment.Entendu, var = factor(NCCImelt2[[input$variable]]), dem=factor(NCCImelt2[[input$variable2]]))
-    }
-    else {
-      # Other questions
-      dataset <- data.frame(Language = NCCIcomplete$Language, var = factor(NCCIcomplete[[input$variable]]))
-    }
-    
-    p <- ggplot(subset(dataset, var!="NA"), aes(var)) +
-      geom_bar(aes(y = (..count..)/sum(..count..)), fill="slateblue")+
-      xlab("") + ylab("Percent")+scale_x_discrete(labels = function(x) str_wrap(x, width = 25)) +
-      scale_y_continuous(labels=percent) + stat_count(geom="text", colour="gray40", size=3.5, 
-      aes(label=paste0(round((100*..count../sum(..count..)),2),'%'), y=((..count..)/sum(..count..))+0.02))
-
-    
-    print(p)
-    
-  })
-     output$SubPlot <- renderPlot({
+  
+  output$SubPlot <- renderPlot({
     
     # check for the input variable
     
@@ -54,24 +32,24 @@ server<-function(input, output) {
     
     if (input$variable == "Comment.Entendu") {
       # Q1
-      dataset <- data.frame(Comment.Entendu = NCCImelt2$Comment.Entendu, var = factor(NCCImelt2[[input$variable]]))
+      dataset <- data.frame(Comment.Entendu = NCCImelt$Comment.Entendu, var = factor(NCCImelt[[input$variable]]), dem=factor(NCCImelt[[input$variable2]]))
     }
     else {
       # Other questions
       dataset <- data.frame(Language = NCCIcomplete$Language, var = factor(NCCIcomplete[[input$variable]]))
     }
-   
-     
+    
+    
     q <- ggplot(dataset, aes(x=dem, fill=var, y=..count..)) + geom_bar(position="dodge") +
-    xlab("") + ylab("Count")+scale_x_discrete(labels = function(x) str_wrap(x, width = 25)) + scale_fill_discrete(name=dataset$dem) + 
+      xlab("") + ylab("Count")+scale_x_discrete(labels = function(x) str_wrap(x, width = 25)) + scale_fill_discrete(name=dataset$dem) + 
       theme(legend.position = "bottom", legend.text = element_text(size = 7))
     
-     print(q)
+    print(q)
     
   })
   
-    
-    
+  
+  
   # Generate an HTML table view of the data; when updating, add links to new tables
   output$table <- DT::renderDataTable({
     DT::datatable(NCCIcomplete, options = list(orderClasses = TRUE, pageLength = 25))
@@ -82,7 +60,7 @@ server<-function(input, output) {
       write.xlsx(NCCIcomplete, file)
     }
   )
-output$AGA031 <- downloadHandler(
+  output$AGA031 <- downloadHandler(
     filename = function() {
       paste("AGA031-", date, ".xlsx")
     },
@@ -515,9 +493,8 @@ output$AGA031 <- downloadHandler(
     },
     content = function(file) {
       write.xlsx(TIL039, file)
-    } )  
-       
-    
+    } )
+  
   output$total <-  renderText({
     paste0(nrow(NCCIcomplete)) 
   })
@@ -545,9 +522,9 @@ ui<-pageWithSidebar(
                      "9. Selon vous, cette activité regroupé les communautés"="RegroupeParticipants",
                      "10. Êtes-vous resté en contact"="ResteEnContact",
                      "11. Comment êtes-vous resté en contact"="CommentContact"
-                
+                     
                 )), 
-     selectInput("variable2", "Compare:",
+    selectInput("variable2", "Compare:",
                 list("1. All Respondents" = "AllRespondents", 
                      "2. Language" = "Language", 
                      "3. Region" = "Region", 
@@ -555,7 +532,10 @@ ui<-pageWithSidebar(
                      "5. Ethnicity" = "Ethnicity",
                      "6. Age" = "Age.Group",
                      "7. Type of Participation"="Participation",
-                     "8. Selection Fairness"="Selection.Beneficiaries"
+                     "8. Selection Fairness"="Selection.Beneficiaries",
+                     "9. Survey Date"="month",
+                     "10. Activity Objective"="Objective3"
+                     
                      
                 )), 
     
@@ -575,16 +555,14 @@ ui<-pageWithSidebar(
                          , tags$br(),
                          paste0("Updated: ", date,"UTC") 
                          
-                         ),
+                ),
                 
-        
+      
               
-                
-                             
                 
                 tabPanel("Table", DT::dataTableOutput("table")),
                 tabPanel("Full Surveys", 
-                       downloadLink("AGA031", "AGA031"), br(),
+                         downloadLink("AGA031", "AGA031"), br(),
                          downloadLink("AGA041", "AGA041"), br(),
                          downloadLink("AGA045", "AGA045"), br(),
                          
@@ -645,12 +623,8 @@ ui<-pageWithSidebar(
                          downloadLink("TIL035", "TIL035"), br(),
                          downloadLink("TIL037", "TIL037"), br(),
                          downloadLink("TIL039", "TIL039")
-                      
-                        
-                        )
+                         )
     )
   ))
 
 shinyApp(ui = ui, server = server)
-
- 
