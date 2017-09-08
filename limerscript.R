@@ -170,10 +170,10 @@ DIF130c<-DIF130[c("startdate","Q1","Q2","Q7","Q8","Q9","Q10")]
 AGA084c<-AGA084[c("startdate","Q1","Q2","Q6","Q7","Q8","Q10","Q14","Q24")]
 TIL061c<-TIL061[c("startdate","Q1","Q2","Q9","Q10","Q11","Q24")]
 AGA101c<-AGA101[c("startdate","Q1","Q2","Q9","Q10","Q11","Q24")]
-TIL024c<-TIL024[c("startdate",,"Q1","Q2","Q6","Q7","Q8","Q10","Q14","Q24")]
+TIL024c<-TIL024[c("startdate","Q1","Q2","Q6","Q7","Q8","Q10","Q14","Q24")]
 #TIL038c
 TIL040c<-TIL040[c("startdate","Q1","Q2","Q9","Q10","Q11","Q24")]
-TIL015c<-TIL015[c("startdate",,"Q1","Q2","Q6","Q7","Q8","Q10","Q14","Q24")]
+TIL015c<-TIL015[c("startdate","Q1","Q2","Q6","Q7","Q8","Q10","Q14","Q24")]
 
 
 
