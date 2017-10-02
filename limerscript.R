@@ -92,7 +92,8 @@ TIL024<-get_responses(iSurveyID= 249834, sLanguageCode = 'fr', sResponseType = '
 TIL038<-get_responses(iSurveyID= 582266, sLanguageCode = 'fr', sResponseType = 'short')
 TIL040<-get_responses(iSurveyID= 996461, sLanguageCode = 'fr', sResponseType = 'short')
 TIL015<-get_responses(iSurveyID= 628154, sLanguageCode = 'fr', sResponseType = 'short')
-
+AGA105<-get_responses(iSurveyID= 824459, sLanguageCode = 'fr', sResponseType = 'short')
+DIF125<-get_responses(iSurveyID= 721576, sLanguageCode = 'fr', sResponseType = 'short')
 
 
 #Make copies with only the columns of interest, also excluding empty surveys
@@ -174,7 +175,8 @@ TIL024c<-TIL024[c("startdate","Q1","Q2","Q6","Q7","Q8","Q10","Q14","Q24")]
 #TIL038c
 TIL040c<-TIL040[c("startdate","Q1","Q2","Q9","Q10","Q11","Q24")]
 TIL015c<-TIL015[c("startdate","Q1","Q2","Q6","Q7","Q8","Q10","Q14","Q24")]
-
+AGA105c<-AGA105[c("startdate","Q1","Q2","Q9","Q10","Q11","Q12","Q13","Q14","Q24")]
+DIF125c<-DIF125[c("startdate","Q1","Q2","Q9","Q10","Q11","Q12","Q13","Q14","Q24")]
 
 
 #Add identification column
@@ -248,7 +250,8 @@ TIL024c$Survey<-'TIL024'
 #TIL038c
 TIL040c$Survey<-'TIL040'
 TIL015c$Survey<-'TIL015'
-
+AGA105c$Survey<-'AGA105'
+DIF125c$Survey<-'DIF125'
 
 
 #Move misaligned columns to desired, consistent location
@@ -569,7 +572,7 @@ DIF130c$Q7<-NULL
 DIF130c$Q8<-NULL
 DIF130c$R13<-NULL
 
-
+AGA105c$Q24<-AGA105$Q30
 
 #Combine tables
 
@@ -579,7 +582,7 @@ NCCIbind <- rbind.fill(AGA041c, AGA045c, AGA051c, AGA055c, AGA059c, AGA060c, AGA
                        TIL014c, DIF100c, AGA074c, DIF105c, AGA071c)
 
 NCCIbind2 <- rbind.fill(AGA067c, TIL039c, AGA086c, AGA083c, DIF140c, TIL035c, TIL037c, DIF107c, DIF145c, AGA077c, 
-                       DIF108c, DIF123c, DIF125c, DIF121c, DIF130c, AGA084c, TIL061c, AGA101c, TIL024c, TIL040c, TIL015c)
+                       DIF108c, DIF123c, DIF125c, DIF121c, DIF130c, AGA084c, TIL061c, AGA101c, TIL024c, TIL040c, TIL015c, AGA105c, DIF125c)
 
 
 
