@@ -207,6 +207,13 @@ server<-function(input, output) {
     content = function(file) {
       write.xlsx(AGA086, file)
     } )
+   output$AGA105 <- downloadHandler(
+    filename = function() {
+      paste("AGA105-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(AGA105, file)
+    } )
   output$AtelierLeader <- downloadHandler(
     filename = function() {
       paste("AtelierLeader-", date, ".xlsx")
