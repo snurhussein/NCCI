@@ -83,7 +83,6 @@ DIF123<-get_responses(iSurveyID= 123585, sLanguageCode = 'fr', sResponseType = '
 AGA077<-get_responses(iSurveyID= 235718, sLanguageCode = 'fr', sResponseType = 'short')
 DIF121<-get_responses(iSurveyID= 888795, sLanguageCode = 'fr', sResponseType = 'short')
 DIF108<-get_responses(iSurveyID= 499791, sLanguageCode = 'fr', sResponseType = 'short')
-DIF125<-get_responses(iSurveyID= 121226, sLanguageCode = 'fr', sResponseType = 'short')
 TIL044<-get_responses(iSurveyID= 243661, sLanguageCode = 'fr', sResponseType = 'short')
 AGA084<-get_responses(iSurveyID= 541136, sLanguageCode = 'fr', sResponseType = 'short')
 TIL061<-get_responses(iSurveyID= 914333, sLanguageCode = 'fr', sResponseType = 'short')
@@ -94,6 +93,15 @@ TIL040<-get_responses(iSurveyID= 996461, sLanguageCode = 'fr', sResponseType = '
 TIL015<-get_responses(iSurveyID= 628154, sLanguageCode = 'fr', sResponseType = 'short')
 AGA105<-get_responses(iSurveyID= 824459, sLanguageCode = 'fr', sResponseType = 'short')
 DIF125<-get_responses(iSurveyID= 721576, sLanguageCode = 'fr', sResponseType = 'short')
+TIL069<-get_responses(iSurveyID= 618393, sLanguageCode = 'fr', sResponseType = 'short')
+TIL071<-get_responses(iSurveyID= 794574, sLanguageCode = 'fr', sResponseType = 'short')
+TIL063<-get_responses(iSurveyID= 931223, sLanguageCode = 'fr', sResponseType = 'short')
+TIL067<-get_responses(iSurveyID= 143983, sLanguageCode = 'fr', sResponseType = 'short')
+AGA093<-get_responses(iSurveyID= 251686, sLanguageCode = 'fr', sResponseType = 'short')
+TIL076<-get_responses(iSurveyID= 679318, sLanguageCode = 'fr', sResponseType = 'short')
+DIF156<-get_responses(iSurveyID= 374652, sLanguageCode = 'fr', sResponseType = 'short')
+AGA091<-get_responses(iSurveyID= 435942, sLanguageCode = 'fr', sResponseType = 'short')
+
 
 
 #Make copies with only the columns of interest, also excluding empty surveys
@@ -142,7 +150,6 @@ DIF105c<-DIF105[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10")]
 DIF130c<-DIF130[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10")]
 #TIL027
 AGA071c<-AGA071[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q27.1.","Q27.2.","Q27.3.","Q27.4.")]
-#TIL005c
 
 
 
@@ -177,7 +184,14 @@ TIL040c<-TIL040[c("startdate","Q1","Q2","Q9","Q10","Q11","Q24")]
 TIL015c<-TIL015[c("startdate","Q1","Q2","Q6","Q7","Q8","Q10","Q14","Q24")]
 AGA105c<-AGA105[c("startdate","Q1","Q2","Q9","Q10","Q11","Q12","Q13","Q14","Q24")]
 DIF125c<-DIF125[c("startdate","Q1","Q2","Q9","Q10","Q11","Q12","Q13","Q14","Q24")]
-
+TIL069c<-TIL069[c("startdate","Q1","Q2","Q6","Q7","Q8","Q10","Q14","Q24", "R20")]
+TIL071c<-TIL071[c("startdate","Q1","Q2","Q6","Q7","Q8","Q10","Q14.1.", "Q14.2.", "Q14.3.","Q24", "R20")]
+TIL063c<-TIL063[c("startdate","Q1","Q2","Q6","Q7","Q8","Q10","Q14.1.", "Q14.2.", "Q14.3.","Q24", "R20")]
+TIL067c<-TIL067[c("startdate","Q1","Q2","Q6","Q7","Q8","Q10","Q14.1.", "Q14.2.", "Q14.3.","Q24", "R20")]
+#AGA093c
+#TIL076c
+#DIF156c
+#AGA091c
 
 #Add identification column
 
@@ -252,7 +266,10 @@ TIL040c$Survey<-'TIL040'
 TIL015c$Survey<-'TIL015'
 AGA105c$Survey<-'AGA105'
 DIF125c$Survey<-'DIF125'
-
+TIL069c$Survey<-'TIL069'
+TIL063c$Survey<-'TIL063'
+TIL071c$Survey<-'TIL071'
+TIL067c$Survey<-'TIL067'
 
 #Move misaligned columns to desired, consistent location
 
@@ -574,15 +591,61 @@ DIF130c$R13<-NULL
 
 AGA105c$Q24<-AGA105$Q30
 
+TIL069c$Q10<-TIL069$Q7
+TIL069c$Q9<-TIL069$Q6
+TIL069c$Q11<-TIL069$Q8
+TIL069c$Q12<-TIL069$R9
+TIL069c$Q13<-TIL069$Q10
+TIL069c$Q6<-NULL
+TIL069c$Q7<-NULL
+TIL069c$Q8<-NULL
+TIL069c$R9<-NULL
+TIL069c$Q10<-NULL
+
+TIL071c$Q10<-TIL071$Q7
+TIL071c$Q9<-TIL071$Q6
+TIL071c$Q11<-TIL071$Q8
+TIL071c$Q12<-TIL071$R9
+TIL071c$Q13<-TIL071$Q10
+TIL071c$Q6<-NULL
+TIL071c$Q7<-NULL
+TIL071c$Q8<-NULL
+TIL071c$R9<-NULL
+TIL071c$Q10<-NULL
+
+TIL063c$Q10<-TIL063$Q7
+TIL063c$Q9<-TIL063$Q6
+TIL063c$Q11<-TIL063$Q8
+TIL063c$Q12<-TIL063$R9
+TIL063c$Q13<-TIL063$Q10
+TIL063c$Q6<-NULL
+TIL063c$Q7<-NULL
+TIL063c$Q8<-NULL
+TIL063c$R9<-NULL
+TIL063c$Q10<-NULL
+
+TIL067c$Q10<-TIL067$Q7
+TIL067c$Q9<-TIL067$Q6
+TIL067c$Q11<-TIL067$Q8
+TIL067c$Q12<-TIL067$R9
+TIL067c$Q13<-TIL067$Q10
+TIL067c$Q6<-NULL
+TIL067c$Q7<-NULL
+TIL067c$Q8<-NULL
+TIL067c$R9<-NULL
+TIL067c$Q10<-NULL
+
+
 #Combine tables
 
-NCCIbind <- rbind.fill(AGA041c, AGA045c, AGA051c, AGA055c, AGA059c, AGA060c, AGA061c, DIF010c, DIF018c, DIF044c,NIA029c, TIL006c, 
+NCCIbind <- rbind.fill(AGA041c, AGA055c, AGA059c, AGA060c, AGA061c, DIF010c, DIF018c, DIF044c,NIA029c, TIL006c, 
                        TIL007c, TIL009c, DIF040c, DIF048c, DIF045c, AGA062c, DIF038c, AGA031c, CFWNM2c, TIL016c, AGA066c, DIF050c,
                        AGA063c, TIL018c, TIL010c, TIL004c, AtelierLeaderc, DIF055c, AGA052c, TIL023c, DIF094c, TIL025c, TIL026c, 
                        TIL014c, DIF100c, AGA074c, DIF105c, AGA071c)
 
 NCCIbind2 <- rbind.fill(AGA067c, TIL039c, AGA086c, AGA083c, DIF140c, TIL035c, TIL037c, DIF107c, DIF145c, AGA077c, 
-                       DIF108c, DIF123c, DIF125c, DIF121c, DIF130c, AGA084c, TIL061c, AGA101c, TIL024c, TIL040c, TIL015c, AGA105c, DIF125c)
+                       DIF108c, DIF123c, DIF125c, DIF121c, DIF130c, AGA084c, TIL061c, AGA101c, TIL024c, TIL040c, TIL015c, AGA105c, DIF125c,
+                       TIL063c, TIL067c, TIL069c, TIL071c)
 
 
 
