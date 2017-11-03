@@ -502,6 +502,57 @@ server<-function(input, output) {
       write.xlsx(TIL039, file)
     } )
   
+  output$TIL040 <- downloadHandler(
+    filename = function() {
+      paste("TIL040-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(TIL040, file)
+    } )
+  output$TIL044 <- downloadHandler(
+    filename = function() {
+      paste("TIL044-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(TIL044, file)
+    } )
+  output$TIL061 <- downloadHandler(
+    filename = function() {
+      paste("TIL061-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(TIL061, file)
+    } )
+  output$TIL063 <- downloadHandler(
+    filename = function() {
+      paste("TIL063-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(TIL063, file)
+    } )
+  output$TIL067 <- downloadHandler(
+    filename = function() {
+      paste("TIL067-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(TIL067, file)
+    } )
+  output$TIL069 <- downloadHandler(
+    filename = function() {
+      paste("TIL069-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(TIL069, file)
+    } )
+  output$TIL071 <- downloadHandler(
+    filename = function() {
+      paste("TIL071-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(TIL071, file)
+    } )
+  
+  
   output$total <-  renderText({
     paste0(nrow(NCCIcomplete)) 
   })
@@ -629,7 +680,15 @@ ui<-pageWithSidebar(
                       
                          downloadLink("TIL035", "TIL035"), br(),
                          downloadLink("TIL037", "TIL037"), br(),
-                         downloadLink("TIL039", "TIL039")
+                         downloadLink("TIL039", "TIL039"), br(),
+                         downloadLink("TIL040", "TIL040"), br(),
+                         downloadLink("TIL044", "TIL044"), br(),
+                         downloadLink("TIL061", "TIL061"), br(),
+                         downloadLink("TIL063", "TIL063"), br(),
+                         downloadLink("TIL067", "TIL067"), br(),
+                         downloadLink("TIL069", "TIL069"), br(),
+                         downloadLink("TIL071", "TIL071")
+                         
                          )
     )
   ))
