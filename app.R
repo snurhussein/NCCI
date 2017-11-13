@@ -32,7 +32,7 @@ server<-function(input, output) {
     
     if (input$variable == "Comment.Entendu") {
       # Q1
-      dataset <- data.frame(Comment.Entendu = NCCImelt$Comment.Entendu, var = factor(NCCImelt[[input$variable]]), dem=factor(NCCImelt[[input$variable2]]))
+      dataset <- data.frame(Comment.Entendu = NCCImelt$Comment.Entendu , var = factor(NCCImelt[[input$variable]]), dem=factor(NCCImelt[[input$variable2]]))
     }
     else {
       # Other questions
@@ -40,9 +40,11 @@ server<-function(input, output) {
     }
     
     
-    q <- ggplot(dataset, aes(x=dem, fill=var, y=..count..)) + geom_bar(position="dodge") +
-      xlab("") + ylab("Count")+scale_x_discrete(labels = function(x) str_wrap(x, width = 25)) + scale_fill_discrete(name=dataset$dem) + 
-      theme(legend.position = "bottom", legend.text = element_text(size = 7))
+    q <- ggplot(dataset, aes(x=dem, fill=var, y=..count../sum(..count..))) + geom_bar(position="dodge") +  
+      xlab("") + ylab("Responses")+scale_x_discrete(labels = function(x) str_wrap(x, width = 25)) + scale_fill_discrete(name=dataset$dem) + 
+      theme(legend.position = "bottom", legend.text = element_text(size = 7)) + scale_y_continuous(labels=percent)+
+      geom_text(stat='count', aes(label=scales::percent(round(..count../sum(..count..),3))), position=position_dodge(width=0.9), vjust=-0.2, size=3)
+
     
     print(q)
     
@@ -389,6 +391,14 @@ server<-function(input, output) {
     content = function(file) {
       write.xlsx(DIF145, file)
     } )
+  output$DIF156 <- downloadHandler(
+    filename = function() {
+      paste("DIF156-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(DIF156, file)
+    } )
+  
   output$NIA029 <- downloadHandler(
     filename = function() {
       paste("NIA029-", date, ".xlsx")
@@ -493,6 +503,13 @@ server<-function(input, output) {
     },
     content = function(file) {
       write.xlsx(TIL037, file)
+    } )
+  output$TIL038 <- downloadHandler(
+    filename = function() {
+      paste("TIL038-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(TIL038, file)
     } )
   output$TIL039 <- downloadHandler(
     filename = function() {
@@ -666,6 +683,7 @@ ui<-pageWithSidebar(
                          downloadLink("DIF140", "DIF140"), br(),
                          
                          downloadLink("DIF145", "DIF145"), br(),
+                         downloadLink("DIF156", "DIF156"), br(),
                          downloadLink("NIA029", "NIA029"), br(),
                          downloadLink("TIL004", "TIL004"), br(),
                          downloadLink("TIL006", "TIL006"), br(),
@@ -680,6 +698,7 @@ ui<-pageWithSidebar(
                       
                          downloadLink("TIL035", "TIL035"), br(),
                          downloadLink("TIL037", "TIL037"), br(),
+                         downloadLink("TIL038", "TIL038"), br(), 
                          downloadLink("TIL039", "TIL039"), br(),
                          downloadLink("TIL040", "TIL040"), br(),
                          downloadLink("TIL044", "TIL044"), br(),
