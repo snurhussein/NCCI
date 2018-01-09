@@ -102,7 +102,18 @@ TIL076<-get_responses(iSurveyID= 679318, sLanguageCode = 'fr', sResponseType = '
 DIF156<-get_responses(iSurveyID= 374652, sLanguageCode = 'fr', sResponseType = 'short')
 AGA091<-get_responses(iSurveyID= 435942, sLanguageCode = 'fr', sResponseType = 'short')
 DIF144<-get_responses(iSurveyID= 894884, sLanguageCode = 'fr', sResponseType = 'short')
-
+TIL066 <-get_responses(iSurveyID= 997668, sLanguageCode = 'fr', sResponseType = 'short')
+TIL080 <-get_responses(iSurveyID= 543338, sLanguageCode = 'fr', sResponseType = 'short')
+DIF148 <-get_responses(iSurveyID= 555781, sLanguageCode = 'fr', sResponseType = 'short')
+TIL055 <-get_responses(iSurveyID= 342372, sLanguageCode = 'fr', sResponseType = 'short')
+DIF151 <-get_responses(iSurveyID= 662329, sLanguageCode = 'fr', sResponseType = 'short')
+TIL062 <-get_responses(iSurveyID= 139993, sLanguageCode = 'fr', sResponseType = 'short')
+TIL059 <-get_responses(iSurveyID= 453721, sLanguageCode = 'fr', sResponseType = 'short')
+DIF147 <-get_responses(iSurveyID= 641392, sLanguageCode = 'fr', sResponseType = 'short')
+AGA110 <-get_responses(iSurveyID= 759435, sLanguageCode = 'fr', sResponseType = 'short')
+DIF120 <-get_responses(iSurveyID= 724941, sLanguageCode = 'fr', sResponseType = 'short')
+AGA096 <-get_responses(iSurveyID= 967386, sLanguageCode = 'fr', sResponseType = 'short')
+AGA095 <-get_responses(iSurveyID= 753553, sLanguageCode = 'fr', sResponseType = 'short')
 
 #Make copies with only the columns of interest, also excluding empty surveys
 
@@ -189,10 +200,23 @@ TIL071c<-TIL071[c("startdate","Q1","Q2","Q6","Q7","Q8","Q10","Q14.1.", "Q14.2.",
 TIL063c<-TIL063[c("startdate","Q1","Q2","Q6","Q7","Q8","Q10","Q14.1.", "Q14.2.", "Q14.3.","Q24", "R20")]
 TIL067c<-TIL067[c("startdate","Q1","Q2","Q6","Q7","Q8","Q10","Q14.1.", "Q14.2.", "Q14.3.","Q24", "R20")]
 #AGA093c
-#TIL076c
+TIL076c<-TIL076[c("startdate","Q1","Q2","Q9","Q10","Q11","Q30")]
 DIF156c<-DIF156[c("startdate","Q1","Q2","Q9","Q10","Q11","Q30")]
-#AGA091c
-#DIF144
+AGA091c<-AGA091[c("startdate","Q1","Q2","Q9","Q10","Q11","Q30")]
+DIF144c<-DIF144[c("startdate","Q1","Q2","Q9","Q10","Q11","Q30")]
+TIL066c<-TIL066[c("startdate","Q1","Q2","Q9","Q10","Q11","Q30")]
+TIL080c <-TIL080[c("startdate","Q1","Q2","Q9","Q10","Q11","Q30")]
+DIF148c <- DIF148[c("startdate","Q1","Q2","Q6","Q7","Q8","Q10","Q14.1.", "Q14.2.", "Q14.3.","Q24", "R20")]
+TIL055c <-TIL055[c("startdate","Q1","Q2","Q9","Q10","Q11","Q30")]
+DIF151c <- DIF151[c("startdate","Q1","Q2","Q9","Q10","Q11","Q28")]
+TIL062c <-TIL062[c("startdate","Q1","Q2","Q7","Q8","Q9","Q10")]
+TIL059c <- TIL059[c("startdate","Q1","Q2","Q9","Q10","Q11","Q30")]
+DIF147c <- DIF147[c("startdate","Q1","Q2","Q6","Q7","Q8","Q10","Q14", "Q24")]
+AGA110c <-AGA110[c("startdate","Q1","Q2","Q6","Q7","Q8","Q10","Q14.1.", "Q14.2.", "Q14.3.","Q24")]
+#DIF120 
+AGA096c <- AGA096[c("startdate","Q1","Q2","Q6","Q7","Q8","Q10","Q14", "Q24")]
+AGA095c <- AGA095[c("startdate","Q1","Q2","Q9","Q10","Q11","Q12","Q13","Q14","Q24")]
+  
 
 #Add identification column
 
