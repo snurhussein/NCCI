@@ -5,6 +5,7 @@
 library(limer)
 library(plyr)
 library(reshape2)
+library(tidyr)
 
 #connect to limer, change api link, username and password where necessary
 
@@ -114,6 +115,9 @@ AGA110 <-get_responses(iSurveyID= 759435, sLanguageCode = 'fr', sResponseType = 
 DIF120 <-get_responses(iSurveyID= 724941, sLanguageCode = 'fr', sResponseType = 'short')
 AGA096 <-get_responses(iSurveyID= 967386, sLanguageCode = 'fr', sResponseType = 'short')
 AGA095 <-get_responses(iSurveyID= 753553, sLanguageCode = 'fr', sResponseType = 'short')
+AGA111 <-get_responses(iSurveyID= 289277, sLanguageCode = 'fr', sResponseType = 'short')
+AGA107 <-get_responses(iSurveyID= 373643, sLanguageCode = 'fr', sResponseType = 'short')
+
 
 #Make copies with only the columns of interest, also excluding empty surveys
 
@@ -206,7 +210,7 @@ AGA091c<-AGA091[c("startdate","Q1","Q2","Q9","Q10","Q11","Q30")]
 DIF144c<-DIF144[c("startdate","Q1","Q2","Q9","Q10","Q11","Q30")]
 TIL066c<-TIL066[c("startdate","Q1","Q2","Q9","Q10","Q11","Q30")]
 TIL080c <-TIL080[c("startdate","Q1","Q2","Q9","Q10","Q11","Q30")]
-DIF148c <- DIF148[c("startdate","Q1","Q2","Q6","Q7","Q8","Q10","Q14.1.", "Q14.2.", "Q14.3.","Q24", "R20")]
+DIF148c <-DIF148[c("startdate","Q1","Q2","Q6","Q7","Q8","Q14","Q24", "R20")]
 TIL055c <-TIL055[c("startdate","Q1","Q2","Q9","Q10","Q11","Q30")]
 DIF151c <- DIF151[c("startdate","Q1","Q2","Q9","Q10","Q11","Q28")]
 TIL062c <-TIL062[c("startdate","Q1","Q2","Q7","Q8","Q9","Q10")]
@@ -216,7 +220,8 @@ AGA110c <-AGA110[c("startdate","Q1","Q2","Q6","Q7","Q8","Q10","Q14.1.", "Q14.2."
 #DIF120 
 AGA096c <- AGA096[c("startdate","Q1","Q2","Q6","Q7","Q8","Q10","Q14", "Q24")]
 AGA095c <- AGA095[c("startdate","Q1","Q2","Q9","Q10","Q11","Q12","Q13","Q14","Q24")]
-  
+#AGA111
+AGA107c<- AGA107[c("startdate","Q1","Q2","Q6","Q7","Q8","Q10","Q14", "Q24")]
 
 #Add identification column
 
@@ -297,6 +302,21 @@ TIL063c$Survey<-'TIL063'
 TIL071c$Survey<-'TIL071'
 TIL067c$Survey<-'TIL067'
 DIF156c$Survey<-'DIF156'
+TIL076c$Survey <- 'TIL076'
+AGA091c$Survey <- 'AGA091'
+DIF144c$Survey <- 'DIF144'
+TIL066c$Survey <- 'TIL066'
+TIL080c$Survey <- 'TIL080'
+DIF148c$Survey <- 'DIF148'
+TIL055c$Survey <- 'TIL055'
+DIF151c$Survey <- 'DIF151'
+TIL062c$Survey <- 'TIL062'
+TIL059c$Survey <- 'TIL059'
+DIF147c$Survey <- 'DIF147'
+AGA110c$Survey <- 'AGA110'
+AGA096c$Survey <- 'AGA096'
+AGA095c$Survey <- 'AGA095'
+AGA107c$Survey <- 'AGA107'
 
 #Move misaligned columns to desired, consistent location
 
@@ -662,8 +682,77 @@ TIL067c$Q8<-NULL
 TIL067c$R9<-NULL
 TIL067c$Q10<-NULL
 
-DIF156c$Q24<DIF156$Q30
+TIL076c$Q24<-TIL076$Q30
+TIL076c$Q30<-NULL
+
+DIF156c$Q24<-DIF156$Q30
 DIF156c$Q30<-NULL
+
+AGA091c$Q24<-AGA091$Q30
+AGA091c$Q30<-NULL
+
+DIF144c$Q24<-DIF144$Q30
+DIF144c$Q30<-NULL
+
+TIL066c$Q24<-TIL066$Q30
+TIL066c$Q30<-NULL
+
+TIL080c$Q24<-TIL080$Q30
+TIL080c$Q30<-NULL
+
+DIF148c$Q10<-DIF148$Q7
+DIF148c$Q9<-DIF148$Q6
+DIF148c$Q11<-DIF148$Q8
+DIF148c$Q13<-DIF148$Q10
+DIF148$Q7<-NULL
+DIF148$Q6<-NULL
+DIF148$Q8<-NULL
+DIF148$Q10<-NULL
+
+TIL055c$Q24<-TIL055$Q30
+TIL055c$Q30<-NULL
+
+DIF151c$Q24<-DIF151$Q28
+DIF151c$Q28<-NULL
+
+TIL059c$Q24<-TIL059$Q30
+TIL059c$Q30<-NULL
+
+DIF147c$Q9<-DIF147$Q6
+DIF147c$Q6<-NULL
+DIF147c$Q10<-DIF147$Q7
+DIF147c$Q7<-NULL
+DIF147c$Q11<-DIF147$Q8
+DIF147c$Q8<-NULL
+DIF147c$Q13<-DIF147$Q10
+DIF147c$Q10<-NULL
+
+AGA110c$Q9<-AGA110$Q6
+AGA110c$Q6<-NULL
+AGA110c$Q10<-AGA110$Q7
+AGA110c$Q7<-NULL
+AGA110c$Q11<-AGA110$Q8
+AGA110c$Q8<-NULL
+AGA110c$Q13<-AGA110$Q10
+AGA110c$Q10<-NULL
+
+AGA096c$Q9<-AGA096$Q6
+AGA096c$Q6<-NULL
+AGA096c$Q10<-AGA096$Q7
+AGA096c$Q7<-NULL
+AGA096c$Q11<-AGA096$Q8
+AGA096c$Q8<-NULL
+AGA096c$Q13<-AGA096$Q10
+AGA096c$Q10<-NULL
+
+AGA107c$Q9<-AGA107$Q6
+AGA107c$Q6<-NULL
+AGA107c$Q10<-AGA107$Q7
+AGA107c$Q7<-NULL
+AGA107c$Q11<-AGA107$Q8
+AGA107c$Q8<-NULL
+AGA107c$Q13<-AGA107$Q10
+AGA107c$Q10<-NULL
 
 
 #Combine tables
@@ -671,13 +760,24 @@ DIF156c$Q30<-NULL
 NCCIbind <- rbind.fill(AGA041c, AGA055c, AGA059c, AGA060c, AGA061c, DIF010c, DIF018c, DIF044c,NIA029c, TIL006c, 
                        TIL007c, TIL009c, DIF040c, DIF048c, DIF045c, AGA062c, DIF038c, AGA031c, CFWNM2c, TIL016c, AGA066c, DIF050c,
                        AGA063c, TIL018c, TIL010c, TIL004c, AtelierLeaderc, DIF055c, AGA052c, TIL023c, DIF094c, TIL025c, TIL026c, 
-                       TIL014c, DIF100c, AGA074c, DIF105c, AGA071c)
+                       TIL014c, DIF100c, AGA074c, DIF105c, AGA071c, TIL062c)
 
 NCCIbind2 <- rbind.fill(AGA067c, TIL039c, AGA086c, AGA083c, DIF140c, TIL035c, TIL037c, DIF107c, DIF145c, AGA077c, 
                        DIF108c, DIF123c, DIF125c, DIF121c, DIF130c, AGA084c, TIL061c, AGA101c, TIL024c, TIL040c, TIL015c, AGA105c, DIF125c,
-                       TIL063c, TIL067c, TIL069c, TIL071c, DIF156c, TIL038c, TIL044c)
+                       TIL063c, TIL067c, TIL069c, TIL071c, DIF156c, TIL038c,TIL044c,TIL076c, AGA091c, DIF144c, TIL066c, TIL080c, DIF148c, TIL055c, DIF151c, 
+                       TIL059c, DIF147c, AGA110c,AGA096c, AGA095c, AGA107c )
 
 
+NCCIbind2$Q14.1.[NCCIbind2$Q14.1. == 'Y'] <- 'F'
+NCCIbind2$Q14.2.[NCCIbind2$Q14.2. == 'Y'] <- 'T'
+NCCIbind2$Q14.3.[NCCIbind2$Q14.3. == 'Y'] <- 'S'
+NCCIbind2$Q14[NCCIbind2$Q14 == 3] <- 'S'
+NCCIbind2$Q14[NCCIbind2$Q14 == 2] <- 'T'
+NCCIbind2$Q14[NCCIbind2$Q14 == 1] <- 'F'
+
+NCCIbind2<-NCCIbind2 %>% 
+  replace_na(list(Q14.1. = "", Q14.2. = "", Q14.3. = "", Q14 = "")) %>% 
+  unite(Q14u, Q14.1., Q14.2., Q14.3.,Q14, remove = FALSE, sep = "")
 
 #Replace numerical codes with text labels
 
@@ -698,7 +798,7 @@ NCCIbind2$Gender<-NCCIbind2$Q9
 NCCIbind2$Participation<-factor(NCCIbind2$Q11, labels = c("Je suis un jeune participant à la formation et un membre de l'équipe qui va bénéficier des unités de production d'eau","Je suis un organisateur (autorité, partenaire)","Je suis un membre de la communauté (spectateur de processus)"))
 NCCIbind2$RegroupeParticipants<-NCCIbind2$Q12
 NCCIbind2$ResteEnContact<-factor(NCCIbind2$Q13, labels = c("Non", "Rarement", "Frequement"))
-NCCIbind2$CommentContact<-factor(NCCIbind2$Q14, labels = c("Face-à-face", "Téléphone", "Social"))
+NCCIbind2$CommentContact<-factor(NCCIbind2$Q14u, levels = c("F","FT","FTS","S","T","TS"), labels = c("Face-à-face", "Face-à-face & Téléphone", "Face-à-face, Téléphone & Social", "Social", "Téléphone", "Téléphone & Social"))
 
 
 
