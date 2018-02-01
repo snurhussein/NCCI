@@ -117,6 +117,17 @@ AGA096 <-get_responses(iSurveyID= 967386, sLanguageCode = 'fr', sResponseType = 
 AGA095 <-get_responses(iSurveyID= 753553, sLanguageCode = 'fr', sResponseType = 'short')
 AGA111 <-get_responses(iSurveyID= 289277, sLanguageCode = 'fr', sResponseType = 'short')
 AGA107 <-get_responses(iSurveyID= 373643, sLanguageCode = 'fr', sResponseType = 'short')
+TIL057 <-get_responses(iSurveyID= 866967, sLanguageCode = 'fr', sResponseType = 'short')
+TIL072 <-get_responses(iSurveyID= 895217, sLanguageCode = 'fr', sResponseType = 'short')
+DIF171 <-get_responses(iSurveyID= 647732, sLanguageCode = 'fr', sResponseType = 'short')
+DIF180 <-get_responses(iSurveyID= 967793, sLanguageCode = 'fr', sResponseType = 'short')
+DIF160 <-get_responses(iSurveyID= 156885, sLanguageCode = 'fr', sResponseType = 'short')
+TIL161 <-get_responses(iSurveyID= 882453, sLanguageCode = 'fr', sResponseType = 'short')
+TIL089 <-get_responses(iSurveyID= 636465, sLanguageCode = 'fr', sResponseType = 'short')
+TIL065 <-get_responses(iSurveyID= 814664, sLanguageCode = 'fr', sResponseType = 'short')
+TIL047 <-get_responses(iSurveyID= 587547, sLanguageCode = 'fr', sResponseType = 'short')
+TIL079 <-get_responses(iSurveyID= 854217, sLanguageCode = 'fr', sResponseType = 'short')
+TIL049 <-get_responses(iSurveyID= 738651, sLanguageCode = 'fr', sResponseType = 'short')
 
 
 #Make copies with only the columns of interest, also excluding empty surveys
@@ -222,6 +233,15 @@ AGA096c <- AGA096[c("startdate","Q1","Q2","Q6","Q7","Q8","Q10","Q14", "Q24")]
 AGA095c <- AGA095[c("startdate","Q1","Q2","Q9","Q10","Q11","Q12","Q13","Q14","Q24")]
 #AGA111
 AGA107c<- AGA107[c("startdate","Q1","Q2","Q6","Q7","Q8","Q10","Q14", "Q24")]
+TIL057c<-TIL057[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q13","Q14","Q30")]
+TIL072c<-TIL072[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q30")]
+DIF171c<-DIF171[c("startdate","Q1","Q2","Q6","Q7","Q8","Q10","Q14", "Q24")]
+DIF180c<-DIF180[c("startdate","Q1","Q2","Q6","Q7","Q8","Q10","Q14", "Q24")]
+DIF160c<-DIF160[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q30")]
+DIF161c<-DIF161[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q30")]
+TIL089c<-TIL089[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q13","Q14","Q30")]
+#TIL065
+
 
 #Add identification column
 
@@ -753,6 +773,24 @@ AGA107c$Q11<-AGA107$Q8
 AGA107c$Q8<-NULL
 AGA107c$Q13<-AGA107$Q10
 AGA107c$Q10<-NULL
+
+DIF171c$Q9<-DIF171$Q6
+DIF171c$Q6<-NULL
+DIF171c$Q10<-DIF171$Q7
+DIF171c$Q7<-NULL
+DIF171c$Q11<-DIF171$Q8
+DIF171c$Q8<-NULL
+DIF171c$Q13<-DIF171$Q10
+DIF171c$Q10<-NULL
+
+DIF180c$Q9<-DIF180$Q6
+DIF180c$Q6<-NULL
+DIF180c$Q10<-DIF180$Q7
+DIF180c$Q7<-NULL
+DIF180c$Q11<-DIF180$Q8
+DIF180c$Q8<-NULL
+DIF180c$Q13<-DIF180$Q10
+DIF180c$Q10<-NULL
 
 
 #Combine tables
