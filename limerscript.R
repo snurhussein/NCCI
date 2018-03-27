@@ -128,7 +128,11 @@ TIL065 <-get_responses(iSurveyID= 814664, sLanguageCode = 'fr', sResponseType = 
 TIL047 <-get_responses(iSurveyID= 587547, sLanguageCode = 'fr', sResponseType = 'short')
 TIL079 <-get_responses(iSurveyID= 854217, sLanguageCode = 'fr', sResponseType = 'short')
 TIL049 <-get_responses(iSurveyID= 738651, sLanguageCode = 'fr', sResponseType = 'short')
-
+TIL086 <-get_responses(iSurveyID= 312929, sLanguageCode = 'fr', sResponseType = 'short')
+AGA112<-get_responses(iSurveyID= 936826, sLanguageCode = 'fr', sResponseType = 'short')
+DIF150<-get_responses(iSurveyID= 496656, sLanguageCode = 'fr', sResponseType = 'short')
+DIF162<-get_responses(iSurveyID= 939723, sLanguageCode = 'fr', sResponseType = 'short')
+DIF180<-get_responses(iSurveyID= 373125, sLanguageCode = 'fr', sResponseType = 'short')
 
 #Make copies with only the columns of interest, also excluding empty surveys
 
@@ -233,15 +237,22 @@ AGA096c <- AGA096[c("startdate","Q1","Q2","Q6","Q7","Q8","Q10","Q14", "Q24")]
 AGA095c <- AGA095[c("startdate","Q1","Q2","Q9","Q10","Q11","Q12","Q13","Q14","Q30")]
 #AGA111
 AGA107c<- AGA107[c("startdate","Q1","Q2","Q6","Q7","Q8","Q10","Q14", "Q24")]
-TIL057c<-TIL057[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q13","Q14","Q30")]
-TIL072c<-TIL072[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q30")]
-DIF171c<-DIF171[c("startdate","Q1","Q2","Q6","Q7","Q8","Q10","Q14", "Q24")]
+TIL057c<-TIL057[c("startdate","Q1","Q2","Q9","Q10","Q11","Q30")]
+TIL072c<-TIL072[c("startdate","Q1","Q2","Q9","Q10","Q11","Q30")]
+DIF171c<-DIF171[c("startdate","Q1","Q2","Q6","Q7","Q8","Q10","Q14.1.", "Q14.2.", "Q14.3.", "Q24")]
 DIF180c<-DIF180[c("startdate","Q1","Q2","Q6","Q7","Q8","Q10","Q14", "Q24")]
-DIF160c<-DIF160[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q30")]
-DIF161c<-DIF161[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q30")]
-TIL089c<-TIL089[c("Q1","Q2","Q6","Q7","Q8","Q9","Q10","Q13","Q14","Q30")]
-#TIL065
-
+DIF160c<-DIF160[c("startdate","Q1","Q2","Q9","Q10","Q11","Q30")]
+DIF161c<-DIF161[c("startdate","Q1","Q2","Q9","Q10","Q11","Q30")]
+TIL089c<-TIL089[c("startdate","Q1","Q2","Q9","Q10","Q11","Q13","Q14","Q30")]
+TIL065c<-TIL065[c("startdate","Q1","Q2","Q9","Q10","Q11","Q30")]
+TIL047c <-TIL047[c("startdate","Q1","Q2","Q9","Q10","Q11","Q30")]
+TIL079c<- TIL079[c("startdate","Q1","Q2","Q9","Q10","Q11","Q13","Q14","Q30")]
+TIL049c<- TIL049[c("startdate","Q1","Q2","Q9","Q10","Q11","Q30")]
+TIL086c<- TIL086[c("startdate","Q1","Q2","Q9","Q10","Q11","Q13","Q14","Q30")]
+AGA112c<-AGA112[c("startdate","Q1","Q2","Q6","Q7","Q8","Q10","Q14", "Q24")]
+DIF150c<-DIF150[c("startdate","Q1","Q2","Q9","Q10","Q11","Q13","Q14","Q30")]
+DIF162c<- DIF162[c("startdate","Q1","Q2","Q9","Q10","Q11","Q13","Q14","Q30")]
+DIF180c<-DIF180[c("startdate","Q1","Q2","Q9","Q10","Q11","Q13","Q14","Q30")]
 
 #Add identification column
 
@@ -344,6 +355,19 @@ DIF180c$Survey <- 'DIF180'
 DIF160c$Survey <- 'DIF160'
 DIF161c$Survey <- 'DIF161'
 TIL089c$Survey <- 'TIL089'
+TIL065c$Survey <- 'TIL065'
+TIL047c$Survey <- 'TIL047'
+TIL079c$Survey <- 'TIL079'
+TIL049c$Survey <- 'TIL049'
+TIL086c$Survey <- 'TIL086'
+AGA112c$Survey <- 'AGA112'
+DIF150c$Survey <- 'DIF150'
+DIF162c$Survey <- 'DIF162'
+DIF180c$Survey <- 'DIF180'
+
+
+
+
 
 #Move misaligned columns to desired, consistent location
 
@@ -814,6 +838,38 @@ DIF161c$Q30<-NULL
 TIL089c$Q24<-TIL089$Q30
 TIL089c$Q30<-NULL
 
+TIL065c$Q24<-TIL065$Q30
+TIL065c$Q30<-NULL
+
+TIL047c$Q24<-TIL047$Q30
+TIL047c$Q30<-NULL
+
+TIL079c$Q24<-TIL079$Q30
+TIL079c$Q30<-NULL
+
+TIL049c$Q24<-TIL049$Q30
+TIL049c$Q30<-NULL
+
+TIL086c$Q24<-TIL086$Q30
+TIL086c$Q30<-NULL
+
+AGA112c$Q9<-AGA112$Q6
+AGA112c$Q6<-NULL
+AGA112c$Q10<-AGA112$Q7
+AGA112c$Q7<-NULL
+AGA112c$Q11<-AGA112$Q8
+AGA112c$Q8<-NULL
+AGA112c$Q13<-AGA112$Q10
+AGA112c$Q10<-NULL
+
+DIF150c$Q24<-DIF150$Q30
+DIF150c$Q30<-NULL
+
+DIF162c$Q24<-DIF162$Q30
+DIF162c$Q30<-NULL
+
+DIF180c$Q24<-DIF180$Q30
+DIF180c$Q30<-NULL
 
 
 #Combine tables
@@ -826,7 +882,11 @@ NCCIbind <- rbind.fill(AGA041c, AGA055c, AGA059c, AGA060c, AGA061c, DIF010c, DIF
 NCCIbind2 <- rbind.fill(AGA067c, TIL039c, AGA086c, AGA083c, DIF140c, TIL035c, TIL037c, DIF107c, DIF145c, AGA077c, 
                        DIF108c, DIF123c, DIF125c, DIF121c, DIF130c, AGA084c, TIL061c, AGA101c, TIL024c, TIL040c, TIL015c, AGA105c, DIF125c,
                        TIL063c, TIL067c, TIL069c, TIL071c, DIF156c, TIL038c,TIL044c,TIL076c, AGA091c, DIF144c, TIL066c, TIL080c, DIF148c, TIL055c, DIF151c, 
-                       TIL059c, DIF147c, AGA110c,AGA096c, AGA095c, AGA107c )
+                       TIL059c, DIF147c, AGA110c,AGA096c, AGA095c, AGA107c,TIL057c, TIL072c,DIF171c,DIF180c,DIF160c,TIL089c,TIL065c,TIL047c,TIL079c,
+                       TIL049c,TIL086c,DIF180c )
+
+#to be added AGA112c, DIF161c, DIF150c,DIF162c,
+
 
 
 NCCIbind2$Q14.1.[NCCIbind2$Q14.1. == 'Y'] <- 'F'
@@ -876,6 +936,7 @@ NCCIbind$Q41.4.<-NULL
 NCCIcomplete <- rbind.fill(NCCIbind, NCCIbind2)
 NCCIcomplete$AllRespondents<-"All Respondents"
 NCCIcomplete$month<-format(as.Date(NCCIcomplete$startdate), "%Y-%m")
+NCCIcomplete$Gender[NCCIcomplete$Gender == 'False'] <- 'F'
 
 #Merge program data
 NCCIcomplete <- merge(NCCIcomplete,NER_Obj3,by="Survey")
