@@ -7,6 +7,7 @@ library(plyr)
 library(reshape2)
 library(tidyr)
 
+
 #connect to limer, change api link, username and password where necessary
 
 options(lime_api = 'http://survey.itechcenter.ne/index.php/admin/remotecontrol')
@@ -252,7 +253,7 @@ TIL086c<- TIL086[c("startdate","Q1","Q2","Q9","Q10","Q11","Q13","Q14","Q30")]
 AGA112c<-AGA112[c("startdate","Q1","Q2","Q6","Q7","Q8","Q10","Q14", "Q24")]
 DIF150c<-DIF150[c("startdate","Q1","Q2","Q9","Q10","Q11","Q13","Q14","Q30")]
 DIF162c<- DIF162[c("startdate","Q1","Q2","Q9","Q10","Q11","Q13","Q14","Q30")]
-DIF180c<-DIF180[c("startdate","Q1","Q2","Q9","Q10","Q11","Q13","Q14","Q30")]
+#DIF180c<-DIF180[c("startdate","Q1","Q2","Q9","Q10","Q11","Q13","Q14","Q24")]
 
 #Add identification column
 
@@ -363,7 +364,7 @@ TIL086c$Survey <- 'TIL086'
 AGA112c$Survey <- 'AGA112'
 DIF150c$Survey <- 'DIF150'
 DIF162c$Survey <- 'DIF162'
-DIF180c$Survey <- 'DIF180'
+#DIF180c$Survey <- 'DIF180'
 
 
 
@@ -868,9 +869,6 @@ DIF150c$Q30<-NULL
 DIF162c$Q24<-DIF162$Q30
 DIF162c$Q30<-NULL
 
-DIF180c$Q24<-DIF180$Q30
-DIF180c$Q30<-NULL
-
 
 #Combine tables
 
@@ -883,7 +881,7 @@ NCCIbind2 <- rbind.fill(AGA067c, TIL039c, AGA086c, AGA083c, DIF140c, TIL035c, TI
                        DIF108c, DIF123c, DIF125c, DIF121c, DIF130c, AGA084c, TIL061c, AGA101c, TIL024c, TIL040c, TIL015c, AGA105c, DIF125c,
                        TIL063c, TIL067c, TIL069c, TIL071c, DIF156c, TIL038c,TIL044c,TIL076c, AGA091c, DIF144c, TIL066c, TIL080c, DIF148c, TIL055c, DIF151c, 
                        TIL059c, DIF147c, AGA110c,AGA096c, AGA095c, AGA107c,TIL057c, TIL072c,DIF171c,DIF180c,DIF160c,TIL089c,TIL065c,TIL047c,TIL079c,
-                       TIL049c,TIL086c,DIF180c )
+                       TIL049c,TIL086c )
 
 #to be added AGA112c, DIF161c, DIF150c,DIF162c,
 
@@ -916,11 +914,11 @@ NCCIbind2$Region <- factor(NCCIbind2$Q2, levels = c(1,2,3,4,"-oth-"), labels = c
 NCCIbind2$Age.Group<-cut(NCCIbind2$Q24,breaks=c(0,17,30,45,60,100), labels=c("Under 18","18-30","31-45","46-60","60+" ))
 NCCIbind2$Ethnicity <- factor(NCCIbind2$Q10, levels = c(1,2,3,4,5,6,7,8), labels = c("Haussa", "Touareg", "Peul", "Zarma/Songhai","Toubou","Kanouri","Arabe","Je préfère ne pas répondre"))
 NCCIbind2$Gender<-NCCIbind2$Q9
-NCCIbind2$Participation<-factor(NCCIbind2$Q11, labels = c("Je suis un jeune participant à la formation et un membre de l'équipe qui va bénéficier des unités de production d'eau","Je suis un organisateur (autorité, partenaire)","Je suis un membre de la communauté (spectateur de processus)"))
+NCCIbind2$Participation<-factor(NCCIbind2$Q11, labels = c("Je suis un jeune participant à la formation et un membre de l'équipe qui va bénéficier des unités de production d'eau","Je suis un organisateur (autorité, partenaire)","Je suis un membre de la communauté (spectateur de processus)", ""))
 NCCIbind2$RegroupeParticipants<-NCCIbind2$Q12
 NCCIbind2$ResteEnContact<-factor(NCCIbind2$Q13, labels = c("Non", "Rarement", "Frequement"))
 NCCIbind2$CommentContact<-factor(NCCIbind2$Q14u, levels = c("F","FT","FTS","S","T","TS"), labels = c("Face-à-face", "Face-à-face & Téléphone", "Face-à-face, Téléphone & Social", "Social", "Téléphone", "Téléphone & Social"))
-
+NCCIbind2$Gender[NCCIbind2$Q9 == 'FALSE'] <- 'F'
 
 
 NCCIbind$Cartes.information<-NCCIbind$Q41.1.
@@ -936,7 +934,7 @@ NCCIbind$Q41.4.<-NULL
 NCCIcomplete <- rbind.fill(NCCIbind, NCCIbind2)
 NCCIcomplete$AllRespondents<-"All Respondents"
 NCCIcomplete$month<-format(as.Date(NCCIcomplete$startdate), "%Y-%m")
-NCCIcomplete$Gender[NCCIcomplete$Gender == 'False'] <- 'F'
+
 
 #Merge program data
 NCCIcomplete <- merge(NCCIcomplete,NER_Obj3,by="Survey")
