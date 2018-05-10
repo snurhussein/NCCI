@@ -130,10 +130,17 @@ TIL047 <-get_responses(iSurveyID= 587547, sLanguageCode = 'fr', sResponseType = 
 TIL079 <-get_responses(iSurveyID= 854217, sLanguageCode = 'fr', sResponseType = 'short')
 TIL049 <-get_responses(iSurveyID= 738651, sLanguageCode = 'fr', sResponseType = 'short')
 TIL086 <-get_responses(iSurveyID= 312929, sLanguageCode = 'fr', sResponseType = 'short')
-AGA112<-get_responses(iSurveyID= 936826, sLanguageCode = 'fr', sResponseType = 'short')
+AGA112<-get_responses(iSurveyID= 273636, sLanguageCode = 'fr', sResponseType = 'short')
 DIF150<-get_responses(iSurveyID= 496656, sLanguageCode = 'fr', sResponseType = 'short')
 DIF162<-get_responses(iSurveyID= 939723, sLanguageCode = 'fr', sResponseType = 'short')
 DIF180<-get_responses(iSurveyID= 373125, sLanguageCode = 'fr', sResponseType = 'short')
+DIF153 <-get_responses(iSurveyID= 524286, sLanguageCode = 'fr', sResponseType = 'short')
+AGA103 <-get_responses(iSurveyID= 788484, sLanguageCode = 'fr', sResponseType = 'short')
+DIF156<-get_responses(iSurveyID= 386858, sLanguageCode = 'fr', sResponseType = 'short')
+TIL075<-get_responses(iSurveyID= 662896, sLanguageCode = 'fr', sResponseType = 'short')
+DIF164<-get_responses(iSurveyID= 246415, sLanguageCode = 'fr', sResponseType = 'short')
+AGA081<-get_responses(iSurveyID= 175292, sLanguageCode = 'fr', sResponseType = 'short')
+AGA104<-get_responses(iSurveyID= 418182, sLanguageCode = 'fr', sResponseType = 'short')
 
 #Make copies with only the columns of interest, also excluding empty surveys
 
@@ -241,19 +248,26 @@ AGA107c<- AGA107[c("startdate","Q1","Q2","Q6","Q7","Q8","Q10","Q14", "Q24")]
 TIL057c<-TIL057[c("startdate","Q1","Q2","Q9","Q10","Q11","Q30")]
 TIL072c<-TIL072[c("startdate","Q1","Q2","Q9","Q10","Q11","Q30")]
 DIF171c<-DIF171[c("startdate","Q1","Q2","Q6","Q7","Q8","Q10","Q14.1.", "Q14.2.", "Q14.3.", "Q24")]
-DIF180c<-DIF180[c("startdate","Q1","Q2","Q6","Q7","Q8","Q10","Q14", "Q24")]
 DIF160c<-DIF160[c("startdate","Q1","Q2","Q9","Q10","Q11","Q30")]
-DIF161c<-DIF161[c("startdate","Q1","Q2","Q9","Q10","Q11","Q30")]
+#DIF161c<-DIF161[c("startdate","Q1","Q2","Q9","Q10","Q11","Q30")]
 TIL089c<-TIL089[c("startdate","Q1","Q2","Q9","Q10","Q11","Q13","Q14","Q30")]
 TIL065c<-TIL065[c("startdate","Q1","Q2","Q9","Q10","Q11","Q30")]
 TIL047c <-TIL047[c("startdate","Q1","Q2","Q9","Q10","Q11","Q30")]
 TIL079c<- TIL079[c("startdate","Q1","Q2","Q9","Q10","Q11","Q13","Q14","Q30")]
 TIL049c<- TIL049[c("startdate","Q1","Q2","Q9","Q10","Q11","Q30")]
 TIL086c<- TIL086[c("startdate","Q1","Q2","Q9","Q10","Q11","Q13","Q14","Q30")]
-AGA112c<-AGA112[c("startdate","Q1","Q2","Q6","Q7","Q8","Q10","Q14", "Q24")]
-DIF150c<-DIF150[c("startdate","Q1","Q2","Q9","Q10","Q11","Q13","Q14","Q30")]
-DIF162c<- DIF162[c("startdate","Q1","Q2","Q9","Q10","Q11","Q13","Q14","Q30")]
-#DIF180c<-DIF180[c("startdate","Q1","Q2","Q9","Q10","Q11","Q13","Q14","Q24")]
+AGA112c<-AGA112[c("startdate","Q1","Q2","Q6","Q7","Q8","Q10","Q14.1.", "Q14.2.", "Q14.3.", "Q24")]
+DIF150c<-DIF150[c("startdate","Q1","Q2","Q9","Q10","Q11","Q13","Q14.1.", "Q14.2.", "Q14.3.","Q30")]
+DIF162c<- DIF162[c("startdate","Q1","Q2","Q9","Q10","Q11","Q13","Q14.1.", "Q14.2.", "Q14.3.","Q30")]
+DIF180c<-DIF180[c("startdate","Q1","Q2","Q9","Q10","Q11","Q13","Q14.1.", "Q14.2.", "Q14.3.","Q24")]
+DIF153c<-DIF153[c("startdate","Q1","Q2","Q9","Q10","Q11","Q30")]
+AGA103c<- AGA103[c("startdate","Q1","Q2","Q6","Q7","Q8","Q10","Q14.1.", "Q14.2.", "Q14.3.", "Q24")] 
+DIF156c<- DIF156[c("startdate","Q1","Q2","Q9","Q10","Q11","Q30")]
+DIF164c<- DIF164[c("startdate","Q1","Q2","Q9","Q10","Q11","Q30")]
+AGA081c<- AGA081[c("startdate","Q1","Q2","Q9","Q10","Q11","Q30")]
+#AGA104c<- AGA104[c("startdate","Q1","Q2","Q6","Q7","Q8","Q10","Q14", "Q24")] 
+
+
 
 #Add identification column
 
@@ -354,7 +368,7 @@ TIL072c$Survey <- 'TIL072'
 DIF171c$Survey <- 'DIF171'
 DIF180c$Survey <- 'DIF180'
 DIF160c$Survey <- 'DIF160'
-DIF161c$Survey <- 'DIF161'
+#DIF161c$Survey <- 'DIF161'
 TIL089c$Survey <- 'TIL089'
 TIL065c$Survey <- 'TIL065'
 TIL047c$Survey <- 'TIL047'
@@ -364,7 +378,12 @@ TIL086c$Survey <- 'TIL086'
 AGA112c$Survey <- 'AGA112'
 DIF150c$Survey <- 'DIF150'
 DIF162c$Survey <- 'DIF162'
-#DIF180c$Survey <- 'DIF180'
+DIF180c$Survey <- 'DIF180'
+DIF153c$Survey<-'DIF153c'
+AGA103c$Survey<-'AGA103c'
+DIF156c$Survey<-'DIF156c'
+DIF164c$Survey<-'DIF164c'
+AGA081c$Survey<-'AGA081c'
 
 
 
@@ -818,14 +837,8 @@ DIF171c$Q8<-NULL
 DIF171c$Q13<-DIF171$Q10
 DIF171c$Q10<-NULL
  
-DIF180c$Q9<-DIF180$Q6
-DIF180c$Q6<-NULL
-DIF180c$Q10<-DIF180$Q7
-DIF180c$Q7<-NULL
-DIF180c$Q11<-DIF180$Q8
-DIF180c$Q8<-NULL
-DIF180c$Q13<-DIF180$Q10
-DIF180c$Q10<-NULL
+DIF180c$Q24<-DIF180$Q30
+DIF180c$Q30<-NULL
 
 TIL072c$Q24<-TIL072$Q30
 TIL072c$Q30<-NULL
@@ -869,6 +882,36 @@ DIF150c$Q30<-NULL
 DIF162c$Q24<-DIF162$Q30
 DIF162c$Q30<-NULL
 
+DIF153c$Q24<-DIF153$Q30
+DIF153c$Q30<-NULL
+
+AGA103c$Q9<-AGA103$Q6
+AGA103c$Q6<-NULL
+AGA103c$Q10<-AGA103$Q7
+AGA103c$Q7<-NULL
+AGA103c$Q11<-AGA103$Q8
+AGA103c$Q8<-NULL
+AGA103c$Q13<-AGA103$Q10
+AGA103c$Q10<-NULL
+
+DIF156c$Q24<-DIF156$Q30
+DIF156c$Q30<-NULL
+
+DIF164c$Q24<-DIF164$Q30
+DIF164c$Q30<-NULL
+
+AGA081c$Q24<-AGA081$Q30
+AGA081c$Q30<-NULL
+
+AGA104c$Q9<-AGA104$Q6
+AGA104c$Q6<-NULL
+AGA104c$Q10<-AGA104$Q7
+AGA104c$Q7<-NULL
+AGA104c$Q11<-AGA104$Q8
+AGA104c$Q8<-NULL
+AGA104c$Q13<-AGA104$Q10
+AGA104c$Q10<-
+ 
 
 #Combine tables
 
@@ -881,9 +924,9 @@ NCCIbind2 <- rbind.fill(AGA067c, TIL039c, AGA086c, AGA083c, DIF140c, TIL035c, TI
                        DIF108c, DIF123c, DIF125c, DIF121c, DIF130c, AGA084c, TIL061c, AGA101c, TIL024c, TIL040c, TIL015c, AGA105c, DIF125c,
                        TIL063c, TIL067c, TIL069c, TIL071c, DIF156c, TIL038c,TIL044c,TIL076c, AGA091c, DIF144c, TIL066c, TIL080c, DIF148c, TIL055c, DIF151c, 
                        TIL059c, DIF147c, AGA110c,AGA096c, AGA095c, AGA107c,TIL057c, TIL072c,DIF171c,DIF180c,DIF160c,TIL089c,TIL065c,TIL047c,TIL079c,
-                       TIL049c,TIL086c )
+                       TIL049c,TIL086c, AGA112c, DIF150c, DIF162c, DIF148c, DIF180c, DIF153c, AGA103c, DIF156c, DIF164c, AGA081c)
 
-#to be added AGA112c, DIF161c, DIF150c,DIF162c,
+#to be added DIF161c, AGA104c
 
 
 
