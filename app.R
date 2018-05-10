@@ -5,6 +5,7 @@ library(stringr)
 library(DT)
 library(scales)
 library(plotly)
+library(xlsx)
 
 
 
@@ -188,6 +189,14 @@ server<-function(input, output) {
     content = function(file) {
       write.xlsx(AGA077, file)
     } )
+  output$AGA081 <- downloadHandler(
+    filename = function() {
+      paste("AGA081-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(AGA081, file)
+    } )
+  
   output$AGA083 <- downloadHandler(
     filename = function() {
       paste("AGA083-", date, ".xlsx")
@@ -230,6 +239,20 @@ server<-function(input, output) {
     },
     content = function(file) {
       write.xlsx(AGA096, file)
+    } )
+  output$AGA101 <- downloadHandler(
+    filename = function() {
+      paste("AGA101-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(AGA101, file)
+    } )
+  output$AGA103 <- downloadHandler(
+    filename = function() {
+      paste("AGA103-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(AGA103, file)
     } )
   
    output$AGA105 <- downloadHandler(
@@ -481,6 +504,14 @@ server<-function(input, output) {
     content = function(file) {
       write.xlsx(DIF151, file)
     } )
+  output$DIF153 <- downloadHandler(
+    filename = function() {
+      paste("DIF153-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(DIF153, file)
+    } )
+  
   output$DIF156 <- downloadHandler(
     filename = function() {
       paste("DIF156-", date, ".xlsx")
@@ -508,6 +539,13 @@ server<-function(input, output) {
     },
     content = function(file) {
       write.xlsx(DIF162, file)
+    } )
+  output$DIF164 <- downloadHandler(
+    filename = function() {
+      paste("DIF164-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(DIF164, file)
     } )
   output$DIF171 <- downloadHandler(
     filename = function() {
@@ -889,12 +927,17 @@ ui<-pageWithSidebar(
                          downloadLink("AGA072", "AGA072"), br(),
                          downloadLink("AGA074", "AGA074"), br(),
                          downloadLink("AGA077", "AGA077"), br(),
+                         downloadLink("AGA081", "AGA081"), br(),
                          downloadLink("AGA083", "AGA083"), br(),
                          downloadLink("AGA085", "AGA085"), br(),
                          downloadLink("AGA086", "AGA086"), br(),
                          downloadLink("AGA091", "AGA091"), br(),
                          downloadLink("AGA095", "AGA095"), br(),
                          downloadLink("AGA096", "AGA096"), br(),
+                         downloadLink("AGA101", "AGA101"), br(),
+                         downloadLink("AGA103", "AGA103"), br(),
+                         downloadLink("AGA105", "AGA105"), br(),
+                         
                          downloadLink("AGA107", "AGA107"), br(),
                          downloadLink("AGA110", "AGA110"), br(),
                          downloadLink("AGA111", "AGA111"), br(),
@@ -928,10 +971,13 @@ ui<-pageWithSidebar(
                          downloadLink("DIF148", "DIF148"), br(),
                          downloadLink("DIF150", "DIF150"), br(),
                          downloadLink("DIF151", "DIF151"), br(),
+                         downloadLink("DIF153", "DIF153"), br(),
                          downloadLink("DIF156", "DIF156"), br(),
                          downloadLink("DIF160", "DIF160"), br(),
                          downloadLink("DIF161", "DIF161"), br(),
                          downloadLink("DIF162", "DIF162"), br(),
+                         downloadLink("DIF164", "DIF164"), br(),
+                         
                          downloadLink("DIF171", "DIF171"), br(),
                          downloadLink("DIF180", "DIF180"), br(),
                          downloadLink("DIF181", "DIF181"), br(),
