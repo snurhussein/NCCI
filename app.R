@@ -5,7 +5,6 @@ library(stringr)
 library(DT)
 library(scales)
 library(plotly)
-library(xlsx)
 
 
 
@@ -841,6 +840,58 @@ server<-function(input, output) {
     content = function(file) {
       write.xlsx(TIL089, file)
     } )
+    output$TIL098 <- downloadHandler(
+    filename = function() {
+      paste("TIL098-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(TIL098, file)
+    } )
+  output$AGA109 <- downloadHandler(
+    filename = function() {
+      paste("AGA109-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(AGA109, file)
+    } )
+  output$TIL051 <- downloadHandler(
+    filename = function() {
+      paste("TIL051-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(TIL051, file)
+    } )
+  output$TIL091 <- downloadHandler(
+    filename = function() {
+      paste("TIL091-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(TIL091, file)
+    } )
+  output$TIL090 <- downloadHandler(
+    filename = function() {
+      paste("TIL090-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(TIL090, file)
+    } )
+  output$AGA123 <- downloadHandler(
+    filename = function() {
+      paste("AGA123-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(AGA123, file)
+    } )
+  output$AGA122 <- downloadHandler(
+    filename = function() {
+      paste("AGA122-", date, ".xlsx")
+    },
+    content = function(file) {
+      write.xlsx(AGA122, file)
+    } )
+  
+  
+  
   
   output$total <-  renderText({
     paste0(nrow(NCCIcomplete)) 
@@ -1017,7 +1068,14 @@ ui<-pageWithSidebar(
                          downloadLink("TIL079", "TIL079"), br(),
                          downloadLink("TIL080", "TIL080"), br(),
                          downloadLink("TIL086", "TIL086"), br(),
-                         downloadLink("TIL089", "TIL089")
+                         downloadLink("TIL089", "TIL089"), br(),
+                         downloadLink("AGA109", "AGA109"), br(), 
+                         downloadLink("TIL051", "TIL051"), br(),
+                         downloadLink("TIL091", "TIL091"), br(),
+                         downloadLink("TIL090", "TIL090"), br(),
+                         downloadLink("AGA123", "AGA123"), br(),
+                         downloadLink("AGA122", "AGA122")
+                         
                          )
     )
   ))

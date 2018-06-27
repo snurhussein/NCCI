@@ -141,6 +141,15 @@ TIL075<-get_responses(iSurveyID= 662896, sLanguageCode = 'fr', sResponseType = '
 DIF164<-get_responses(iSurveyID= 246415, sLanguageCode = 'fr', sResponseType = 'short')
 AGA081<-get_responses(iSurveyID= 175292, sLanguageCode = 'fr', sResponseType = 'short')
 AGA104<-get_responses(iSurveyID= 418182, sLanguageCode = 'fr', sResponseType = 'short')
+DIF166<-get_responses(iSurveyID= 246532, sLanguageCode = 'fr', sResponseType = 'short')
+TIL098<-get_responses(iSurveyID= 391331, sLanguageCode = 'fr', sResponseType = 'short')
+AGA109<-get_responses(iSurveyID= 764688, sLanguageCode = 'fr', sResponseType = 'short')
+TIL051<-get_responses(iSurveyID= 123922, sLanguageCode = 'fr', sResponseType = 'short')
+TIL091<-get_responses(iSurveyID= 725599, sLanguageCode = 'fr', sResponseType = 'short')
+TIL090<-get_responses(iSurveyID= 485898, sLanguageCode = 'fr', sResponseType = 'short')
+AGA123<-get_responses(iSurveyID= 624289, sLanguageCode = 'fr', sResponseType = 'short')
+AGA122<-get_responses(iSurveyID= 981549, sLanguageCode = 'fr', sResponseType = 'short')
+
 
 #Make copies with only the columns of interest, also excluding empty surveys
 
@@ -265,9 +274,16 @@ AGA103c<- AGA103[c("startdate","Q1","Q2","Q6","Q7","Q8","Q10","Q14.1.", "Q14.2."
 DIF156c<- DIF156[c("startdate","Q1","Q2","Q9","Q10","Q11","Q30")]
 DIF164c<- DIF164[c("startdate","Q1","Q2","Q9","Q10","Q11","Q30")]
 AGA081c<- AGA081[c("startdate","Q1","Q2","Q9","Q10","Q11","Q30")]
-#AGA104c<- AGA104[c("startdate","Q1","Q2","Q6","Q7","Q8","Q10","Q14", "Q24")] 
-
-
+AGA104c<- AGA104[c("startdate","Q1","Q2","Q6","Q7","Q8","Q10","Q14", "Q24")] 
+#DIF166
+TIL098c<-TIL098[c("startdate","Q1","Q2","Q9","Q10","Q11","Q30")]
+AGA109c<-AGA109[c("startdate","Q1","Q2","Q6","Q7","Q8","Q10","Q14", "Q24")] 
+TIL051c<-TIL051[c("startdate","Q1","Q2","Q6","Q7","Q8","Q10","Q14", "Q24")]
+TIL091c<-TIL091[c("startdate","Q1","Q2","Q9","Q10","Q11","Q24")]
+TIL090c<-TIL090[c("startdate","Q1","Q2","Q6","Q7","Q8","Q10","Q14", "Q24")]
+AGA123c<-AGA123[c("startdate","Q1","Q2","Q9","Q10","Q11","Q30")]
+AGA122c<-AGA122[c("startdate","Q1","Q2","Q9","Q10","Q11","Q30")]
+AGA104c<-AGA104[c("startdate","Q1","Q2","Q6","Q7","Q8","Q10","Q14.1.", "Q14.2.", "Q14.3.", "Q24")]
 
 #Add identification column
 
@@ -379,15 +395,19 @@ AGA112c$Survey <- 'AGA112'
 DIF150c$Survey <- 'DIF150'
 DIF162c$Survey <- 'DIF162'
 DIF180c$Survey <- 'DIF180'
-DIF153c$Survey<-'DIF153c'
-AGA103c$Survey<-'AGA103c'
-DIF156c$Survey<-'DIF156c'
-DIF164c$Survey<-'DIF164c'
-AGA081c$Survey<-'AGA081c'
-
-
-
-
+DIF153c$Survey<-'DIF153'
+AGA103c$Survey<-'AGA103'
+DIF156c$Survey<-'DIF156'
+DIF164c$Survey<-'DIF164'
+AGA081c$Survey<-'AGA081'
+TIL098c$Survey<-'TIL098'
+AGA109c$Survey<-'AGA109'
+TIL051c$Survey<-'TIL051'
+TIL091c$Survey<-'TIL091'
+TIL090c$Survey<-'TIL090'
+AGA123c$Survey<-'AGA123'
+AGA122c$Survey<-'AGA122'
+AGA104c$Survey<-'AGA104'
 
 #Move misaligned columns to desired, consistent location
 
@@ -910,7 +930,43 @@ AGA104c$Q7<-NULL
 AGA104c$Q11<-AGA104$Q8
 AGA104c$Q8<-NULL
 AGA104c$Q13<-AGA104$Q10
-AGA104c$Q10<-
+AGA104c$Q10<-NULL
+
+TIL098c$Q24<-TIL098$Q30
+TIL098c$Q30<-NULL
+
+AGA109c$Q9<-AGA109$Q6
+AGA109c$Q6<-NULL
+AGA109c$Q10<-AGA109$Q7
+AGA109c$Q7<-NULL
+AGA109c$Q11<-AGA109$Q8
+AGA109c$Q8<-NULL
+AGA109c$Q13<-AGA109$Q10
+AGA109c$Q10<-NULL
+
+TIL051c$Q9<-TIL051$Q6
+TIL051c$Q6<-NULL
+TIL051c$Q10<-TIL051$Q7
+TIL051c$Q7<-NULL
+TIL051c$Q11<-TIL051$Q8
+TIL051c$Q8<-NULL
+TIL051c$Q13<-TIL051$Q10
+TIL051c$Q10<-NULL
+
+TIL090c$Q9<-TIL090$Q6
+TIL090c$Q6<-NULL
+TIL090c$Q10<-TIL090$Q7
+TIL090c$Q7<-NULL
+TIL090c$Q11<-TIL090$Q8
+TIL090c$Q8<-NULL
+TIL090c$Q13<-TIL090$Q10
+TIL090c$Q10<-NULL
+
+AGA122c$Q24<-AGA122$Q30
+AGA122c$Q30<-NULL
+
+AGA123c$Q24<-AGA123$Q30
+AGA123c$Q30<-NULL
  
 
 #Combine tables
@@ -924,9 +980,10 @@ NCCIbind2 <- rbind.fill(AGA067c, TIL039c, AGA086c, AGA083c, DIF140c, TIL035c, TI
                        DIF108c, DIF123c, DIF125c, DIF121c, DIF130c, AGA084c, TIL061c, AGA101c, TIL024c, TIL040c, TIL015c, AGA105c, DIF125c,
                        TIL063c, TIL067c, TIL069c, TIL071c, DIF156c, TIL038c,TIL044c,TIL076c, AGA091c, DIF144c, TIL066c, TIL080c, DIF148c, TIL055c, DIF151c, 
                        TIL059c, DIF147c, AGA110c,AGA096c, AGA095c, AGA107c,TIL057c, TIL072c,DIF171c,DIF180c,DIF160c,TIL089c,TIL065c,TIL047c,TIL079c,
-                       TIL049c,TIL086c, AGA112c, DIF150c, DIF162c, DIF148c, DIF180c, DIF153c, AGA103c, DIF156c, DIF164c, AGA081c)
+                       TIL049c,TIL086c, AGA112c, DIF150c, DIF162c, DIF148c, DIF180c, DIF153c, AGA103c, DIF156c, DIF164c, AGA081c,
+                       TIL098c,AGA109c, TIL051c,TIL091c, TIL090c, AGA123c, AGA122c, AGA104c)
 
-#to be added DIF161c, AGA104c
+#to be added DIF161c, DIF166c
 
 
 
