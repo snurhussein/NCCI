@@ -4,7 +4,7 @@ library(ggplot2)
 library(stringr)
 library(DT)
 library(scales)
-library(plotly)
+#library(plotly)
 
 
 
